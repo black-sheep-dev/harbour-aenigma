@@ -47,6 +47,7 @@ Rectangle {
                     }
 
                     if (!settings.highlighting) {
+                        highlighted = false
                         return
                     }
 
@@ -64,8 +65,10 @@ Rectangle {
                     }
 
                     highlighted = false
+                }
 
-
+                function resetCell() {
+                    noteBlock.notes = Note.None
                 }
 
                 width: cellSize
@@ -100,8 +103,15 @@ Rectangle {
                 }
 
                 Connections {
+                    target: settings
+
+                    onHighlightingChanged: refreshCell()
+                }
+
+                Connections {
                     target: Global
                     onRefrechCells: refreshCell()
+                    onResetCells: resetCell()
                     onSelectedNumberChanged: refreshCell()
                     onShowErrorsChanged: refreshCell()
                 }

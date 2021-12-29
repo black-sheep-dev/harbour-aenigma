@@ -12,6 +12,13 @@ Page {
 
     allowedOrientations: Orientation.Portrait
 
+    function reset() {
+        Sudoku.reset()
+        Global.selectedNumber = -1
+        Global.resetCells()
+        Global.refrechCells()
+    }
+
     DisplayBlanking {
         preventBlanking: Sudoku.state === GameState.Playing
     }
@@ -42,11 +49,7 @@ Page {
                 //% "Reset"
                 text: qsTrId("id-reset")
                 //% "Reset game"
-                onClicked: remorse.execute(qsTrId("id-reset-game"), function() {
-                    Sudoku.reset()
-                    Global.selectedNumber = -1
-                    Global.refrechCells()
-                })
+                onClicked: remorse.execute(qsTrId("id-reset-game"), function() { reset() })
             }
             MenuItem {
                 //% "New game"
@@ -55,6 +58,7 @@ Page {
                     var dialog = pageStack.push(Qt.resolvedUrl("../dialogs/NewGameDialog.qml"), { "difficulty": settings.lastDifficulty })
 
                     dialog.accepted.connect(function() {
+                        reset()
                         Sudoku.difficulty = dialog.difficulty
                         settings.lastDifficulty = dialog.difficulty
                         Sudoku.generate()
@@ -105,7 +109,7 @@ Page {
             }
 
             GameBoard {
-                visible: Sudoku.state >= GameState.Playing
+                visible: Sudoku.state >= GameState.Ready
                 id: gameBoard
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
@@ -118,7 +122,7 @@ Page {
             }
 
             Controls {
-                visible: Sudoku.state >= GameState.Playing
+                visible: Sudoku.state >= GameState.Ready
                 id: controlsPanel
 
                 x: Theme.horizontalPageMargin

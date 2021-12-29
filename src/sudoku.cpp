@@ -221,8 +221,11 @@ void Sudoku::generate()
 void Sudoku::reset()
 {
     m_undoQueue.clear();
+    m_notes.fill(0);
     m_game = m_puzzle;
+
     m_state = GameState::Ready;
+    checkIfFinished();
     emit stateChanged();
 }
 

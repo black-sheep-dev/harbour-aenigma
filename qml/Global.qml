@@ -9,4 +9,5 @@ QtObject {
     property bool showErrors: false
 
     signal refrechCells()
+    signal resetCells()
 }
