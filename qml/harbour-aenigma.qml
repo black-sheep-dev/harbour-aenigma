@@ -6,6 +6,7 @@ import "pages"
 import org.nubecula.aenigma 1.0
 
 ApplicationWindow {
+    id: app
 
     ConfigurationGroup {
         id: settings
@@ -18,7 +19,7 @@ ApplicationWindow {
         property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
 
-        onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes
+        onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes = autoCleanupNotes
         onAutoNotesChanged: Sudoku.autoNotes = autoNotes
     }
 

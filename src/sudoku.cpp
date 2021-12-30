@@ -43,7 +43,7 @@ QVariant Sudoku::data(quint8 row, quint8 column, quint8 role) const
     }
 }
 
-bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &data, bool undo)
+bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &data, bool undo, quint16 undoId)
 {
     if (row > rowSize || column > rowSize) {
         return false;
@@ -63,9 +63,11 @@ bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &dat
         if (m_puzzle[index] != 0) {
             return false;
         }
+
         oldData = m_game[index];
         m_game.replace(index, data.toUInt());
         checkIfFinished();
+
         if (m_autoCleanupNotes) {
             cleanupNotes(data.toUInt());
         }
@@ -81,6 +83,14 @@ bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &dat
 
     if (!undo) {
         UndoStep step;
+
+        if (undoId != 0) {
+            step.id = undoId;
+        } else {
+            incrementUndoId();
+            step.id = m_currentUndoId;
+        }
+
         step.row = row;
         step.column = column;
         step.role = role;
@@ -177,6 +187,20 @@ void Sudoku::setAutoNotes(bool enabled)
     emit autoNotesChanged();
 }
 
+quint16 Sudoku::currentUndoId() const
+{
+    return m_currentUndoId;
+}
+
+void Sudoku::setCurrentUndoId(quint16 id)
+{
+    if (m_currentUndoId == id)
+        return;
+    m_currentUndoId = id;
+    emit currentUndoIdChanged();
+}
+
+
 Difficulty::Level Sudoku::difficulty() const
 {
     return m_difficulty;
@@ -215,6 +239,8 @@ void Sudoku::generate()
 void Sudoku::reset()
 {
     m_undoQueue.clear();
+    m_currentUndoId = 0;
+
     m_notes.fill(0);
     m_game = m_puzzle;
 
@@ -242,8 +268,17 @@ void Sudoku::undo()
         return;
     }
 
-    auto step = m_undoQueue.takeLast();
-    setData(step.row, step.column, step.role, step.oldValue, true);
+    UndoStep current;
+
+    do {
+        current = m_undoQueue.takeLast();
+        setData(current.row, current.column, current.role, current.oldValue, true);
+
+        if (m_undoQueue.isEmpty()) {
+            break;
+        }
+
+    } while (current.id == m_undoQueue.last().id);
 }
 
 void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution, const QVector<quint16> &notes)
@@ -308,11 +343,20 @@ void Sudoku::checkIfFinished()
 
 void Sudoku::cleanupNotes(quint8 number)
 {
+    const quint16 id = m_currentUndoId++;
+
     for (int i = 0; i < gridSize; ++i) {
         const quint8 r = floor(i / rowSize);
         const quint8 c = i - r * rowSize;
 
         if (!isInArea(r, c, number)) continue;
-        setData(r, c, CellData::Notes, m_notes[i] & ~Helper::numberToNote(number));
+        setData(r, c, CellData::Notes, m_notes[i] & ~Helper::numberToNote(number), false, id);
     }
 }
+
+void Sudoku::incrementUndoId()
+{
+    m_currentUndoId++;
+    emit currentUndoIdChanged();
+}
+

@@ -20,9 +20,8 @@ Page {
     }
 
     DisplayBlanking {
-        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking && __silica_applicationwindow_instance.active
+        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking && app.visible
     }
-
 
     PageBusyIndicator {
         anchors.centerIn: parent

@@ -52,22 +52,26 @@ Item {
 
         IconSwitch {
             id: switchAdd
+            enabled: !checked
             checked: true
             source: "image://theme/icon-m-tab-new"
             onCheckedChanged: if (checked) mode = EditMode.Add
         }
         IconSwitch {
             id: switchNote
+            enabled: !checked
             source: "image://theme/icon-m-edit"
             onCheckedChanged: if (checked) mode = EditMode.Note
         }
         IconSwitch {
             id: switchDelete
+            enabled: !checked
             source: "image://theme/icon-m-delete"
             onCheckedChanged: if (checked) mode = EditMode.Delete
         }
         IconSwitch {
             id: switchHint
+            enabled: !checked
             source: "image://theme/icon-m-question"
             onCheckedChanged: if (checked) mode = EditMode.Hint
         }

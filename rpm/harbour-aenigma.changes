@@ -1,3 +1,9 @@
+* Thu Dec 30 2021 Samuel Kron <blacksheep@nubecula.org> 0.1.2-1
+- Option for auto cleaning notes
+- Improved undo
+- Fixed display keeps on when app is minimized
+- Fixed mode buttons courl be turned of
+
 * Thu Dec 30 2021 Samuel Kron <blacksheep@nubecula.org> 0.1.1-1
 - Auto notes
 - Option to turn on/off display blanking

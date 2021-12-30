@@ -33,6 +33,11 @@ Rectangle {
                 property bool highlighted: false
                 property bool hasError: false
 
+                function getUndoId() {
+                    var undoId = Sudoku.currentUndoId + 1
+                    Sudoku.currentUndoId = undoId
+                    return undoId
+                }
 
                 function isCurrentNumber() {
                     return Global.selectedNumber == valueLabel.text
@@ -150,25 +155,31 @@ Rectangle {
 
                         if (Global.mode === EditMode.Add) {
                             if (Global.selectedNumber < 0) return
+
+                            const undoId = getUndoId()
+
                             var value = 0
                             if (isCurrentNumber()) {
-                                Sudoku.setData(row, column, CellData.Value, value)
+                                Sudoku.setData(row, column, CellData.Value, value, false, undoId)
                             } else {
-                                Sudoku.setData(row, column, CellData.Value, Global.selectedNumber)
+                                Sudoku.setData(row, column, CellData.Value, Global.selectedNumber, false, undoId)
                                 value = Global.selectedNumber
-                            }
-                            Sudoku.setData(row, column, CellData.Notes, Note.None)
+                            }    
+                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                             Global.refrechCells()
                         } else if (Global.mode === EditMode.Delete) {
-                            Sudoku.setData(row, column, CellData.Value, 0)
-                            Sudoku.setData(row, column, CellData.Notes, Note.None)
+                            const undoId = getUndoId()
+                            Sudoku.setData(row, column, CellData.Value, 0, false, undoId)
+                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                             Global.refrechCells()
                         } else if (Global.mode === EditMode.Note) {
                             if (Sudoku.data(row, column, CellData.Value) !== 0) return
                             Sudoku.toogleNote(row, column, Sudoku.numberToNote(Global.selectedNumber))
                         } else if (Global.mode === EditMode.Hint) {
                             const value = Sudoku.data(row, column, CellData.Solution)
-                            Sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value)
+                            const undoId = getUndoId()
+                            Sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value, false, undoId)
+                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                             Global.refrechCells()
                         }
                     }

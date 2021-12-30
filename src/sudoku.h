@@ -12,6 +12,7 @@
 
 struct UndoStep {
     quint8 column{0};
+    quint16 id{0};
     QVariant newValue;
     QVariant oldValue;
     quint8 role{0};
@@ -24,6 +25,7 @@ class Sudoku : public QObject
 
     Q_PROPERTY(bool autoCleanupNotes READ autoCleanupNotes WRITE setAutoCleanupNotes NOTIFY autoCleanupNotesChanged)
     Q_PROPERTY(bool autoNotes READ autoNotes WRITE setAutoNotes NOTIFY autoNotesChanged)
+    Q_PROPERTY(quint16 currentUndoId READ currentUndoId WRITE setCurrentUndoId NOTIFY currentUndoIdChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
     Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
     Q_PROPERTY(quint8 unsolvedCellCount READ unsolvedCellCount NOTIFY unsolvedCellCountChanged)
@@ -32,7 +34,7 @@ public:
     explicit Sudoku(QObject *parent = nullptr);
 
     Q_INVOKABLE QVariant data(quint8 row, quint8 column, quint8 role) const;
-    Q_INVOKABLE bool setData(quint8 row, quint8 column, quint8 role, const QVariant &data, bool undo = false);
+    Q_INVOKABLE bool setData(quint8 row, quint8 column, quint8 role, const QVariant &data, bool undo = false, quint16 undoId = 0);
 
     Q_INVOKABLE quint8 cellCount() const;
     Q_INVOKABLE bool isInArea(quint8 row, quint8 column, quint8 number) const;
@@ -49,14 +51,15 @@ public:
     bool autoNotes() const;
     void setAutoNotes(bool enabled);
 
+    quint16 currentUndoId() const;
+    void setCurrentUndoId(quint16 id);
+
     Difficulty::Level difficulty() const;
     void setDifficulty(Difficulty::Level difficulty);
 
     GameState::State state() const;
 
     quint8 unsolvedCellCount() const;
-
-
 
 signals:
     void dataChanged(quint8 row, quint8 column, quint8 role, const QVariant &data);
@@ -70,6 +73,8 @@ signals:
 
     void autoCleanupNotesChanged();
 
+    void currentUndoIdChanged();
+
 public slots:
     void generate();
     void reset();
@@ -82,6 +87,7 @@ private slots:
 private:
     void checkIfFinished();
     void cleanupNotes(quint8 number);
+    void incrementUndoId();
 
     QVector<quint8> m_game{QVector<quint8>(gridSize, 0)};
     QVector<quint16> m_notes{QVector<quint16>(gridSize, 0)};
@@ -93,6 +99,7 @@ private:
     bool m_autoNotes{false};
     Difficulty::Level m_difficulty{Difficulty::Easy};
     GameState::State m_state{GameState::Empty};
+    quint16 m_currentUndoId{0};
     quint8 m_unsolvedCellCount{0};
     bool m_autoCleanupNotes{false};
 };
