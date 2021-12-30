@@ -167,6 +167,7 @@ Rectangle {
                             Sudoku.setData(row, column, CellData.Notes, Note.None)
                             Global.refrechCells()
                         } else if (Global.mode === EditMode.Note) {
+                            if (Sudoku.data(row, column, CellData.Value) !== 0) return
                             Sudoku.toogleNote(row, column, Sudoku.numberToNote(Global.selectedNumber))
                         } else if (Global.mode === EditMode.Hint) {
                             const value = Sudoku.data(row, column, CellData.Solution)
