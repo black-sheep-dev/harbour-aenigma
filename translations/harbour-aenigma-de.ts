@@ -119,14 +119,14 @@
         <translation>Hilfsmittel</translation>
     </message>
     <message id="id-highlighting">
-        <source>Prevent display blanking</source>
-        <oldsource>Highlighting</oldsource>
-        <translation>Bildschrirmabschaltung verhindern</translation>
+        <source>Highlighting</source>
+        <oldsource>Prevent display blanking</oldsource>
+        <translation>Hervorhebung</translation>
     </message>
     <message id="id-highlighting-desc">
-        <source>This option prevents display blanking during playing.</source>
-        <oldsource>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</oldsource>
-        <translation>Diese Option verhindert die Abschaltung des Bildschirms während des Spielens.</translation>
+        <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
+        <oldsource>This option prevents display blanking during playing.</oldsource>
+        <translation>Diese Option aktiviert das Hervorheben von Reihen, Spalten und Blöcken in denen die gewählte  Nummer. bereits vorhanden ist.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -139,6 +139,22 @@
     <message id="id-general">
         <source>General</source>
         <translation>Allgemein</translation>
+    </message>
+    <message id="id-auto-notes">
+        <source>Auto notes</source>
+        <translation>Auto Notizen</translation>
+    </message>
+    <message id="id-auto-notes-desc">
+        <source>This option automatically adds all notes to a new sudoku puzzle.</source>
+        <translation>Diese Option fügt automatisch alle Notizen einem neuen Sudoku Puzzle hinzu.</translation>
+    </message>
+    <message id="id-display-blanking">
+        <source>Prevent display blanking</source>
+        <translation>Bidschirmabschaltung verhindern</translation>
+    </message>
+    <message id="id-display-blanking-desc">
+        <source>This option prevents display blanking during playing.</source>
+        <translation>Diese Option verhindert das Abschalten des Bildschirms während des Spielens.</translation>
     </message>
 </context>
 </TS>

@@ -22,6 +22,7 @@ class Sudoku : public QObject
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool autoNotes READ autoNotes WRITE setAutoNotes NOTIFY autoNotesChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
     Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
     Q_PROPERTY(quint8 unsolvedCellCount READ unsolvedCellCount NOTIFY unsolvedCellCountChanged)
@@ -36,10 +37,13 @@ public:
     Q_INVOKABLE bool isInBox(quint8 row, quint8 column, quint8 number) const;
     Q_INVOKABLE bool isInColumn(quint8 column, quint8 number) const;
     Q_INVOKABLE bool isInRow(quint8 row, quint8 number) const;
-    Q_INVOKABLE quint8 noteToNumber(Note::Number number) const;
+    Q_INVOKABLE quint8 noteToNumber(Note::Number note) const;
     Q_INVOKABLE quint16 numberToNote(quint8 number) const;
 
     // properties
+    bool autoNotes() const;
+    void setAutoNotes(bool enabled);
+
     Difficulty::Level difficulty() const;
     void setDifficulty(Difficulty::Level difficulty);
 
@@ -52,9 +56,10 @@ signals:
     void numberFinished(quint8 number, bool finished = true);
 
     // properties
+    void autoNotesChanged();
     void difficultyChanged();
     void stateChanged();
-    void unsolvedCellCountChanged();
+    void unsolvedCellCountChanged(); 
 
 public slots:
     void generate();
@@ -63,7 +68,7 @@ public slots:
     void undo();
 
 private slots:
-    void onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution);
+    void onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution, const QVector<quint16> &notes);
 
 private:
     void checkIfFinished();
@@ -76,6 +81,7 @@ private:
     QList<UndoStep> m_undoQueue;
 
     // properties
+    bool m_autoNotes{false};
     Difficulty::Level m_difficulty{Difficulty::Easy};
     GameState::State m_state{GameState::Empty};
     quint8 m_unsolvedCellCount{0};

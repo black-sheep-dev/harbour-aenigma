@@ -12,9 +12,12 @@ ApplicationWindow {
         path: "/apps/harbour-aenigma"
         synchronous: true
 
-        property int lastDifficulty: Difficulty.Medium
         property bool highlighting: true
+        property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
+        property bool autoNotes: false
+
+        onAutoNotesChanged: Sudoku.autoNotes = autoNotes
     }
 
     initialPage: Component { GamePage { } }

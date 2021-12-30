@@ -6,10 +6,12 @@
 #include "sudoku.h"
 
 Q_DECLARE_METATYPE(QVector<quint8>)
+Q_DECLARE_METATYPE(QVector<quint16>)
 
 int main(int argc, char *argv[])
 {
     qRegisterMetaType<QVector<quint8> >();
+    qRegisterMetaType<QVector<quint16> >();
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> v(SailfishApp::createView());

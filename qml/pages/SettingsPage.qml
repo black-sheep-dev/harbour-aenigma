@@ -33,9 +33,9 @@ Page {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
                 //% "Prevent display blanking"
-                text: qsTrId("id-highlighting")
+                text: qsTrId("id-display-blanking")
                 //% "This option prevents display blanking during playing."
-                description: qsTrId("id-highlighting-desc")
+                description: qsTrId("id-display-blanking-desc")
 
                 onCheckedChanged: settings.preventDisplayBlanking = checked
 

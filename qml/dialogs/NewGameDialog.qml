@@ -59,6 +59,24 @@ Dialog {
                 }
             }
         }
+
+        SectionHeader {
+            //% "Support tools"
+            text: qsTrId("id-support-tools")
+        }
+
+        TextSwitch {
+            x: Theme.horizontalPageMargin
+            width: parent.width - 2*x
+            //% "Auto notes"
+            text: qsTrId("id-auto-notes")
+            //% "This option automatically adds all notes to a new sudoku puzzle."
+            description: qsTrId("id-auto-notes-desc")
+
+            onCheckedChanged: settings.autoNotes = checked
+
+            Component.onCompleted: checked = settings.autoNotes
+        }
     }
 
     onAccepted: difficulty = difficultiySelect.currentIndex

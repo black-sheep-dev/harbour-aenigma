@@ -4,6 +4,7 @@
 #include <QThreadPool>
 
 #include "generator.h"
+#include "helper.h"
 
 Sudoku::Sudoku(QObject *parent) : QObject(parent)
 {
@@ -131,56 +132,27 @@ bool Sudoku::isInRow(quint8 row, quint8 number) const
     return false;
 }
 
-quint16 Sudoku::numberToNote(quint8 number) const
+quint8 Sudoku::noteToNumber(Note::Number note) const
 {
-    switch (number) {
-    case 1:
-        return Note::One;
-    case 2:
-        return Note::Two;
-    case 3:
-        return Note::Three;
-    case 4:
-        return Note::Four;
-    case 5:
-        return Note::Five;
-    case 6:
-        return Note::Six;
-    case 7:
-        return Note::Seven;
-    case 8:
-        return Note::Eight;
-    case 9:
-        return Note::Nine;
-    default:
-        return Note::None;
-    }
+    return Helper::noteToNumber(note);
 }
 
-quint8 Sudoku::noteToNumber(Note::Number number) const
+quint16 Sudoku::numberToNote(quint8 number) const
 {
-    switch (number) {
-    case Note::One:
-        return 1;
-    case Note::Two:
-        return 2;
-    case Note::Three:
-        return 3;
-    case Note::Four:
-        return 4;
-    case Note::Five:
-        return 5;
-    case Note::Six:
-        return 6;
-    case Note::Seven:
-        return 7;
-    case Note::Eight:
-        return 8;
-    case Note::Nine:
-        return 9;
-    default:
-        return 0;
-    }
+    return Helper::numberToNote(number);
+}
+
+bool Sudoku::autoNotes() const
+{
+    return m_autoNotes;
+}
+
+void Sudoku::setAutoNotes(bool enabled)
+{
+    if (m_autoNotes == enabled)
+        return;
+    m_autoNotes = enabled;
+    emit autoNotesChanged();
 }
 
 Difficulty::Level Sudoku::difficulty() const
@@ -252,11 +224,15 @@ void Sudoku::undo()
     setData(step.row, step.column, step.role, step.oldValue, true);
 }
 
-void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution)
+void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution, const QVector<quint16> &notes)
 {
     m_puzzle = puzzle;
     m_game = puzzle;
     m_solution = solution;
+
+    if (m_autoNotes) {
+        m_notes = notes;
+    }
 
     // emit state change
     m_state = GameState::Ready;
@@ -307,4 +283,3 @@ void Sudoku::checkIfFinished()
     m_state = GameState::Solved;
     emit stateChanged();
 }
-

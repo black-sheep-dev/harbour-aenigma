@@ -1,5 +1,7 @@
 #include "generator.h"
 
+#include "helper.h"
+
 Generator::Generator(Difficulty::Level difficulty, QObject *parent) :
     QObject(parent),
     m_difficulty(difficulty)
@@ -151,6 +153,22 @@ void Generator::generateBoard(QVector<quint8> &board)
     solveBoard(board);
 }
 
+void Generator::generateNotes(QVector<quint16> &notes, const QVector<quint8> &board)
+{
+    notes.fill(Note::None);
+
+    for (int i = 0; i < gridSize; ++i) {
+        if (board[i] != 0) continue;
+        const quint8 row = floor(i / rowSize);
+        const quint8 col = i - row * rowSize;
+
+        for (int n = 1; n <= boxSize; ++n) {
+            if (!isValid(n, row, col, board)) continue;
+            notes[i] |= Helper::numberToNote(n);
+        }
+    }
+}
+
 bool Generator::solveBoard(QVector<quint8> &board)
 {
     QVector<quint8> numbers(getShuffledNumbers());
@@ -177,12 +195,14 @@ bool Generator::solveBoard(QVector<quint8> &board)
 
 void Generator::run()
 {
-    QVector<quint8> solution;
-    solution.resize(gridSize);
+    QVector<quint8> solution(gridSize, 0);
     generateBoard(solution);
 
     QVector<quint8> puzzle(solution);
     removeElements(puzzle, m_difficulties[m_difficulty]);
 
-    emit finished(puzzle, solution);
+    QVector<quint16> notes(gridSize, Note::None);
+    generateNotes(notes, puzzle);
+
+    emit finished(puzzle, solution, notes);
 }

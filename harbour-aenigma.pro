@@ -9,6 +9,7 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-aenigma.cpp \
     src/generator.cpp \
+    src/helper.cpp \
     src/sudoku.cpp
 
 DISTFILES += qml/harbour-aenigma.qml \
@@ -37,6 +38,7 @@ HEADERS += \
     src/enums.h \
     src/generator.h \
     src/global.h \
+    src/helper.h \
     src/sudoku.h
 
 RESOURCES += \

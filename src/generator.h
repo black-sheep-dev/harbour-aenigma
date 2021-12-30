@@ -19,7 +19,7 @@ public:
     explicit Generator(Difficulty::Level difficulty = Difficulty::Easy, QObject *parent = nullptr);
 
 signals:
-    void finished(QVector<quint8> puzzle, QVector<quint8> solution);
+    void finished(QVector<quint8> puzzle, QVector<quint8> solution, QVector<quint16> notes);
 
 private:
     // helper functions
@@ -37,6 +37,7 @@ private:
 
     // main functions
     void generateBoard(QVector<quint8> &board);
+    void generateNotes(QVector<quint16> &notes, const QVector<quint8> &board);
     bool solveBoard(QVector<quint8> &board);
 
     Difficulty::Level m_difficulty{Difficulty::Easy};
