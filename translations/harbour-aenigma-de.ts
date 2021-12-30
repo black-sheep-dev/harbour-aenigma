@@ -126,7 +126,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation>Diese Option aktiviert das Hervorheben von Reihen, Spalten und Blöcken in denen die gewählte  Nummer. bereits vorhanden ist.</translation>
+        <translation>Diese Option aktiviert das Hervorheben von Reihen, Spalten und Blöcken in denen die gewählte Nummer. bereits vorhanden ist.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
