@@ -119,16 +119,26 @@
         <translation>Support tools</translation>
     </message>
     <message id="id-highlighting">
-        <source>Highlighting</source>
-        <translation>Highlighting</translation>
+        <source>Prevent display blanking</source>
+        <oldsource>Highlighting</oldsource>
+        <translation type="unfinished">Highlighting</translation>
     </message>
     <message id="id-highlighting-desc">
-        <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
-        <translation>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
+        <source>This option prevents display blanking during playing.</source>
+        <oldsource>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</oldsource>
+        <translation type="unfinished">This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
         <translation>Sudoku board</translation>
+    </message>
+    <message id="id-level">
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-general">
+        <source>General</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -119,49 +119,26 @@
         <translation>Hilfsmittel</translation>
     </message>
     <message id="id-highlighting">
-        <source>Highlighting</source>
-        <translation>Hervorhebung</translation>
+        <source>Prevent display blanking</source>
+        <oldsource>Highlighting</oldsource>
+        <translation>Bildschrirmabschaltung verhindern</translation>
     </message>
     <message id="id-highlighting-desc">
-        <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
-        <translation>Diese Option aktiviert die Hervorhebung von Reihen, Spalten und Blöcken, die bereits von der ausgewählten Zahl blockiert sind.</translation>
+        <source>This option prevents display blanking during playing.</source>
+        <oldsource>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</oldsource>
+        <translation>Diese Option verhindert die Abschaltung des Bildschirms während des Spielens.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
         <translation>Sudoku Board</translation>
     </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>My Cover</source>
-        <translation type="vanished">Mein Cover</translation>
+    <message id="id-level">
+        <source>Level</source>
+        <translation>Level</translation>
     </message>
-</context>
-<context>
-    <name>FirstPage</name>
-    <message>
-        <source>Show Page 2</source>
-        <translation type="vanished">Zur Seite 2</translation>
-    </message>
-    <message>
-        <source>UI Template</source>
-        <translation type="vanished">UI-Vorlage</translation>
-    </message>
-    <message>
-        <source>Hello Sailors</source>
-        <translation type="vanished">Hallo Matrosen</translation>
-    </message>
-</context>
-<context>
-    <name>SecondPage</name>
-    <message>
-        <source>Nested Page</source>
-        <translation type="vanished">Unterseite</translation>
-    </message>
-    <message>
-        <source>Item</source>
-        <translation type="vanished">Element</translation>
+    <message id="id-general">
+        <source>General</source>
+        <translation>Allgemein</translation>
     </message>
 </context>
 </TS>

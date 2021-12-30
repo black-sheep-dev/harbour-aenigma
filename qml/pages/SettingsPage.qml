@@ -25,6 +25,24 @@ Page {
             }
 
             SectionHeader {
+                //% "General"
+                text: qsTrId("id-general")
+            }
+
+            TextSwitch {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                //% "Prevent display blanking"
+                text: qsTrId("id-highlighting")
+                //% "This option prevents display blanking during playing."
+                description: qsTrId("id-highlighting-desc")
+
+                onCheckedChanged: settings.preventDisplayBlanking = checked
+
+                Component.onCompleted: checked = settings.preventDisplayBlanking
+            }
+
+            SectionHeader {
                 //% "Support tools"
                 text: qsTrId("id-support-tools")
             }

@@ -14,6 +14,7 @@ ApplicationWindow {
 
         property int lastDifficulty: Difficulty.Medium
         property bool highlighting: true
+        property bool preventDisplayBlanking: true
     }
 
     initialPage: Component { GamePage { } }

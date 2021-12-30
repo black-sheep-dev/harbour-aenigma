@@ -20,7 +20,7 @@ Page {
     }
 
     DisplayBlanking {
-        preventBlanking: Sudoku.state === GameState.Playing
+        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking
     }
 
 
