@@ -20,7 +20,7 @@ Page {
     }
 
     DisplayBlanking {
-        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking
+        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking && __silica_applicationwindow_instance.active
     }
 
 
