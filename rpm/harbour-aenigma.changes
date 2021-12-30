@@ -1,3 +1,10 @@
+* Thu Dec 30 2021 Samuel Kron <blacksheep@nubecula.org> 0.1.1-1
+- Auto notes
+- Option to turn on/off display blanking
+- Higlight finsihed buttons
+- Fixed adding notes to non empty cells
+- Bugfixes / Improvements
+
 * Wed Dec 29 2021 Samuel Kron <blacksheep@nubecula.org> 0.1.0-1
 - Initial release
 
