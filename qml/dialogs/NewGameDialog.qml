@@ -36,6 +36,8 @@ Dialog {
         ComboBox {
             id: difficultiySelect
 
+            //% "Level"
+            label: qsTrId("id-level")
             currentIndex: difficulty
 
             menu: ContextMenu {
