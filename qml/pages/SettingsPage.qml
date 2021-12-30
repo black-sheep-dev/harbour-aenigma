@@ -59,6 +59,19 @@ Page {
 
                 Component.onCompleted: checked = settings.highlighting
             }
+
+            TextSwitch {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                //% "Auto clean"
+                text: qsTrId("id-auto-clean")
+                //% "This option enables auto cleaning of notes when a number is added to a cell."
+                description: qsTrId("id-auto-clean-desc")
+
+                onCheckedChanged: settings.autoCleanupNotes = checked
+
+                Component.onCompleted: checked = settings.autoCleanupNotes
+            }
         }
     }
 }

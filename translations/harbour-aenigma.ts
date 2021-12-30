@@ -156,5 +156,13 @@
         <source>This option prevents display blanking during playing.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="id-auto-clean">
+        <source>Auto clean</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-auto-clean-desc">
+        <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

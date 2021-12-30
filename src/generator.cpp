@@ -26,7 +26,7 @@ void Generator::fillBox(quint8 row, quint8 col, QVector<quint8> &board, quint8 (
                 quint8 num = dice();
 
                 if (isValidBox(num, i, j, board)) {
-                    board[index(i, j)] = num;
+                    board[Helper::index(i, j)] = num;
                     filled = true;
                 }
             }
@@ -74,7 +74,7 @@ bool Generator::isValidBox(quint8 num, quint8 row, quint8 col, const QVector<qui
 
     for (quint8 i = 0; i < 3; ++i) {
         for (quint8 j = 0; j < 3; ++j) {
-            if (num == board[index(R + i, C + j)]) return false;
+            if (num == board[Helper::index(R + i, C + j)]) return false;
         }
     }
 
@@ -84,7 +84,7 @@ bool Generator::isValidBox(quint8 num, quint8 row, quint8 col, const QVector<qui
 bool Generator::isValidCol(quint8 num, quint8 col, const QVector<quint8> &board)
 {
     for (quint8 i = 0; i < boxSize; ++i) {
-        if (num == board[index(i, col)]) {
+        if (num == board[Helper::index(i, col)]) {
             return false;
         }
     }
@@ -95,7 +95,7 @@ bool Generator::isValidCol(quint8 num, quint8 col, const QVector<quint8> &board)
 bool Generator::isValidRow(quint8 num, quint8 row, const QVector<quint8> &board)
 {
     for (quint8 i = 0; i < boxSize; ++i) {
-        if (num == board[index(row, i)]) {
+        if (num == board[Helper::index(row, i)]) {
             return false;
         }
     }
@@ -129,7 +129,7 @@ void Generator::removeElements(QVector<quint8> &board, quint8 n)
     quint8 value{0};
 
     for (quint8 i = 0; i < n;) {
-        pos = index(dice() - 1, dice() - 1);
+        pos = Helper::index(dice() - 1, dice() - 1);
         value = board[pos];
         if (value != 0) {
             board[pos] = 0;

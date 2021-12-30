@@ -27,7 +27,6 @@ private:
     void fillBox(quint8 row, quint8 col, QVector<quint8> &board, quint8 (*dice)());
     qint8 findEmptyCell(QVector<quint8> &board);
     QVector<quint8> getShuffledNumbers() const;
-    quint8 index(quint8 i, quint8 j) { return i * 9 + j; }
     bool isValid(quint8 num, quint8 row, quint8 col, const QVector<quint8> &board);
     bool isValidBox(quint8 num, quint8 row, quint8 col, const QVector<quint8> &board);
     bool isValidCol(quint8 num, quint8 col, const QVector<quint8> &board);

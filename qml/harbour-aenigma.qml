@@ -12,11 +12,13 @@ ApplicationWindow {
         path: "/apps/harbour-aenigma"
         synchronous: true
 
+        property bool autoCleanupNotes: false
+        property bool autoNotes: false
         property bool highlighting: true
         property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
-        property bool autoNotes: false
 
+        onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes
         onAutoNotesChanged: Sudoku.autoNotes = autoNotes
     }
 

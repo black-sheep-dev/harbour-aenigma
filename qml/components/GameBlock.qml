@@ -56,10 +56,7 @@ Rectangle {
                         highlighted = true
                     }
 
-                    if ( Sudoku.isInRow(row, Global.selectedNumber)
-                            || Sudoku.isInColumn(column, Global.selectedNumber)
-                            || Sudoku.isInBox(row, column, Global.selectedNumber)
-                            ) {
+                    if ( Sudoku.isInArea(row, column, Global.selectedNumber)) {
                         highlighted = true
                         return
                     }

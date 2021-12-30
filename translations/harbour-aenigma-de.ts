@@ -156,5 +156,13 @@
         <source>This option prevents display blanking during playing.</source>
         <translation>Diese Option verhindert das Abschalten des Bildschirms während des Spielens.</translation>
     </message>
+    <message id="id-auto-clean">
+        <source>Auto clean</source>
+        <translation>Auto Bereinigung</translation>
+    </message>
+    <message id="id-auto-clean-desc">
+        <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
+        <translation>Diese Option aktiviert die Auto-Bereinigung von Notizen wenn eine Nummer in eine Zelle eingetragen wird.</translation>
+    </message>
 </context>
 </TS>

@@ -49,7 +49,7 @@ bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &dat
         return false;
     }
 
-    const quint8 index = this->index(row, column);
+    const quint8 index = Helper::index(row, column);
 
     QVariant oldData;
 
@@ -66,6 +66,9 @@ bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &dat
         oldData = m_game[index];
         m_game.replace(index, data.toUInt());
         checkIfFinished();
+        if (m_autoCleanupNotes) {
+            cleanupNotes(data.toUInt());
+        }
         break;
 
     default:
@@ -96,6 +99,11 @@ quint8 Sudoku::cellCount() const
     return m_game.count();
 }
 
+bool Sudoku::isInArea(quint8 row, quint8 column, quint8 number) const
+{
+    return isInBox(row, column, number) || isInRow(row, number) || isInColumn(column, number);
+}
+
 bool Sudoku::isInBox(quint8 row, quint8 column, quint8 number) const
 {
     const quint8 R = row - row % 3;
@@ -103,7 +111,7 @@ bool Sudoku::isInBox(quint8 row, quint8 column, quint8 number) const
 
     for (quint8 i = 0; i < 3; ++i) {
         for (quint8 j = 0; j < 3; ++j) {
-            if (number == m_game[index(R + i, C + j)]) return true;
+            if (number == m_game[Helper::index(R + i, C + j)]) return true;
         }
     }
 
@@ -113,7 +121,7 @@ bool Sudoku::isInBox(quint8 row, quint8 column, quint8 number) const
 bool Sudoku::isInColumn(quint8 column, quint8 number) const
 {
     for (quint8 i = 0; i < boxSize; ++i) {
-        if (number == m_game[index(i, column)]) {
+        if (number == m_game[Helper::index(i, column)]) {
             return true;
         }
     }
@@ -124,7 +132,7 @@ bool Sudoku::isInColumn(quint8 column, quint8 number) const
 bool Sudoku::isInRow(quint8 row, quint8 number) const
 {
     for (quint8 i = 0; i < boxSize; ++i) {
-        if (number == m_game[index(row, i)]) {
+        if (number == m_game[Helper::index(row, i)]) {
             return true;
         }
     }
@@ -141,6 +149,20 @@ quint16 Sudoku::numberToNote(quint8 number) const
 {
     return Helper::numberToNote(number);
 }
+
+bool Sudoku::autoCleanupNotes() const
+{
+    return m_autoCleanupNotes;
+}
+
+void Sudoku::setAutoCleanupNotes(bool cleanup)
+{
+    if (m_autoCleanupNotes == cleanup)
+        return;
+    m_autoCleanupNotes = cleanup;
+    emit autoCleanupNotesChanged();
+}
+
 
 bool Sudoku::autoNotes() const
 {
@@ -282,4 +304,15 @@ void Sudoku::checkIfFinished()
     // end puzzle
     m_state = GameState::Solved;
     emit stateChanged();
+}
+
+void Sudoku::cleanupNotes(quint8 number)
+{
+    for (int i = 0; i < gridSize; ++i) {
+        const quint8 r = floor(i / rowSize);
+        const quint8 c = i - r * rowSize;
+
+        if (!isInArea(r, c, number)) continue;
+        setData(r, c, CellData::Notes, m_notes[i] & ~Helper::numberToNote(number));
+    }
 }

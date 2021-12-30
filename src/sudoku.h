@@ -22,6 +22,7 @@ class Sudoku : public QObject
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool autoCleanupNotes READ autoCleanupNotes WRITE setAutoCleanupNotes NOTIFY autoCleanupNotesChanged)
     Q_PROPERTY(bool autoNotes READ autoNotes WRITE setAutoNotes NOTIFY autoNotesChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
     Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
@@ -34,6 +35,7 @@ public:
     Q_INVOKABLE bool setData(quint8 row, quint8 column, quint8 role, const QVariant &data, bool undo = false);
 
     Q_INVOKABLE quint8 cellCount() const;
+    Q_INVOKABLE bool isInArea(quint8 row, quint8 column, quint8 number) const;
     Q_INVOKABLE bool isInBox(quint8 row, quint8 column, quint8 number) const;
     Q_INVOKABLE bool isInColumn(quint8 column, quint8 number) const;
     Q_INVOKABLE bool isInRow(quint8 row, quint8 number) const;
@@ -41,6 +43,9 @@ public:
     Q_INVOKABLE quint16 numberToNote(quint8 number) const;
 
     // properties
+    bool autoCleanupNotes() const;
+    void setAutoCleanupNotes(bool cleanup);
+
     bool autoNotes() const;
     void setAutoNotes(bool enabled);
 
@@ -51,6 +56,8 @@ public:
 
     quint8 unsolvedCellCount() const;
 
+
+
 signals:
     void dataChanged(quint8 row, quint8 column, quint8 role, const QVariant &data);
     void numberFinished(quint8 number, bool finished = true);
@@ -60,6 +67,8 @@ signals:
     void difficultyChanged();
     void stateChanged();
     void unsolvedCellCountChanged(); 
+
+    void autoCleanupNotesChanged();
 
 public slots:
     void generate();
@@ -72,7 +81,7 @@ private slots:
 
 private:
     void checkIfFinished();
-    quint8 index(quint8 i, quint8 j) const { return i * 9 + j; }
+    void cleanupNotes(quint8 number);
 
     QVector<quint8> m_game{QVector<quint8>(gridSize, 0)};
     QVector<quint16> m_notes{QVector<quint16>(gridSize, 0)};
@@ -85,6 +94,7 @@ private:
     Difficulty::Level m_difficulty{Difficulty::Easy};
     GameState::State m_state{GameState::Empty};
     quint8 m_unsolvedCellCount{0};
+    bool m_autoCleanupNotes{false};
 };
 
 #endif // SUDOKU_H
