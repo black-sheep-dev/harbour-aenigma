@@ -107,6 +107,23 @@ Item {
                         Global.selectedNumber = index + 1
                     }
                 }
+
+                Rectangle {
+                    id: overlayRect
+                    visible: false
+                    anchors.fill: parent
+                    color: Theme.highlightFromColor("#64DD17", Theme.colorScheme)
+                    radius: Theme.paddingSmall
+                    opacity: 0.4
+                }
+
+                Connections {
+                    target: Sudoku
+                    onNumberFinished: {
+                        if (number !== (index + 1)) return
+                        overlayRect.visible = finished
+                    }
+                }
             }
         }
     }

@@ -268,14 +268,24 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
 void Sudoku::checkIfFinished()
 {
     // check if finished / no 0 left
+    QVector<quint8> numbers(boxSize, 0);
     m_unsolvedCellCount = 0;
     for (const auto &number : m_game) {
         if (number == 0) {
             m_unsolvedCellCount++;
+            continue;
         }
+        numbers[number - 1]++;
     }
 
     emit unsolvedCellCountChanged();
+
+    // emit if single number is complete
+    for (int i = 0; i < boxSize; ++i) {
+        emit numberFinished(i + 1, numbers[i] == boxSize);
+    }
+
+    //
     if (m_unsolvedCellCount > 0) {
         if (m_state != GameState::Playing) {
             m_state = GameState::Playing;

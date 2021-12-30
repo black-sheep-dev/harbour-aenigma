@@ -49,6 +49,7 @@ public:
 
 signals:
     void dataChanged(quint8 row, quint8 column, quint8 role, const QVariant &data);
+    void numberFinished(quint8 number, bool finished = true);
 
     // properties
     void difficultyChanged();
