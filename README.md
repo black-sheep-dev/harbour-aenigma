@@ -11,6 +11,7 @@ Aenigma (Latin for puzzle) is a Sudoku puzzle game for Sailfish OS.
 - Highlighting
 - Hinting
 - Undo
+- Auto notes
 
 ## Planned Features
 - Feature requests welcome
