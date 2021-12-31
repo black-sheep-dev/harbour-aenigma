@@ -5,164 +5,164 @@
     <name></name>
     <message id="id-about">
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Névjegy</translation>
     </message>
     <message id="id-app-name">
         <source>Aenigma</source>
-        <translation type="unfinished"></translation>
+        <translation>Aenigma</translation>
     </message>
     <message id="id-about-page-description">
         <source>Aenigma is a Sudoku puzzle game for Sailfish OS.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az Aenigma egy Sudoku játék Sailfish operációs rendszerre.</translation>
     </message>
     <message id="id-translations">
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Fordítások</translation>
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem érhető el a saját nyelveden? Támogasd a projektet a fordítással a saját Weblate szerveremen.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Források</translation>
     </message>
     <message id="id-donations">
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>Adományok</translation>
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha tetszik a munkám, vennél nekem egy sört?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>Adományozz PayPal-lel</translation>
     </message>
     <message id="id-donate-liberpay">
         <source>Donate with Liberpay</source>
-        <translation type="unfinished"></translation>
+        <translation>Adományozz Liberapay-jel</translation>
     </message>
     <message id="id-reset">
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Visszaállítás</translation>
     </message>
     <message id="id-new-game">
         <source>New game</source>
-        <translation type="unfinished"></translation>
+        <translation>Új játék</translation>
     </message>
     <message id="id-placeholder-text">
         <source>Want to play?</source>
-        <translation type="unfinished"></translation>
+        <translation>Játszani szeretnél?</translation>
     </message>
     <message id="id-placeholder-hint">
         <source>Pull down to start a new game</source>
-        <translation type="unfinished"></translation>
+        <translation>Húzd le új játék indításához</translation>
     </message>
     <message id="id-reset-game">
         <source>Reset game</source>
-        <translation type="unfinished"></translation>
+        <translation>Játék visszaállítása</translation>
     </message>
     <message id="id-generating">
         <source>Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Létrehozás</translation>
     </message>
     <message id="id-cells-unsolved" numerus="yes">
         <source>%n cell(s) unsolved</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n megoldatlan cella</numerusform>
+            <numerusform>%n megoldatlan cella</numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
         <source>There are errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibák vannak</translation>
     </message>
     <message id="id-solved">
         <source>Solved</source>
-        <translation type="unfinished"></translation>
+        <translation>Megoldva</translation>
     </message>
     <message id="id-generate">
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Létrehozás</translation>
     </message>
     <message id="id-dialog-new-game-info">
         <source>You can select a level of difficulty for your Sudoku puzzle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválaszthatod a Sudoku játékod nehézségi szintjét.</translation>
     </message>
     <message id="id-easy">
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Könnyű</translation>
     </message>
     <message id="id-medium">
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Közepes</translation>
     </message>
     <message id="id-hard">
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehéz</translation>
     </message>
     <message id="id-insane">
         <source>Insane</source>
-        <translation type="unfinished"></translation>
+        <translation>Őrjítő</translation>
     </message>
     <message id="id-level-of-difficulty">
         <source>Level of difficulty</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehézségi szint</translation>
     </message>
     <message id="id-settings">
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Beállítások</translation>
     </message>
     <message id="id-support-tools">
         <source>Support tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Segítő eszközök</translation>
     </message>
     <message id="id-highlighting">
         <source>Highlighting</source>
         <oldsource>Prevent display blanking</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Kiemelés</translation>
     </message>
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ez az opció lehetővé teszi a kiválasztott szám által már blokkolt sorok, oszlopok és dobozok kiemelését.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
-        <translation type="unfinished"></translation>
+        <translation>Sudoku-tábla</translation>
     </message>
     <message id="id-level">
         <source>Level</source>
-        <translation type="unfinished"></translation>
+        <translation>Szint</translation>
     </message>
     <message id="id-general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Általános</translation>
     </message>
     <message id="id-auto-notes">
         <source>Auto notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus kitöltés</translation>
     </message>
     <message id="id-auto-notes-desc">
         <source>This option automatically adds all notes to a new sudoku puzzle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez az opció automatikusan kitölti az összes számot az új Sudokuban.</translation>
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
-        <translation type="unfinished"></translation>
+        <translation>Kijelző elalvásának megakadályozása</translation>
     </message>
     <message id="id-display-blanking-desc">
         <source>This option prevents display blanking during playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez az opció megakadályozza a kijelző elsötétülését a játék ideje alatt.</translation>
     </message>
     <message id="id-auto-clean">
         <source>Auto clean</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus törlés</translation>
     </message>
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez az opció lehetővé teszi a jegyzetek automatikus törlését, amikor egy cellába számot írunk be.</translation>
     </message>
 </context>
 </TS>
