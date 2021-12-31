@@ -127,7 +127,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation>Ta opcja umożliwia podświetlenie wierszy, kolumn i komórek, gdy znajdzie się w nich ten sam numer.</translation>
+        <translation type="vanished">Ta opcja umożliwia podświetlenie wierszy, kolumn i komórek, gdy znajdzie się w nich ten sam numer.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -164,6 +164,42 @@
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
         <translation>Ta opcja umożliwia automatyczne czyszczenie notatek po wpisaniu numeru w komórce.</translation>
+    </message>
+    <message id="id-styles-desc">
+        <source>Choose a style for you sudoku board.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style">
+        <source>Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-default">
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style-black-and-white">
+        <source>Black &amp; White</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style-paper">
+        <source>Paper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-highlight-combo-desc">
+        <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-none">
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-cell">
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-row-column-block">
+        <source>Row / column / block</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

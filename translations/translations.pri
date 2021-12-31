@@ -2,7 +2,8 @@ TRANSLATIONS += \
     translations/harbour-aenigma.ts \
     translations/harbour-aenigma-de.ts \
     translations/harbour-aenigma-hu.ts \
-    translations/harbour-aenigma-es.ts
+    translations/harbour-aenigma-es.ts \
+    translations/harbour-aenigma-pl.ts
 
 qm.input    = TRANSLATIONS
 qm.output   = translations/${QMAKE_FILE_BASE}.qm
