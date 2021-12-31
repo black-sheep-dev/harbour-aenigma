@@ -84,7 +84,10 @@ Item {
         IconSwitch {
             checkable: false
             source: "image://theme/icon-m-back"
-            onCheckedChanged: Sudoku.undo()
+            onCheckedChanged: {
+                Sudoku.undo()
+                Sudoku.incrementStepsCount()
+            }
         }
     }
 

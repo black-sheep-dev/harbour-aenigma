@@ -157,6 +157,8 @@ Rectangle {
                     onClicked: {
                         if (!isEditable && Global.mode !== EditMode.Hint) return;
 
+                        Sudoku.incrementStepsCount()
+
                         if (Global.mode === EditMode.Add) {
                             if (Global.selectedNumber < 0) return
 

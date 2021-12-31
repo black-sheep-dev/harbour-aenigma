@@ -214,14 +214,60 @@ void Sudoku::setDifficulty(Difficulty::Level difficulty)
     emit difficultyChanged();
 }
 
+const QTime &Sudoku::elapsedTime() const
+{
+    return m_elapsedTime;
+}
+
+void Sudoku::setElapsedTime(const QTime &msec)
+{
+    if (m_elapsedTime == msec)
+        return;
+    m_elapsedTime = msec;
+    emit elapsedTimeChanged();
+}
+
+const QDateTime &Sudoku::startTime() const
+{
+    return m_startTime;
+}
+
+void Sudoku::setStartTime(const QDateTime &time)
+{
+    if (m_startTime == time)
+        return;
+    m_startTime = time;
+    emit startTimeChanged();
+}
+
+
 GameState::State Sudoku::state() const
 {
     return m_state;
 }
 
+quint16 Sudoku::stepsCount() const
+{
+    return m_stepsCount;
+}
+
+void Sudoku::setStepsCount(quint16 count)
+{
+    if (m_stepsCount == count)
+        return;
+    m_stepsCount = count;
+    emit stepsCountChanged();
+}
+
+
 quint8 Sudoku::unsolvedCellCount() const
 {
     return m_unsolvedCellCount;
+}
+
+void Sudoku::incrementStepsCount()
+{
+    setStepsCount(m_stepsCount + 1);
 }
 
 void Sudoku::generate()
@@ -251,6 +297,17 @@ void Sudoku::reset()
     m_state = GameState::Ready;
     checkIfFinished();
     emit stateChanged();
+}
+
+void Sudoku::startStopWatch()
+{
+    m_resumeTime = QDateTime::currentDateTimeUtc();
+    emit elapsedTimeChanged();
+}
+
+void Sudoku::stopStopWatch()
+{
+    setElapsedTime(m_elapsedTime.addMSecs(int(QDateTime::currentMSecsSinceEpoch() - m_resumeTime.toMSecsSinceEpoch())));
 }
 
 void Sudoku::toogleNote(quint8 row, quint8 column, quint16 note)
@@ -295,6 +352,10 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
         m_notes = notes;
         m_notesGenerated = notes;
     }
+
+    // set start datetime and start stopwatch
+    setStartTime(QDateTime::currentDateTimeUtc());
+    startStopWatch();
 
     // emit state change
     m_state = GameState::Ready;
@@ -364,4 +425,3 @@ void Sudoku::incrementUndoId()
     m_currentUndoId++;
     emit currentUndoIdChanged();
 }
-

@@ -3,6 +3,7 @@
 
 #include <QObject>
 
+#include <QDateTime>
 #include <QList>
 #include <QVariant>
 #include <QVector>
@@ -27,7 +28,10 @@ class Sudoku : public QObject
     Q_PROPERTY(bool autoNotes READ autoNotes WRITE setAutoNotes NOTIFY autoNotesChanged)
     Q_PROPERTY(quint16 currentUndoId READ currentUndoId WRITE setCurrentUndoId NOTIFY currentUndoIdChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
+    Q_PROPERTY(QTime elapsedTime READ elapsedTime WRITE setElapsedTime NOTIFY elapsedTimeChanged)
+    Q_PROPERTY(QDateTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
+    Q_PROPERTY(quint16 stepsCount READ stepsCount WRITE setStepsCount NOTIFY stepsCountChanged)
     Q_PROPERTY(quint8 unsolvedCellCount READ unsolvedCellCount NOTIFY unsolvedCellCountChanged)
 
 public:    
@@ -57,7 +61,16 @@ public:
     Difficulty::Level difficulty() const;
     void setDifficulty(Difficulty::Level difficulty);
 
+    const QTime &elapsedTime() const;
+    void setElapsedTime(const QTime &msec);
+
+    const QDateTime &startTime() const;
+    void setStartTime(const QDateTime &time);
+
     GameState::State state() const;
+
+    quint16 stepsCount() const;
+    void setStepsCount(quint16 count);
 
     quint8 unsolvedCellCount() const;
 
@@ -66,18 +79,23 @@ signals:
     void numberFinished(quint8 number, bool finished = true);
 
     // properties
+    void autoCleanupNotesChanged();
     void autoNotesChanged();
+    void currentUndoIdChanged();
     void difficultyChanged();
+    void startTimeChanged();
     void stateChanged();
+    void stepsCountChanged();
     void unsolvedCellCountChanged(); 
 
-    void autoCleanupNotesChanged();
-
-    void currentUndoIdChanged();
+    void elapsedTimeChanged();
 
 public slots:
+    void incrementStepsCount();
     void generate();
     void reset();
+    void startStopWatch();
+    void stopStopWatch();
     void toogleNote(quint8 row, quint8 column, quint16 note);
     void undo();
 
@@ -94,15 +112,19 @@ private:
     QVector<quint16> m_notesGenerated{QVector<quint16>(gridSize, 0)};
     QVector<quint8> m_puzzle{QVector<quint8>(gridSize, 0)};
     QVector<quint8> m_solution{QVector<quint8>(gridSize, 0)};
+    QDateTime m_resumeTime;
     QList<UndoStep> m_undoQueue;
 
     // properties
-    bool m_autoNotes{false};
-    Difficulty::Level m_difficulty{Difficulty::Easy};
-    GameState::State m_state{GameState::Empty};
-    quint16 m_currentUndoId{0};
-    quint8 m_unsolvedCellCount{0};
     bool m_autoCleanupNotes{false};
+    bool m_autoNotes{false};
+    quint16 m_currentUndoId{0};
+    Difficulty::Level m_difficulty{Difficulty::Easy};
+    QTime m_elapsedTime{QTime(0,0,0,0)};
+    QDateTime m_startTime;
+    GameState::State m_state{GameState::Empty};
+    quint16 m_stepsCount{0};
+    quint8 m_unsolvedCellCount{0};
 };
 
 #endif // SUDOKU_H

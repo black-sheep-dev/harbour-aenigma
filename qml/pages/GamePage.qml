@@ -137,4 +137,12 @@ Page {
             hintText: qsTrId("id-placeholder-hint")
         }
     }
+
+    onVisibleChanged: {
+        if (visible && Sudoku.state === GameState.Playing) {
+            Sudoku.startStopWatch()
+        } else if (!visible && Sudoku.state === GameState.Playing){
+            Sudoku.stopStopWatch()
+        }
+    }
 }
