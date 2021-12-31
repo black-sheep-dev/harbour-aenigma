@@ -126,7 +126,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
+        <translation type="vanished">This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -163,6 +163,22 @@
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
         <translation>This option enables auto cleaning of notes when a number is added to a cell.</translation>
+    </message>
+    <message id="id-highlight-combo-desc">
+        <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
+        <translation>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</translation>
+    </message>
+    <message id="id-none">
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message id="id-cell">
+        <source>Cell</source>
+        <translation>Cell</translation>
+    </message>
+    <message id="id-row-column-block">
+        <source>Row / column / block</source>
+        <translation>Row / column / block</translation>
     </message>
 </context>
 </TS>

@@ -51,7 +51,7 @@ Rectangle {
                         hasError = false
                     }
 
-                    if (!settings.highlighting) {
+                    if (settings.highlightMode === HighlightMode.None) {
                         highlighted = false
                         return
                     }
@@ -59,9 +59,12 @@ Rectangle {
                     // highligt cells
                     if (isCurrentNumber()) {
                         highlighted = true
+                    } else if (settings.highlightMode !== HighlightMode.Complete) {
+                        highlighted = false
+                        return;
                     }
 
-                    if ( Sudoku.isInArea(row, column, Global.selectedNumber)) {
+                    if (Sudoku.isInArea(row, column, Global.selectedNumber)) {
                         highlighted = true
                         return
                     }
@@ -107,7 +110,7 @@ Rectangle {
                 Connections {
                     target: settings
 
-                    onHighlightingChanged: refreshCell()
+                    onHighlightModeChanged: refreshCell()
                 }
 
                 Connections {

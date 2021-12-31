@@ -59,6 +59,18 @@ public:
     Q_ENUM(State)
 };
 
+class HighlightMode
+{
+    Q_GADGET
+public:
+    enum Mode {
+        None,
+        Cell,
+        Complete
+    };
+    Q_ENUM(Mode)
+};
+
 class Note
 {
     Q_GADGET

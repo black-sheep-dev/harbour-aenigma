@@ -16,6 +16,7 @@ ApplicationWindow {
         property bool autoCleanupNotes: false
         property bool autoNotes: false
         property bool highlighting: true
+        property int highlightMode: HighlightMode.Complete
         property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
 

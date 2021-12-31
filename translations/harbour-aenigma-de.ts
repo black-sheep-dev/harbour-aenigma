@@ -126,7 +126,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation>Diese Option aktiviert das Hervorheben von Reihen, Spalten und Blöcken in denen die gewählte Nummer. bereits vorhanden ist.</translation>
+        <translation type="vanished">Diese Option aktiviert das Hervorheben von Reihen, Spalten und Blöcken in denen die gewählte Nummer. bereits vorhanden ist.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -162,7 +162,23 @@
     </message>
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
-        <translation>Diese Option aktiviert die Auto-Bereinigung von Notizen wenn eine Nummer in eine Zelle eingetragen wird.</translation>
+        <translation>Diese Option aktiviert die Auto-Bereinigung von Notizen, wenn eine Nummer in eine Zelle eingetragen wird.</translation>
+    </message>
+    <message id="id-highlight-combo-desc">
+        <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
+        <translation>Wähle einen Hervorhebungsmodus aus, um nur die Zellen der ausgewählten Zahl, oder die Reihe, Spalte und den Block den sie beeinflusst, herforzuheben.</translation>
+    </message>
+    <message id="id-none">
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message id="id-cell">
+        <source>Cell</source>
+        <translation>Zelle</translation>
+    </message>
+    <message id="id-row-column-block">
+        <source>Row / column / block</source>
+        <translation>Reihe / Spalte / Block</translation>
     </message>
 </context>
 </TS>

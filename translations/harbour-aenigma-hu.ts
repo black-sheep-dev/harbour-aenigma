@@ -71,7 +71,6 @@
         <source>%n cell(s) unsolved</source>
         <translation>
             <numerusform>%n megoldatlan cella</numerusform>
-            <numerusform>%n megoldatlan cella</numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
@@ -126,7 +125,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation>Ez az opció lehetővé teszi a kiválasztott szám által már blokkolt sorok, oszlopok és dobozok kiemelését.</translation>
+        <translation type="vanished">Ez az opció lehetővé teszi a kiválasztott szám által már blokkolt sorok, oszlopok és dobozok kiemelését.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -163,6 +162,22 @@
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
         <translation>Ez az opció lehetővé teszi a jegyzetek automatikus törlését, amikor egy cellába számot írunk be.</translation>
+    </message>
+    <message id="id-highlight-combo-desc">
+        <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-none">
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-cell">
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-row-column-block">
+        <source>Row / column / block</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

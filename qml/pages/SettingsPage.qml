@@ -38,7 +38,6 @@ Page {
                 description: qsTrId("id-display-blanking-desc")
 
                 onCheckedChanged: settings.preventDisplayBlanking = checked
-
                 Component.onCompleted: checked = settings.preventDisplayBlanking
             }
 
@@ -47,17 +46,37 @@ Page {
                 text: qsTrId("id-support-tools")
             }
 
-            TextSwitch {
+            Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
+                wrapMode: Text.Wrap
+                color: Theme.highlightColor
+
+                //% "Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects."
+                text: qsTrId("id-highlight-combo-desc")
+            }
+
+            ComboBox {
                 //% "Highlighting"
-                text: qsTrId("id-highlighting")
-                //% "This option enables highlighting of rows, columns and boxes already blocked by the selected number."
-                description: qsTrId("id-highlighting-desc")
+                label: qsTrId("id-highlighting")
 
-                onCheckedChanged: settings.highlighting = checked
+                menu: ContextMenu {
+                    MenuItem {
+                        //% "None"
+                        text: qsTrId("id-none")
+                    }
+                    MenuItem {
+                        //% "Cell"
+                        text: qsTrId("id-cell")
+                    }
+                    MenuItem {
+                        //% "Row / column / block"
+                        text: qsTrId("id-row-column-block")
+                    }
+                }
 
-                Component.onCompleted: checked = settings.highlighting
+                onCurrentIndexChanged: settings.highlightMode = currentIndex
+                Component.onCompleted: currentIndex = settings.highlightMode
             }
 
             TextSwitch {
@@ -69,7 +88,6 @@ Page {
                 description: qsTrId("id-auto-clean-desc")
 
                 onCheckedChanged: settings.autoCleanupNotes = checked
-
                 Component.onCompleted: checked = settings.autoCleanupNotes
             }
         }
