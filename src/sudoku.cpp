@@ -227,6 +227,19 @@ void Sudoku::setElapsedTime(const QTime &msec)
     emit elapsedTimeChanged();
 }
 
+quint16 Sudoku::hintsCount() const
+{
+    return m_hintsCount;
+}
+
+void Sudoku::setHintsCount(quint16 count)
+{
+    if (m_hintsCount == count)
+        return;
+    m_hintsCount = count;
+    emit hintsCountChanged();
+}
+
 const QDateTime &Sudoku::startTime() const
 {
     return m_startTime;
@@ -263,6 +276,11 @@ void Sudoku::setStepsCount(quint16 count)
 quint8 Sudoku::unsolvedCellCount() const
 {
     return m_unsolvedCellCount;
+}
+
+void Sudoku::incrementHintsCount()
+{
+    setHintsCount(m_hintsCount + 1);
 }
 
 void Sudoku::incrementStepsCount()
@@ -403,6 +421,7 @@ void Sudoku::checkIfFinished()
     }
 
     // end puzzle
+    stopStopWatch();
     m_state = GameState::Solved;
     emit stateChanged();
 }

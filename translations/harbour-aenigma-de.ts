@@ -200,5 +200,21 @@
         <source>Paper</source>
         <translation>Papier</translation>
     </message>
+    <message id="id-puzzle-solved">
+        <source>Puzzle solved!</source>
+        <translation>Puzzle gelöst!</translation>
+    </message>
+    <message id="id-steps-required">
+        <source>Steps required</source>
+        <translation>Benötigte Schritte</translation>
+    </message>
+    <message id="id-time-required">
+        <source>Time required</source>
+        <translation>Benötigte Zeit</translation>
+    </message>
+    <message id="id-hints-used">
+        <source>Hints used</source>
+        <translation>Benutzte Hinweise</translation>
+    </message>
 </context>
 </TS>

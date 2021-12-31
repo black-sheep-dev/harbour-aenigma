@@ -186,6 +186,7 @@ Rectangle {
                             const undoId = getUndoId()
                             Sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value, false, undoId)
                             Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
+                            Sudoku.incrementHintsCount()
                             Global.refrechCells()
                         }
                     }

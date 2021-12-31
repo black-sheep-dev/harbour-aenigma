@@ -20,6 +20,7 @@ DISTFILES += qml/harbour-aenigma.qml \
     qml/components/GameBoard.qml \
     qml/components/IconSwitch.qml \
     qml/components/NoteBlock.qml \
+    qml/components/ResultBoard.qml \
     qml/cover/CoverPage.qml \
     qml/dialogs/NewGameDialog.qml \
     qml/pages/GamePage.qml \

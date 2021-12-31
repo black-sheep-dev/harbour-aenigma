@@ -29,6 +29,7 @@ class Sudoku : public QObject
     Q_PROPERTY(quint16 currentUndoId READ currentUndoId WRITE setCurrentUndoId NOTIFY currentUndoIdChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
     Q_PROPERTY(QTime elapsedTime READ elapsedTime WRITE setElapsedTime NOTIFY elapsedTimeChanged)
+    Q_PROPERTY(quint16 hintsCount READ hintsCount WRITE setHintsCount NOTIFY hintsCountChanged)
     Q_PROPERTY(QDateTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
     Q_PROPERTY(quint16 stepsCount READ stepsCount WRITE setStepsCount NOTIFY stepsCountChanged)
@@ -64,6 +65,9 @@ public:
     const QTime &elapsedTime() const;
     void setElapsedTime(const QTime &msec);
 
+    quint16 hintsCount() const;
+    void setHintsCount(quint16 count);
+
     const QDateTime &startTime() const;
     void setStartTime(const QDateTime &time);
 
@@ -72,7 +76,7 @@ public:
     quint16 stepsCount() const;
     void setStepsCount(quint16 count);
 
-    quint8 unsolvedCellCount() const;
+    quint8 unsolvedCellCount() const;   
 
 signals:
     void dataChanged(quint8 row, quint8 column, quint8 role, const QVariant &data);
@@ -83,14 +87,15 @@ signals:
     void autoNotesChanged();
     void currentUndoIdChanged();
     void difficultyChanged();
+    void elapsedTimeChanged();
+    void hintsCountChanged();
     void startTimeChanged();
     void stateChanged();
     void stepsCountChanged();
     void unsolvedCellCountChanged(); 
 
-    void elapsedTimeChanged();
-
 public slots:
+    void incrementHintsCount();
     void incrementStepsCount();
     void generate();
     void reset();
@@ -121,10 +126,12 @@ private:
     quint16 m_currentUndoId{0};
     Difficulty::Level m_difficulty{Difficulty::Easy};
     QTime m_elapsedTime{QTime(0,0,0,0)};
+    quint16 m_hintsCount{0};
     QDateTime m_startTime;
     GameState::State m_state{GameState::Empty};
     quint16 m_stepsCount{0};
     quint8 m_unsolvedCellCount{0};
+
 };
 
 #endif // SUDOKU_H

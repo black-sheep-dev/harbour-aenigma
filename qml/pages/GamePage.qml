@@ -107,17 +107,35 @@ Page {
                 }
             }
 
-            GameBoard {
-                visible: Sudoku.state >= GameState.Ready
-                id: gameBoard
+            Item {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
                 height: width
 
-                opacity: Sudoku.state > GameState.Playing ? 0.1 : 1.0
-                Behavior on opacity { FadeAnimator {} }
+                GameBoard {
+                    visible: Sudoku.state >= GameState.Ready
+                    id: gameBoard
+                    anchors.fill: parent
 
-                cellSize: (width - 2*spacing) / 9
+
+                    opacity: Sudoku.state > GameState.Playing ? 0.1 : 1.0
+                    Behavior on opacity { FadeAnimator {} }
+
+                    cellSize: (width - 2*spacing) / 9
+
+                    layer.enabled: true
+
+
+                }
+
+                ResultBoard {
+                    visible: Sudoku.state === GameState.Solved
+                    anchors.fill: parent
+
+                    elapsedTime: Sudoku.elapsedTime
+                    hints: Sudoku.hintsCount
+                    steps: Sudoku.stepsCount
+                }
             }
 
             Controls {

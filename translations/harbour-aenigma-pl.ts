@@ -201,5 +201,21 @@
         <source>Row / column / block</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="id-puzzle-solved">
+        <source>Puzzle solved!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-steps-required">
+        <source>Steps required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-time-required">
+        <source>Time required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-hints-used">
+        <source>Hints used</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
