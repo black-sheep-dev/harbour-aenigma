@@ -12,9 +12,9 @@ Rectangle {
 
     width: cellSize * 3
     height: cellSize * 3
-    color: "transparent"
+    color: BoardStyles.backgroundColor
 
-    border.color: Theme.secondaryColor
+    border.color: BoardStyles.secondaryGridColor
     border.width: 2
 
     Grid {
@@ -78,7 +78,7 @@ Rectangle {
 
                 width: cellSize
                 height: cellSize
-                border.color: Theme.primaryColor
+                border.color: BoardStyles.primaryGridColor
                 border.width: 1
                 color: "transparent"
 
@@ -87,7 +87,7 @@ Rectangle {
                 Rectangle {
                     visible: highlighted || hasError
                     anchors.fill: parent
-                    color: hasError ? Theme.errorColor : Theme.highlightBackgroundColor
+                    color: hasError ? BoardStyles.errorColor : BoardStyles.cellHighlightColor
                     opacity: 0.1
                 }
 
@@ -100,11 +100,12 @@ Rectangle {
 
                     anchors.centerIn: parent
                     color: {
-                        if (hasError) return Theme.errorColor
-                        if (highlighted && isCurrentNumber()) return Theme.highlightColor
-                        return isEditable ? Theme.secondaryHighlightColor : Theme.primaryColor
+                        if (hasError) return BoardStyles.errorColor
+                        if (highlighted && isCurrentNumber()) return BoardStyles.numberHighlightColor
+                        return isEditable ? BoardStyles.numberFixedColor : BoardStyles.numberColor
                     }
                     font.pointSize: Math.max(Math.round(cellSize * 0.5), 1)
+                    font.bold: true
                 }
 
                 Connections {

@@ -29,6 +29,39 @@ Page {
                 text: qsTrId("id-general")
             }
 
+            Label {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                wrapMode: Text.Wrap
+                color: Theme.highlightColor
+
+                //% "Choose a style for you sudoku board."
+                text: qsTrId("id-styles-desc")
+            }
+
+            ComboBox {
+                //% "Style"
+                label: qsTrId("id-style")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        //% "Default"
+                        text: qsTrId("id-default")
+                    }
+                    MenuItem {
+                        //% "Black & White"
+                        text: qsTrId("id-style-black-and-white")
+                    }
+                    MenuItem {
+                        //% "Paper"
+                        text: qsTrId("id-style-paper")
+                    }
+                }
+
+                onCurrentIndexChanged: settings.style = currentIndex
+                Component.onCompleted: currentIndex = settings.style
+            }
+
             TextSwitch {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
@@ -40,6 +73,8 @@ Page {
                 onCheckedChanged: settings.preventDisplayBlanking = checked
                 Component.onCompleted: checked = settings.preventDisplayBlanking
             }
+
+
 
             SectionHeader {
                 //% "Support tools"

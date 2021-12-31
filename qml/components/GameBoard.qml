@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 import "."
+import "../."
 
 Item {
     id: gameBoard
@@ -23,14 +24,14 @@ Item {
                 blockNumber: index
             }
         }
-    }
+    } 
 
     Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         x: 3*cellSize
         width: spacing
-        color: Theme.secondaryColor
+        color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
@@ -38,7 +39,7 @@ Item {
         anchors.bottom: parent.bottom
         x: 6*cellSize + spacing
         width: spacing
-        color: Theme.secondaryColor
+        color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
@@ -46,7 +47,7 @@ Item {
         anchors.right: parent.right
         y: 3*cellSize
         height: spacing
-        color: Theme.secondaryColor
+        color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
@@ -54,7 +55,7 @@ Item {
         anchors.right: parent.right
         y: 6*cellSize + spacing
         height: spacing
-        color: Theme.secondaryColor
+        color: BoardStyles.secondaryGridColor
     }
 }
 

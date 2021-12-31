@@ -1,1 +1,2 @@
 singleton Global 1.0 Global.qml
+singleton BoardStyles 1.0 BoardStyles.qml

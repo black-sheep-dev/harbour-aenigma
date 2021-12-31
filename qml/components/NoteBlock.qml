@@ -3,6 +3,8 @@ import Sailfish.Silica 1.0
 
 import org.nubecula.aenigma 1.0
 
+import "../."
+
 Grid {
     id: noteGrid
 
@@ -27,7 +29,7 @@ Grid {
             Text {
                 id: valueLabel
                 anchors.centerIn: parent
-                color: Theme.highlightColor
+                color: BoardStyles.notesColor
                 font.pointSize: Math.max(Math.round(parent.width * 0.8), 1)
 
                 text: {

@@ -108,7 +108,7 @@ Page {
             }
 
             GameBoard {
-                visible: Sudoku.state >= GameState.Ready
+                //visible: Sudoku.state >= GameState.Ready
                 id: gameBoard
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
@@ -129,12 +129,12 @@ Page {
             }
         }
 
-        ViewPlaceholder {
-            enabled: Sudoku.state === GameState.Empty
-            //% "Want to play?"
-            text: qsTrId("id-placeholder-text")
-            //% "Pull down to start a new game"
-            hintText: qsTrId("id-placeholder-hint")
-        }
+//        ViewPlaceholder {
+//            enabled: Sudoku.state === GameState.Empty
+//            //% "Want to play?"
+//            text: qsTrId("id-placeholder-text")
+//            //% "Pull down to start a new game"
+//            hintText: qsTrId("id-placeholder-hint")
+//        }
     }
 }

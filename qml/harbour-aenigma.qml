@@ -5,6 +5,8 @@ import "pages"
 
 import org.nubecula.aenigma 1.0
 
+import "."
+
 ApplicationWindow {
     id: app
 
@@ -19,9 +21,11 @@ ApplicationWindow {
         property int highlightMode: HighlightMode.Complete
         property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
+        property int style: Styles.Default
 
         onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes = autoCleanupNotes
         onAutoNotesChanged: Sudoku.autoNotes = autoNotes
+        onStyleChanged: BoardStyles.setStyle(style)
     }
 
     initialPage: Component { GamePage { } }

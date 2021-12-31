@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<GameState>(uri, 1, 0, "GameState", "ENUM");
     qmlRegisterUncreatableType<HighlightMode>(uri, 1, 0, "HighlightMode", "ENUM");
     qmlRegisterUncreatableType<Note>(uri, 1, 0, "Note", "ENUM");
+    qmlRegisterUncreatableType<Styles>(uri, 1, 0, "Styles", "ENUM");
 
     auto context = v.data()->rootContext();
 

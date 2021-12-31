@@ -92,4 +92,16 @@ public:
 };
 Q_DECLARE_OPERATORS_FOR_FLAGS(Note::Numbers)
 
+class Styles
+{
+    Q_GADGET
+public:
+    enum Style {
+        Default,
+        BlackAndWhite,
+        Paper
+    };
+    Q_ENUM(Style)
+};
+
 #endif // ENUMS_H

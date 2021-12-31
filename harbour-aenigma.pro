@@ -13,6 +13,7 @@ SOURCES += src/harbour-aenigma.cpp \
     src/sudoku.cpp
 
 DISTFILES += qml/harbour-aenigma.qml \
+    qml/BoardStyles.qml \
     qml/Global.qml \
     qml/components/Controls.qml \
     qml/components/GameBlock.qml \
