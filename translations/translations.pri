@@ -1,6 +1,8 @@
 TRANSLATIONS += \
     translations/harbour-aenigma.ts \
-    translations/harbour-aenigma-de.ts
+    translations/harbour-aenigma-de.ts \
+    translations/harbour-aenigma-hu.ts \
+    translations/harbour-aenigma-es.ts
 
 qm.input    = TRANSLATIONS
 qm.output   = translations/${QMAKE_FILE_BASE}.qm
@@ -14,3 +16,4 @@ translations.files = $$OUT_PWD/translations
 translations.path  = $$PREFIX/share/$$TARGET
 
 INSTALLS += translations
+

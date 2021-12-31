@@ -121,12 +121,12 @@
     <message id="id-highlighting">
         <source>Highlighting</source>
         <oldsource>Prevent display blanking</oldsource>
-        <translation type="unfinished">Highlighting</translation>
+        <translation>Highlighting</translation>
     </message>
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-        <translation type="unfinished">This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
+        <translation>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -134,35 +134,35 @@
     </message>
     <message id="id-level">
         <source>Level</source>
-        <translation type="unfinished"></translation>
+        <translation>Level</translation>
     </message>
     <message id="id-general">
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message id="id-auto-notes">
         <source>Auto notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto notes</translation>
     </message>
     <message id="id-auto-notes-desc">
         <source>This option automatically adds all notes to a new sudoku puzzle.</source>
-        <translation type="unfinished"></translation>
+        <translation>This option automatically adds all notes to a new sudoku puzzle.</translation>
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
-        <translation type="unfinished"></translation>
+        <translation>Prevent display blanking</translation>
     </message>
     <message id="id-display-blanking-desc">
         <source>This option prevents display blanking during playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>This option prevents display blanking during playing.</translation>
     </message>
     <message id="id-auto-clean">
         <source>Auto clean</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto clean</translation>
     </message>
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>This option enables auto cleaning of notes when a number is added to a cell.</translation>
     </message>
 </context>
 </TS>
