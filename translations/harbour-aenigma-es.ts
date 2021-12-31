@@ -166,7 +166,7 @@
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation>Elige un modo de resaltado para resaltar una sola celda con el número seleccionado o la fila y la columna y bloquea el número seleccionado.</translation>
+        <translation>Elige un modo de resaltado para resaltar una sola casilla con el número seleccionado o la fila y la columna y bloquear el número seleccionado.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
