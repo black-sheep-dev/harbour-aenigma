@@ -175,7 +175,7 @@
     </message>
     <message id="id-default">
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślny</translation>
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>

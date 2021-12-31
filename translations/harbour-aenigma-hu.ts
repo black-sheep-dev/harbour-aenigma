@@ -71,6 +71,7 @@
         <source>%n cell(s) unsolved</source>
         <translation>
             <numerusform>%n megoldatlan cella</numerusform>
+            <numerusform>%n megoldatlan cella</numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
