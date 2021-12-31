@@ -6,7 +6,7 @@ import org.nubecula.aenigma 1.0
 import "."
 import "../."
 
-Rectangle {
+Rectangle {    
     property int cellSize
     property int blockNumber
 
@@ -73,7 +73,7 @@ Rectangle {
                 }
 
                 function resetCell() {
-                    noteBlock.notes = Note.None
+                    noteBlock.notes = Sudoku.data(row, column, CellData.Notes)
                 }
 
                 width: cellSize

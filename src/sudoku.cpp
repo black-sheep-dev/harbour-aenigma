@@ -244,6 +244,10 @@ void Sudoku::reset()
     m_notes.fill(0);
     m_game = m_puzzle;
 
+    if (m_autoNotes) {
+        m_notes = m_notesGenerated;
+    }
+
     m_state = GameState::Ready;
     checkIfFinished();
     emit stateChanged();
@@ -289,6 +293,7 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
 
     if (m_autoNotes) {
         m_notes = notes;
+        m_notesGenerated = notes;
     }
 
     // emit state change
