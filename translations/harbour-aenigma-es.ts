@@ -166,55 +166,55 @@
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige un modo de resaltado para resaltar una sola celda con el número seleccionado o la fila y la columna y bloquea el número seleccionado.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Ninguno</translation>
     </message>
     <message id="id-cell">
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Casilla</translation>
     </message>
     <message id="id-row-column-block">
         <source>Row / column / block</source>
-        <translation type="unfinished"></translation>
+        <translation>Fila / columna / bloquear</translation>
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige un estilo para tu tablero de sudoku.</translation>
     </message>
     <message id="id-style">
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo</translation>
     </message>
     <message id="id-default">
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Predeterminado</translation>
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>
-        <translation type="unfinished"></translation>
+        <translation>Negro y blanco</translation>
     </message>
     <message id="id-style-paper">
         <source>Paper</source>
-        <translation type="unfinished"></translation>
+        <translation>Papel</translation>
     </message>
     <message id="id-puzzle-solved">
         <source>Puzzle solved!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Sudoku resuelto!</translation>
     </message>
     <message id="id-steps-required">
         <source>Steps required</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasos requeridos</translation>
     </message>
     <message id="id-time-required">
         <source>Time required</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo requerido</translation>
     </message>
     <message id="id-hints-used">
         <source>Hints used</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencias usadas</translation>
     </message>
 </context>
 </TS>
