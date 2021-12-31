@@ -70,8 +70,8 @@
     <message id="id-cells-unsolved" numerus="yes">
         <source>%n cell(s) unsolved</source>
         <translation>
-            <numerusform>%n celda sin resolver</numerusform>
-            <numerusform>%n celdas sin resolver</numerusform>
+            <numerusform>%n casilla sin resolver</numerusform>
+            <numerusform>%n casillas sin resolver</numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
