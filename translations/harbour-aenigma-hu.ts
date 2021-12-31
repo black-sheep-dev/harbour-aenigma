@@ -179,5 +179,25 @@
         <source>Row / column / block</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="id-styles-desc">
+        <source>Choose a style for you sudoku board.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style">
+        <source>Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-default">
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style-black-and-white">
+        <source>Black &amp; White</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-style-paper">
+        <source>Paper</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

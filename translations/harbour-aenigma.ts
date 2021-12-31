@@ -180,5 +180,25 @@
         <source>Row / column / block</source>
         <translation>Row / column / block</translation>
     </message>
+    <message id="id-styles-desc">
+        <source>Choose a style for you sudoku board.</source>
+        <translation>Choose a style for you sudoku board.</translation>
+    </message>
+    <message id="id-style">
+        <source>Style</source>
+        <translation>Style</translation>
+    </message>
+    <message id="id-default">
+        <source>Default</source>
+        <translation>Default</translation>
+    </message>
+    <message id="id-style-black-and-white">
+        <source>Black &amp; White</source>
+        <translation>Black &amp; White</translation>
+    </message>
+    <message id="id-style-paper">
+        <source>Paper</source>
+        <translation>Paper</translation>
+    </message>
 </context>
 </TS>
