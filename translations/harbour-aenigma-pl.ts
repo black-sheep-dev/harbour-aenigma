@@ -13,7 +13,7 @@
     </message>
     <message id="id-about-page-description">
         <source>Aenigma is a Sudoku puzzle game for Sailfish OS.</source>
-        <translation>Aenigma jest grą w Sudoku dla systemu Sialfish OS.</translation>
+        <translation>Aenigma jest grą w sudoku dla systemu Sialfish OS.</translation>
     </message>
     <message id="id-translations">
         <source>Translations</source>
@@ -61,7 +61,7 @@
     </message>
     <message id="id-reset-game">
         <source>Reset game</source>
-        <translation>Zresetuj grę</translation>
+        <translation>Ponowne uruchamianie gry</translation>
     </message>
     <message id="id-generating">
         <source>Generating</source>
@@ -85,11 +85,11 @@
     </message>
     <message id="id-generate">
         <source>Generate</source>
-        <translation>Generować</translation>
+        <translation>Generuj</translation>
     </message>
     <message id="id-dialog-new-game-info">
         <source>You can select a level of difficulty for your Sudoku puzzle.</source>
-        <translation>Możesz wybrać poziom trudności swojego Sudoku.</translation>
+        <translation>Możesz wybrać poziom trudności swojego sudoku.</translation>
     </message>
     <message id="id-easy">
         <source>Easy</source>
@@ -131,7 +131,7 @@
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
-        <translation>Tablica Sudoku</translation>
+        <translation>Plansza Sudoku</translation>
     </message>
     <message id="id-level">
         <source>Level</source>
@@ -147,7 +147,7 @@
     </message>
     <message id="id-auto-notes-desc">
         <source>This option automatically adds all notes to a new sudoku puzzle.</source>
-        <translation>Ta opcja automatycznie dodaje wszystkie notatki do nowej układanki Sudoku.</translation>
+        <translation>Ta opcja automatycznie dodaje wszystkie notatki do nowej układanki sudoku.</translation>
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
@@ -167,11 +167,11 @@
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz styl dla swojej planszy sudoku.</translation>
     </message>
     <message id="id-style">
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Styl</translation>
     </message>
     <message id="id-default">
         <source>Default</source>
@@ -179,43 +179,43 @@
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>
-        <translation type="unfinished"></translation>
+        <translation>Czarno-biały</translation>
     </message>
     <message id="id-style-paper">
         <source>Paper</source>
-        <translation type="unfinished"></translation>
+        <translation>Papierowy</translation>
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz tryb podświetlania, aby podświetlić pojedynczą komórkę z wybraną liczbą, albo wiersz, kolumnę i blok, na który wpływa wybrany numer.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nic</translation>
     </message>
     <message id="id-cell">
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Komórka</translation>
     </message>
     <message id="id-row-column-block">
         <source>Row / column / block</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiersz / kolumna / blok</translation>
     </message>
     <message id="id-puzzle-solved">
         <source>Puzzle solved!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sudoku rozwiązane!</translation>
     </message>
     <message id="id-steps-required">
         <source>Steps required</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymagane kroki</translation>
     </message>
     <message id="id-time-required">
         <source>Time required</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymagany czas</translation>
     </message>
     <message id="id-hints-used">
         <source>Hints used</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyte wskazówki</translation>
     </message>
 </context>
 </TS>
