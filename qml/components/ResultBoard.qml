@@ -38,7 +38,7 @@ Item {
         DetailItem {
             //% "Hints used"
             label: qsTrId("id-hints-used")
-            value: hints
+            value: steps
         }
     }
 }

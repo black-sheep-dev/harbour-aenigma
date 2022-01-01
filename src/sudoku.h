@@ -31,7 +31,7 @@ class Sudoku : public QObject
     Q_PROPERTY(QTime elapsedTime READ elapsedTime WRITE setElapsedTime NOTIFY elapsedTimeChanged)
     Q_PROPERTY(quint16 hintsCount READ hintsCount WRITE setHintsCount NOTIFY hintsCountChanged)
     Q_PROPERTY(QDateTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
-    Q_PROPERTY(GameState::State state READ state NOTIFY stateChanged)
+    Q_PROPERTY(GameState::State gameState READ gameState NOTIFY gameStateChanged)
     Q_PROPERTY(quint16 stepsCount READ stepsCount WRITE setStepsCount NOTIFY stepsCountChanged)
     Q_PROPERTY(quint8 unsolvedCellCount READ unsolvedCellCount NOTIFY unsolvedCellCountChanged)
 
@@ -65,13 +65,13 @@ public:
     const QTime &elapsedTime() const;
     void setElapsedTime(const QTime &msec);
 
+    GameState::State gameState() const;
+
     quint16 hintsCount() const;
     void setHintsCount(quint16 count);
 
     const QDateTime &startTime() const;
     void setStartTime(const QDateTime &time);
-
-    GameState::State state() const;
 
     quint16 stepsCount() const;
     void setStepsCount(quint16 count);
@@ -88,9 +88,9 @@ signals:
     void currentUndoIdChanged();
     void difficultyChanged();
     void elapsedTimeChanged();
+    void gameStateChanged();
     void hintsCountChanged();
     void startTimeChanged();
-    void stateChanged();
     void stepsCountChanged();
     void unsolvedCellCountChanged(); 
 
@@ -98,9 +98,10 @@ public slots:
     void incrementHintsCount();
     void incrementStepsCount();
     void generate();
+    void pause();
     void reset();
-    void startStopWatch();
-    void stopStopWatch();
+    void start();
+    void stop();
     void toogleNote(quint8 row, quint8 column, quint16 note);
     void undo();
 
@@ -115,9 +116,10 @@ private:
     QVector<quint8> m_game{QVector<quint8>(gridSize, 0)};
     QVector<quint16> m_notes{QVector<quint16>(gridSize, 0)};
     QVector<quint16> m_notesGenerated{QVector<quint16>(gridSize, 0)};
+    bool m_playing{false};
     QVector<quint8> m_puzzle{QVector<quint8>(gridSize, 0)};
     QVector<quint8> m_solution{QVector<quint8>(gridSize, 0)};
-    QDateTime m_resumeTime;
+    qint64 m_resumeTime{0};
     QList<UndoStep> m_undoQueue;
 
     // properties
@@ -126,9 +128,9 @@ private:
     quint16 m_currentUndoId{0};
     Difficulty::Level m_difficulty{Difficulty::Easy};
     QTime m_elapsedTime{QTime(0,0,0,0)};
+    GameState::State m_gameState{GameState::Empty};
     quint16 m_hintsCount{0};
     QDateTime m_startTime;
-    GameState::State m_state{GameState::Empty};
     quint16 m_stepsCount{0};
     quint8 m_unsolvedCellCount{0};
 

@@ -1,5 +1,8 @@
 #include "generator.h"
 
+#include <QDateTime>
+#include <QtMath>
+
 #include "helper.h"
 
 Generator::Generator(Difficulty::Level difficulty, QObject *parent) :
@@ -11,10 +14,12 @@ Generator::Generator(Difficulty::Level difficulty, QObject *parent) :
 
 quint8 Generator::dice()
 {
-    static std::random_device rd;
-    static std::ranlux24 generator(rd());
-    static std::uniform_int_distribution<unsigned short> distribution(1, boxSize);
-    return distribution(generator);
+    return qrand() % boxSize + 1;
+
+//    static std::random_device rd;
+//    static std::ranlux24 generator(rd());
+//    static std::uniform_int_distribution<unsigned short> distribution(1, boxSize);
+//    return distribution(generator);
 }
 
 void Generator::fillBox(quint8 row, quint8 col, QVector<quint8> &board, quint8 (*dice)())
@@ -48,7 +53,7 @@ qint8 Generator::findEmptyCell(QVector<quint8> &board)
 }
 
 
-QVector<quint8> Generator::getShuffledNumbers() const
+QVector<quint8> Generator::getShuffledNumbers()
 {
     QVector<quint8> numbers;
     numbers.resize(boxSize);
@@ -57,7 +62,9 @@ QVector<quint8> Generator::getShuffledNumbers() const
         numbers[i] = i + 1;
     }
 
-    std::random_shuffle(numbers.begin(), numbers.end());
+    shuffleVector(numbers);
+
+    //std::random_shuffle(numbers.begin(), numbers.end());
 
     return numbers;
 }
@@ -142,6 +149,29 @@ void Generator::removeElements(QVector<quint8> &board, quint8 n)
     }
 }
 
+void Generator::shuffleVector(QVector<quint8> &vector)
+{
+    quint8 i{0};
+    quint8 j{0};
+
+    quint8 cnt{0};
+    while (cnt < vector.size()) {
+        i = dice() - 1;
+        j = dice() - 1;
+        if (i != j) {
+            swapNumber(i, j, vector);
+            cnt++;
+        }
+    }
+}
+
+void Generator::swapNumber(quint8 i, quint8 j, QVector<quint8> &vector)
+{
+    quint8 temp = vector[i];
+    vector[i] = vector[j];
+    vector[j] = temp;
+}
+
 void Generator::generateBoard(QVector<quint8> &board)
 {
     board.fill(0);
@@ -159,7 +189,7 @@ void Generator::generateNotes(QVector<quint16> &notes, const QVector<quint8> &bo
 
     for (int i = 0; i < gridSize; ++i) {
         if (board[i] != 0) continue;
-        const quint8 row = floor(i / rowSize);
+        const quint8 row = qFloor(i / rowSize);
         const quint8 col = i - row * rowSize;
 
         for (int n = 1; n <= boxSize; ++n) {
@@ -195,14 +225,21 @@ bool Generator::solveBoard(QVector<quint8> &board)
 
 void Generator::run()
 {
+    // seeding random number generator
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+
+    // generate board
     QVector<quint8> solution(gridSize, 0);
     generateBoard(solution);
 
+    // generate puzzle
     QVector<quint8> puzzle(solution);
     removeElements(puzzle, m_difficulties[m_difficulty]);
 
+    // generate notes
     QVector<quint16> notes(gridSize, Note::None);
     generateNotes(notes, puzzle);
 
+    // emit finished
     emit finished(puzzle, solution, notes);
 }

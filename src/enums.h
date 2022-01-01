@@ -53,6 +53,7 @@ public:
         Generating,
         Ready,
         Playing,
+        Pause,
         Solved,
         NotCorrect
     };

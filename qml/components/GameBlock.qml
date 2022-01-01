@@ -45,7 +45,7 @@ Rectangle {
 
                 function refreshCell() {
                     // highlight error cells
-                    if (Global.showErrors) {
+                    if (Global.showErrors || Sudoku.gameState === GameState.NotCorrect) {
                         hasError = Sudoku.data(row, column, CellData.HasError)
                     } else {
                         hasError = false
@@ -143,11 +143,15 @@ Rectangle {
 
                         Global.refrechCells()
                     }
-                    onStateChanged: {
-                        const value = Sudoku.data(row, column, CellData.Value)
-                        valueLabel.setValue(value)
-                        noteBlock.notes = Sudoku.data(row, column, CellData.Notes)
-                        isEditable = Sudoku.data(row, column, CellData.IsEditable)
+                    onGameStateChanged: {
+                        if (Sudoku.gameState === GameState.Ready || Sudoku.gameState === GameState.Playing) {
+                            const value = Sudoku.data(row, column, CellData.Value)
+                            valueLabel.setValue(value)
+                            noteBlock.notes = Sudoku.data(row, column, CellData.Notes)
+                            isEditable = Sudoku.data(row, column, CellData.IsEditable)
+                        }
+
+                        refreshCell()
                     }
                 }
 
@@ -172,12 +176,10 @@ Rectangle {
                                 value = Global.selectedNumber
                             }    
                             Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
-                            Global.refrechCells()
                         } else if (Global.mode === EditMode.Delete) {
                             const undoId = getUndoId()
                             Sudoku.setData(row, column, CellData.Value, 0, false, undoId)
                             Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
-                            Global.refrechCells()
                         } else if (Global.mode === EditMode.Note) {
                             if (Sudoku.data(row, column, CellData.Value) !== 0) return
                             Sudoku.toogleNote(row, column, Sudoku.numberToNote(Global.selectedNumber))
@@ -187,8 +189,8 @@ Rectangle {
                             Sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value, false, undoId)
                             Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                             Sudoku.incrementHintsCount()
-                            Global.refrechCells()
                         }
+                        refreshCell()
                     }
                 }
             }

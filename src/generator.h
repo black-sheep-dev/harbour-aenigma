@@ -6,8 +6,6 @@
 
 #include <QVector>
 
-#include <random>
-
 #include "enums.h"
 #include "global.h"
 
@@ -26,13 +24,15 @@ private:
     static quint8 dice();
     void fillBox(quint8 row, quint8 col, QVector<quint8> &board, quint8 (*dice)());
     qint8 findEmptyCell(QVector<quint8> &board);
-    QVector<quint8> getShuffledNumbers() const;
+    QVector<quint8> getShuffledNumbers();
     bool isValid(quint8 num, quint8 row, quint8 col, const QVector<quint8> &board);
     bool isValidBox(quint8 num, quint8 row, quint8 col, const QVector<quint8> &board);
     bool isValidCol(quint8 num, quint8 col, const QVector<quint8> &board);
     bool isValidRow(quint8 num, quint8 row, const QVector<quint8> &board);
     quint8 numberOfSolutions(QVector<quint8> &board, quint8 pos = 0, quint8 count = 0);
     void removeElements(QVector<quint8> &board, quint8 n);
+    void shuffleVector(QVector<quint8> &vector);
+    void swapNumber(quint8 i, quint8 j, QVector<quint8> &vector);
 
     // main functions
     void generateBoard(QVector<quint8> &board);

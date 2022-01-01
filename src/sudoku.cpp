@@ -1,6 +1,7 @@
 #include "sudoku.h"
 
 #include <QDebug>
+#include <QtMath>
 #include <QThreadPool>
 
 #include "generator.h"
@@ -227,6 +228,11 @@ void Sudoku::setElapsedTime(const QTime &msec)
     emit elapsedTimeChanged();
 }
 
+GameState::State Sudoku::gameState() const
+{
+    return m_gameState;
+}
+
 quint16 Sudoku::hintsCount() const
 {
     return m_hintsCount;
@@ -251,12 +257,6 @@ void Sudoku::setStartTime(const QDateTime &time)
         return;
     m_startTime = time;
     emit startTimeChanged();
-}
-
-
-GameState::State Sudoku::state() const
-{
-    return m_state;
 }
 
 quint16 Sudoku::stepsCount() const
@@ -290,8 +290,8 @@ void Sudoku::incrementStepsCount()
 
 void Sudoku::generate()
 {
-    m_state = GameState::Generating;
-    emit stateChanged();
+    m_gameState = GameState::Generating;
+    emit gameStateChanged();
 
     auto generator = new Generator(m_difficulty);
     generator->setAutoDelete(true);
@@ -300,32 +300,61 @@ void Sudoku::generate()
     QThreadPool::globalInstance()->start(generator);
 }
 
+void Sudoku::pause()
+{
+    if (m_playing) {
+        return;
+    }
+
+    m_gameState = GameState::Pause;
+    emit gameStateChanged();
+}
+
 void Sudoku::reset()
 {
     m_undoQueue.clear();
-    m_currentUndoId = 0;
+    m_currentUndoId = 0; 
 
     m_notes.fill(0);
     m_game = m_puzzle;
+
+    m_stepsCount = 0;
+    m_hintsCount = 0;
+    m_startTime = QDateTime::currentDateTime();
+    m_resumeTime = 0;
+    m_elapsedTime = QTime{0,0,0,0};
 
     if (m_autoNotes) {
         m_notes = m_notesGenerated;
     }
 
-    m_state = GameState::Ready;
+    m_gameState = GameState::Ready;
     checkIfFinished();
-    emit stateChanged();
+    emit gameStateChanged();
 }
 
-void Sudoku::startStopWatch()
+void Sudoku::start()
 {
-    m_resumeTime = QDateTime::currentDateTimeUtc();
+    if (m_playing) {
+        return;
+    }
+
+    m_resumeTime = QDateTime::currentMSecsSinceEpoch();
+    m_playing = true;
+
+    m_gameState = GameState::Playing;
+    emit gameStateChanged();
+}
+
+void Sudoku::stop()
+{
+    if (!m_playing) {
+        return;
+    }
+
+    m_playing = false;
+    setElapsedTime(QTime(m_elapsedTime).addMSecs(QDateTime::currentMSecsSinceEpoch() - m_resumeTime));
     emit elapsedTimeChanged();
-}
-
-void Sudoku::stopStopWatch()
-{
-    setElapsedTime(m_elapsedTime.addMSecs(int(QDateTime::currentMSecsSinceEpoch() - m_resumeTime.toMSecsSinceEpoch())));
 }
 
 void Sudoku::toogleNote(quint8 row, quint8 column, quint16 note)
@@ -346,6 +375,8 @@ void Sudoku::undo()
     if (m_undoQueue.isEmpty()) {
         return;
     }
+
+    start();
 
     UndoStep current;
 
@@ -373,11 +404,10 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
 
     // set start datetime and start stopwatch
     setStartTime(QDateTime::currentDateTimeUtc());
-    startStopWatch();
 
     // emit state change
-    m_state = GameState::Ready;
-    emit stateChanged();
+    m_gameState = GameState::Ready;
+    emit gameStateChanged();
 
     checkIfFinished();
 }
@@ -402,28 +432,25 @@ void Sudoku::checkIfFinished()
         emit numberFinished(i + 1, numbers[i] == boxSize);
     }
 
-    //
+    // return if not solved
     if (m_unsolvedCellCount > 0) {
-        if (m_state != GameState::Playing) {
-            m_state = GameState::Playing;
-            emit stateChanged();
-        }
+        start();
         return;
     }
 
     // check for errors
     for (quint8 i = 0; i < gridSize; ++i) {
         if (m_game[i] != m_solution[i]) {
-            m_state = GameState::NotCorrect;
-            emit stateChanged();
+            m_gameState = GameState::NotCorrect;
+            emit gameStateChanged();
             return;
         }
     }
 
     // end puzzle
-    stopStopWatch();
-    m_state = GameState::Solved;
-    emit stateChanged();
+    stop();
+    m_gameState = GameState::Solved;
+    emit gameStateChanged();
 }
 
 void Sudoku::cleanupNotes(quint8 number)
@@ -431,7 +458,7 @@ void Sudoku::cleanupNotes(quint8 number)
     const quint16 id = m_currentUndoId++;
 
     for (int i = 0; i < gridSize; ++i) {
-        const quint8 r = floor(i / rowSize);
+        const quint8 r = qFloor(i / rowSize);
         const quint8 c = i - r * rowSize;
 
         if (!isInArea(r, c, number)) continue;

@@ -20,12 +20,12 @@ Page {
     }
 
     DisplayBlanking {
-        preventBlanking: Sudoku.state === GameState.Playing && settings.preventDisplayBlanking && app.visible
+        preventBlanking: Sudoku.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
     }
 
     PageBusyIndicator {
         anchors.centerIn: parent
-        running: Sudoku.state === GameState.Generating
+        running: Sudoku.gameState === GameState.Generating
     }
 
     SilicaFlickable {
@@ -44,7 +44,7 @@ Page {
             }
 
             MenuItem {
-                enabled: Sudoku.state >= GameState.Playing
+                enabled: Sudoku.gameState >= GameState.Playing
                 //% "Reset"
                 text: qsTrId("id-reset")
                 //% "Reset game"
@@ -80,7 +80,7 @@ Page {
                 //% "Sudoku board"
                 title: qsTrId("id-sudoku-board")
                 description: {
-                    switch (Sudoku.state) {
+                    switch (Sudoku.gameState) {
                     case GameState.Empty:
                         return ''
 
@@ -89,6 +89,7 @@ Page {
                         return qsTrId("id-generating") + "..."
 
                     case GameState.Ready:
+                    case GameState.Pause:
                     case GameState.Playing:
                         //% "%n cell(s) unsolved"
                         return qsTrId("id-cells-unsolved", Sudoku.unsolvedCellCount)
@@ -113,23 +114,21 @@ Page {
                 height: width
 
                 GameBoard {
-                    visible: Sudoku.state >= GameState.Ready
+                    visible: Sudoku.gameState >= GameState.Ready
                     id: gameBoard
                     anchors.fill: parent
 
 
-                    opacity: Sudoku.state > GameState.Playing ? 0.1 : 1.0
+                    opacity: Sudoku.gameState === GameState.Solved ? 0.1 : 1.0
                     Behavior on opacity { FadeAnimator {} }
 
                     cellSize: (width - 2*spacing) / 9
 
                     layer.enabled: true
-
-
                 }
 
                 ResultBoard {
-                    visible: Sudoku.state === GameState.Solved
+                    visible: Sudoku.gameState === GameState.Solved
                     anchors.fill: parent
 
                     elapsedTime: Sudoku.elapsedTime
@@ -139,7 +138,7 @@ Page {
             }
 
             Controls {
-                visible: Sudoku.state >= GameState.Ready
+                visible: Sudoku.gameState >= GameState.Ready
                 id: controlsPanel
 
                 x: Theme.horizontalPageMargin
@@ -148,7 +147,7 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: Sudoku.state === GameState.Empty
+            enabled: Sudoku.gameState === GameState.Empty
             //% "Want to play?"
             text: qsTrId("id-placeholder-text")
             //% "Pull down to start a new game"
@@ -157,10 +156,10 @@ Page {
     }
 
     onVisibleChanged: {
-        if (visible && Sudoku.state === GameState.Playing) {
-            Sudoku.startStopWatch()
-        } else if (!visible && Sudoku.state === GameState.Playing){
-            Sudoku.stopStopWatch()
+        if (visible && Sudoku.gameState === GameState.Pause) {
+            Sudoku.start()
+        } else if (!visible && Sudoku.gameState === GameState.Playing){
+            Sudoku.pause()
         }
     }
 }
