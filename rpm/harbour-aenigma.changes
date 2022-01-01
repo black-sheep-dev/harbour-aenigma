@@ -1,3 +1,9 @@
+* Sat Jan 01 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.5-1
+- Replaced all std:: functions
+- Updated Spanish and Polish translation
+- Improvements
+- Several bugfixes
+
 * Fri Dec 31 2021 Samuel Kron <blacksheep@nubecula.org> 0.1.4-1
 - Add different board styles
 - Highlight modes (only cell / rows, colums, blocks)

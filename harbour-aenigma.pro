@@ -1,11 +1,11 @@
 # VERSION
-VERSION = 0.1.4
+VERSION = 0.1.5
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 TARGET = harbour-aenigma
 DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
-CONFIG += sailfishapp c++11
+CONFIG += sailfishapp
 
 SOURCES += src/harbour-aenigma.cpp \
     src/generator.cpp \
