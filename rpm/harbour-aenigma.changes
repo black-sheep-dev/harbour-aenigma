@@ -1,3 +1,8 @@
+* Sun Jan 02 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.6-1
+- Fixed a bug with game states not changing correct
+- Update Polish translation
+- Code cleanup
+
 * Sat Jan 01 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.5-1
 - Replaced all std:: functions
 - Updated Spanish and Polish translation
