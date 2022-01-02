@@ -116,7 +116,6 @@ private:
     QVector<quint8> m_game{QVector<quint8>(gridSize, 0)};
     QVector<quint16> m_notes{QVector<quint16>(gridSize, 0)};
     QVector<quint16> m_notesGenerated{QVector<quint16>(gridSize, 0)};
-    bool m_playing{false};
     QVector<quint8> m_puzzle{QVector<quint8>(gridSize, 0)};
     QVector<quint8> m_solution{QVector<quint8>(gridSize, 0)};
     qint64 m_resumeTime{0};

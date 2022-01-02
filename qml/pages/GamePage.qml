@@ -155,6 +155,11 @@ Page {
         }
     }
 
+    Connections {
+        target: Sudoku
+        onGameStateChanged: console.log("GameState: " + Sudoku.gameState)
+    }
+
     onVisibleChanged: {
         if (visible && Sudoku.gameState === GameState.Pause) {
             Sudoku.start()

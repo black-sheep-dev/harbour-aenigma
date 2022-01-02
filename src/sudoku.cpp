@@ -302,7 +302,7 @@ void Sudoku::generate()
 
 void Sudoku::pause()
 {
-    if (m_playing) {
+    if (m_gameState != GameState::Playing) {
         return;
     }
 
@@ -318,41 +318,39 @@ void Sudoku::reset()
     m_notes.fill(0);
     m_game = m_puzzle;
 
-    m_stepsCount = 0;
-    m_hintsCount = 0;
-    m_startTime = QDateTime::currentDateTime();
-    m_resumeTime = 0;
-    m_elapsedTime = QTime{0,0,0,0};
-
     if (m_autoNotes) {
         m_notes = m_notesGenerated;
     }
 
-    m_gameState = GameState::Ready;
+    // reset stats
+    stop();
+    setStepsCount(0);
+    setHintsCount(0);
+    setStartTime(QDateTime::currentDateTime());
+    setElapsedTime(QTime(0,0,0,0));
+    m_resumeTime = 0;
+
+    // check
     checkIfFinished();
-    emit gameStateChanged();
 }
 
 void Sudoku::start()
 {
-    if (m_playing) {
+    if (m_gameState == GameState::Playing) {
         return;
     }
 
     m_resumeTime = QDateTime::currentMSecsSinceEpoch();
-    m_playing = true;
-
     m_gameState = GameState::Playing;
     emit gameStateChanged();
 }
 
 void Sudoku::stop()
 {
-    if (!m_playing) {
+    if (m_gameState != GameState::Playing) {
         return;
     }
 
-    m_playing = false;
     setElapsedTime(QTime(m_elapsedTime).addMSecs(QDateTime::currentMSecsSinceEpoch() - m_resumeTime));
     emit elapsedTimeChanged();
 }
@@ -402,7 +400,7 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
         m_notesGenerated = notes;
     }
 
-    // set start datetime and start stopwatch
+    // set start datetime
     setStartTime(QDateTime::currentDateTimeUtc());
 
     // emit state change
