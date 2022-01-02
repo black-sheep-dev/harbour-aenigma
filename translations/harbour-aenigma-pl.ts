@@ -187,7 +187,7 @@
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation>Wybierz tryb podświetlania, aby podświetlić pojedynczą komórkę z wybraną liczbą, albo wiersz, kolumnę i blok, na który wpływa wybrany numer.</translation>
+        <translation>Wybierz tryb podświetlania, aby podświetlić pojedynczą komórkę z wybraną liczbą lub wiersz, kolumnę i blok, na który wpływa wybrany numer.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
@@ -207,11 +207,11 @@
     </message>
     <message id="id-steps-required">
         <source>Steps required</source>
-        <translation>Wymagane kroki</translation>
+        <translation>Ilość kroków</translation>
     </message>
     <message id="id-time-required">
         <source>Time required</source>
-        <translation>Wymagany czas</translation>
+        <translation>Czas rozwiązania</translation>
     </message>
     <message id="id-hints-used">
         <source>Hints used</source>
