@@ -219,7 +219,7 @@
     <message id="id-generator-failed-msg">
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>¡La generación del sudoku ha fallado! ¡Inténtalo de nuevo!</translation>
     </message>
 </context>
 </TS>
