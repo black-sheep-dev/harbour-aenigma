@@ -166,55 +166,55 @@
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassz egy kiemelési módot a kiválasztott számot tartalmazó egyetlen cella, vagy a sor, oszlop és blokk kiemeléséhez, amelyet a kiválasztott szám érint.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs</translation>
     </message>
     <message id="id-cell">
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cella</translation>
     </message>
     <message id="id-row-column-block">
         <source>Row / column / block</source>
-        <translation type="unfinished"></translation>
+        <translation>Sor/oszlop/blokk</translation>
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassz stílust a sudoku-tábládnak.</translation>
     </message>
     <message id="id-style">
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stílus</translation>
     </message>
     <message id="id-default">
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehér &amp; Fekete</translation>
     </message>
     <message id="id-style-paper">
         <source>Paper</source>
-        <translation type="unfinished"></translation>
+        <translation>Papír</translation>
     </message>
     <message id="id-puzzle-solved">
         <source>Puzzle solved!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirakós megoldva!</translation>
     </message>
     <message id="id-steps-required">
         <source>Steps required</source>
-        <translation type="unfinished"></translation>
+        <translation>Szükséges lépések</translation>
     </message>
     <message id="id-time-required">
         <source>Time required</source>
-        <translation type="unfinished"></translation>
+        <translation>Szükséges idő</translation>
     </message>
     <message id="id-hints-used">
         <source>Hints used</source>
-        <translation type="unfinished"></translation>
+        <translation>Használt tippek</translation>
     </message>
 </context>
 </TS>
