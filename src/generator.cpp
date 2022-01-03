@@ -1,6 +1,5 @@
 #include "generator.h"
 
-#include <QDebug>
 #include <QDateTime>
 #include <QtMath>
 
@@ -239,8 +238,6 @@ void Generator::run()
     QVector<quint8> solution(gridSize, 0);
     generateBoard(solution);
 
-    //qDebug() << "GENERATE BOARD FINISHED";
-
     // generate puzzle
     QVector<quint8> puzzle(solution);
     if (!removeElements(puzzle, m_difficulties[m_difficulty])) {
@@ -248,13 +245,9 @@ void Generator::run()
         return;
     }
 
-    //qDebug() << "GENERATE PUZZLE FINISHED";
-
     // generate notes
     QVector<quint16> notes(gridSize, Note::None);
     generateNotes(notes, puzzle);
-
-    //qDebug() << "GENERATE NOTES FINISHED";
 
     // emit finished
     emit finished(puzzle, solution, notes);
