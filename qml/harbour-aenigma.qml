@@ -1,11 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
-import "pages"
+import Nemo.Notifications 1.0
 
 import org.nubecula.aenigma 1.0
 
 import "."
+import "pages"
+
 
 ApplicationWindow {
     id: app
@@ -26,6 +28,26 @@ ApplicationWindow {
         onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes = autoCleanupNotes
         onAutoNotesChanged: Sudoku.autoNotes = autoNotes
         onStyleChanged: BoardStyles.setStyle(style)
+    }
+
+    Notification {
+        function show(message) {
+            replacesId = 0
+            previewSummary = ""
+            previewBody = message
+            icon = "/usr/share/icons/hicolor/86x86/apps/harbour-aenigma.png"
+            publish()
+        }
+
+        id: notification
+        appName: "Aenigma"
+        expireTimeout: 3000
+    }
+
+    Connections {
+        target: Sudoku
+        //% "Generation of Sudoku game failed! Please try again!"
+        onGeneratorFailed: notification.show(qsTrId("id-generator-failed-msg"))
     }
 
     initialPage: Component { GamePage { } }

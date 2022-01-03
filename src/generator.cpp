@@ -1,9 +1,12 @@
 #include "generator.h"
 
+#include <QDebug>
 #include <QDateTime>
 #include <QtMath>
 
 #include "helper.h"
+
+constexpr quint32 MAX_SOLUTION_TRIES{5000000};
 
 Generator::Generator(Difficulty::Level difficulty, QObject *parent) :
     QObject(parent),
@@ -15,11 +18,6 @@ Generator::Generator(Difficulty::Level difficulty, QObject *parent) :
 quint8 Generator::dice()
 {
     return qrand() % boxSize + 1;
-
-//    static std::random_device rd;
-//    static std::ranlux24 generator(rd());
-//    static std::uniform_int_distribution<unsigned short> distribution(1, boxSize);
-//    return distribution(generator);
 }
 
 void Generator::fillBox(quint8 row, quint8 col, QVector<quint8> &board, quint8 (*dice)())
@@ -63,8 +61,6 @@ QVector<quint8> Generator::getShuffledNumbers()
     }
 
     shuffleVector(numbers);
-
-    //std::random_shuffle(numbers.begin(), numbers.end());
 
     return numbers;
 }
@@ -111,7 +107,13 @@ bool Generator::isValidRow(quint8 num, quint8 row, const QVector<quint8> &board)
 }
 
 quint8 Generator::numberOfSolutions(QVector<quint8> &board, quint8 pos, quint8 count)
-{
+{  
+    m_solutionTriesCounter++;
+
+    if (m_solutionTriesCounter > MAX_SOLUTION_TRIES) {
+        return 0;
+    }
+
     if (pos == gridSize) {
         return 1 + count;
     }
@@ -130,7 +132,7 @@ quint8 Generator::numberOfSolutions(QVector<quint8> &board, quint8 pos, quint8 c
     }
 }
 
-void Generator::removeElements(QVector<quint8> &board, quint8 n)
+bool Generator::removeElements(QVector<quint8> &board, quint8 n)
 {
     quint8 pos{0};
     quint8 value{0};
@@ -140,13 +142,18 @@ void Generator::removeElements(QVector<quint8> &board, quint8 n)
         value = board[pos];
         if (value != 0) {
             board[pos] = 0;
-            if (numberOfSolutions(board) > 1) {
+            const quint8 solutions = numberOfSolutions(board);
+            if (solutions > 1) {
                 board[pos] = value;
                 continue;
+            } else if (solutions == 0) {
+                return false;
             }
             ++i;
         }
     }
+
+    return true;
 }
 
 void Generator::shuffleVector(QVector<quint8> &vector)
@@ -203,7 +210,7 @@ bool Generator::solveBoard(QVector<quint8> &board)
 {
     QVector<quint8> numbers(getShuffledNumbers());
 
-    qint8 pos = findEmptyCell(board);
+    const qint8 pos = findEmptyCell(board);
 
     if (pos == -1) {
         return true;
@@ -232,13 +239,22 @@ void Generator::run()
     QVector<quint8> solution(gridSize, 0);
     generateBoard(solution);
 
+    //qDebug() << "GENERATE BOARD FINISHED";
+
     // generate puzzle
     QVector<quint8> puzzle(solution);
-    removeElements(puzzle, m_difficulties[m_difficulty]);
+    if (!removeElements(puzzle, m_difficulties[m_difficulty])) {
+        emit failed();
+        return;
+    }
+
+    //qDebug() << "GENERATE PUZZLE FINISHED";
 
     // generate notes
     QVector<quint16> notes(gridSize, Note::None);
     generateNotes(notes, puzzle);
+
+    //qDebug() << "GENERATE NOTES FINISHED";
 
     // emit finished
     emit finished(puzzle, solution, notes);

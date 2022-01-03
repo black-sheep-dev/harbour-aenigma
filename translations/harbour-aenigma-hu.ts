@@ -71,7 +71,6 @@
         <source>%n cell(s) unsolved</source>
         <translation>
             <numerusform>%n megoldatlan cella</numerusform>
-            <numerusform>%n megoldatlan cella</numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
@@ -215,6 +214,11 @@
     <message id="id-hints-used">
         <source>Hints used</source>
         <translation>Használt tippek</translation>
+    </message>
+    <message id="id-generator-failed-msg">
+        <source>Generation of Sudoku game failed! Please try again!</source>
+        <oldsource>Generation of game failed! Please try again!</oldsource>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

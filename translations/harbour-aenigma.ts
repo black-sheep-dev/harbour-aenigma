@@ -216,5 +216,10 @@
         <source>Hints used</source>
         <translation>Hints used</translation>
     </message>
+    <message id="id-generator-failed-msg">
+        <source>Generation of Sudoku game failed! Please try again!</source>
+        <oldsource>Generation of game failed! Please try again!</oldsource>
+        <translation>Generation of Sudoku game failed! Please try again!</translation>
+    </message>
 </context>
 </TS>

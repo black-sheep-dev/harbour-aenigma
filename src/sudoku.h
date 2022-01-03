@@ -80,6 +80,7 @@ public:
 
 signals:
     void dataChanged(quint8 row, quint8 column, quint8 role, const QVariant &data);
+    void generatorFailed();
     void numberFinished(quint8 number, bool finished = true);
 
     // properties
@@ -106,6 +107,7 @@ public slots:
     void undo();
 
 private slots:
+    void onGeneratorFailed();
     void onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution, const QVector<quint16> &notes);
 
 private:

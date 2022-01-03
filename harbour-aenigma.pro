@@ -5,7 +5,8 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 TARGET = harbour-aenigma
 DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
-CONFIG += sailfishapp
+CONFIG += link_pkgconfig sailfishapp
+PKGCONFIG += nemonotifications-qt5
 
 SOURCES += src/harbour-aenigma.cpp \
     src/generator.cpp \

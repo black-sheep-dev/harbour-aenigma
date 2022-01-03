@@ -296,6 +296,7 @@ void Sudoku::generate()
     auto generator = new Generator(m_difficulty);
     generator->setAutoDelete(true);
     connect(generator, &Generator::finished, this, &Sudoku::onGeneratorFinished);
+    connect(generator, &Generator::failed, this, &Sudoku::onGeneratorFailed);
 
     QThreadPool::globalInstance()->start(generator);
 }
@@ -387,6 +388,13 @@ void Sudoku::undo()
         }
 
     } while (current.id == m_undoQueue.last().id);
+}
+
+void Sudoku::onGeneratorFailed()
+{
+    m_gameState = GameState::Empty;
+    emit gameStateChanged();
+    emit generatorFailed();
 }
 
 void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<quint8> &solution, const QVector<quint16> &notes)
