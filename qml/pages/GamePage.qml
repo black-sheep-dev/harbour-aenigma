@@ -7,7 +7,7 @@ import org.nubecula.aenigma 1.0
 import "../."
 import "../components"
 
-Page {
+Page {    
     id: page
 
     allowedOrientations: Orientation.Portrait
@@ -176,9 +176,9 @@ Page {
                 || Sudoku.gameState === GameState.Pause
                 || Sudoku.gameState === GameState.NotCorrect ) {
 
-            settings.gameStateData = Sudoku.gameStateData();
+            settings.gameStateData = Sudoku.gameStateData()
         } else {
-            console.log("Clear game data")
+            settings.gameStateData = ""
         }
     }
 }
