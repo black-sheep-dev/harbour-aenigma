@@ -3,12 +3,28 @@ import Sailfish.Silica 1.0
 
 import org.nubecula.aenigma 1.0
 
+import "../."
+
 Page {
     id: page
 
     allowedOrientations: Orientation.Portrait
 
     SilicaFlickable {
+        PullDownMenu {
+            MenuItem {
+                //% "Reset settings"
+                text: qsTrId("id-reset-settings")
+                //% "Resetting settings"
+                onClicked: remorse.execute(qsTrId("id-resetting-settings"), function () {
+                    settings.reset()
+                    pageStack.navigateBack()
+                })
+            }
+        }
+
+        RemorsePopup { id: remorse }
+
         anchors.fill: parent
 
         contentHeight: column.height

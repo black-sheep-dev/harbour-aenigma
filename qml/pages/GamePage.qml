@@ -167,4 +167,18 @@ Page {
             Sudoku.pause()
         }
     }
+
+    Component.onCompleted: if (settings.gameStateData.length > 0) Sudoku.setGameStateData(settings.gameStateData)
+
+    Component.onDestruction: {
+        if ( Sudoku.gameState === GameState.Ready
+                || Sudoku.gameState === GameState.Playing
+                || Sudoku.gameState === GameState.Pause
+                || Sudoku.gameState === GameState.NotCorrect ) {
+
+            settings.gameStateData = Sudoku.gameStateData();
+        } else {
+            console.log("Clear game data")
+        }
+    }
 }

@@ -221,5 +221,13 @@
         <oldsource>Generation of game failed! Please try again!</oldsource>
         <translation>¡La generación del sudoku ha fallado! ¡Inténtalo de nuevo!</translation>
     </message>
+    <message id="id-reset-settings">
+        <source>Reset settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-resetting-settings">
+        <source>Resetting settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

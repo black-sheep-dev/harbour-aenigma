@@ -127,7 +127,7 @@
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
         <oldsource>This option prevents display blanking during playing.</oldsource>
-            <translation type="vanished">Ta opcja umożliwia podświetlenie wierszy, kolumn i komórek, gdy znajdzie się w nich ten sam numer.</translation>
+        <translation type="vanished">Ta opcja umożliwia podświetlenie wierszy, kolumn i komórek, gdy znajdzie się w nich ten sam numer.</translation>
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
@@ -221,6 +221,14 @@
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
         <translation>Nie udało się generowanie gry! Spróbuj ponownie!</translation>
+    </message>
+    <message id="id-reset-settings">
+        <source>Reset settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-resetting-settings">
+        <source>Resetting settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

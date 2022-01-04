@@ -150,7 +150,7 @@
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
-        <translation>Bidschirmabschaltung verhindern</translation>
+        <translation>Bildschirmabschaltung verhindern</translation>
     </message>
     <message id="id-display-blanking-desc">
         <source>This option prevents display blanking during playing.</source>
@@ -220,6 +220,14 @@
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
         <translation>Generierung des Sudoku-Spiels fehlgeschlagen! Bitte nochmal probieren!</translation>
+    </message>
+    <message id="id-reset-settings">
+        <source>Reset settings</source>
+        <translation>Einstellungen zurücksetzen</translation>
+    </message>
+    <message id="id-resetting-settings">
+        <source>Resetting settings</source>
+        <translation>Setze Einstellungen zurück</translation>
     </message>
 </context>
 </TS>

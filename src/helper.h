@@ -3,6 +3,9 @@
 
 #include "enums.h"
 
+#include <QJsonArray>
+#include <QVector>
+
 class Helper
 {
 public:

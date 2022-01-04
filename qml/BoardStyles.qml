@@ -10,7 +10,7 @@ QtObject {
     property color errorColor: Theme.errorColor
     property color errorHighlightColor: Theme.errorColor
     property color notesColor: Theme.secondaryHighlightColor
-    property color numberColor: Theme.secondaryHighlightColor
+    property color numberColor: Theme.primaryColor
     property color numberFixedColor: Theme.secondaryHighlightColor
     property color numberHighlightColor: Theme.highlightColor
     property color primaryGridColor: Theme.primaryColor
@@ -50,7 +50,7 @@ QtObject {
             errorColor = Theme.errorColor
             errorHighlightColor = Theme.errorColor
             notesColor = Theme.secondaryHighlightColor
-            numberColor = Theme.secondaryHighlightColor
+            numberColor = Theme.primaryColor
             numberFixedColor = Theme.secondaryHighlightColor
             numberHighlightColor = Theme.highlightColor
             primaryGridColor = Theme.primaryColor

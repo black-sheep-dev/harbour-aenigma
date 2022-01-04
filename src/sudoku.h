@@ -10,15 +10,7 @@
 
 #include "enums.h"
 #include "global.h"
-
-struct UndoStep {
-    quint8 column{0};
-    quint16 id{0};
-    QVariant newValue;
-    QVariant oldValue;
-    quint8 role{0};
-    quint8 row{0};
-};
+#include "undostep.h"
 
 class Sudoku : public QObject
 {
@@ -48,6 +40,10 @@ public:
     Q_INVOKABLE bool isInRow(quint8 row, quint8 number) const;
     Q_INVOKABLE quint8 noteToNumber(Note::Number note) const;
     Q_INVOKABLE quint16 numberToNote(quint8 number) const;
+
+    // save & load game state data
+    Q_INVOKABLE QString gameStateData() const;
+    Q_INVOKABLE void setGameStateData(const QString &data);
 
     // properties
     bool autoCleanupNotes() const;

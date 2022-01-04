@@ -7,6 +7,9 @@
 #include "generator.h"
 #include "helper.h"
 
+constexpr quint64 AENIGMA_GAME_DATA_MAGIC = 0x41454e49474d41;
+constexpr quint16 AENIGMA_GAME_DATA_VERSION = 1;
+
 Sudoku::Sudoku(QObject *parent) : QObject(parent)
 {
 
@@ -159,6 +162,76 @@ quint8 Sudoku::noteToNumber(Note::Number note) const
 quint16 Sudoku::numberToNote(quint8 number) const
 {
     return Helper::numberToNote(number);
+}
+
+QString Sudoku::gameStateData() const
+{
+    QByteArray out;
+
+    QDataStream stream(&out, QIODevice::WriteOnly);
+    stream.setVersion(QDataStream::Qt_5_6);
+
+    stream << AENIGMA_GAME_DATA_MAGIC;
+    stream << AENIGMA_GAME_DATA_VERSION;
+
+    stream << m_elapsedTime;
+    stream << quint8(m_gameState);
+    stream << m_hintsCount;
+    stream << m_stepsCount;
+
+    stream << m_game;
+    stream << m_notes;
+    stream << m_notesGenerated;
+    stream << m_puzzle;
+    stream << m_solution;
+
+    stream << m_currentUndoId;
+    stream << m_undoQueue;
+
+    return out.toBase64();
+}
+
+void Sudoku::setGameStateData(const QString &data)
+{
+    QByteArray in = QByteArray::fromBase64(data.toUtf8());
+
+    QDataStream stream(&in, QIODevice::ReadOnly);
+
+    quint64 magic{0};
+    stream >> magic;
+
+    if (magic != AENIGMA_GAME_DATA_MAGIC) {
+        qWarning() << "No valid game data";
+        return;
+    }
+
+    // reset current game
+    reset();
+
+    // load game data
+    quint16 version{0};
+    stream >> version;
+
+    stream >> m_elapsedTime;
+    emit elapsedTimeChanged();
+
+    quint8 state;
+    stream >> state;
+    m_gameState = GameState::State(state);
+
+    stream >> m_hintsCount;
+    stream >> m_stepsCount;
+
+    stream >> m_game;
+    stream >> m_notes;
+    stream >> m_notesGenerated;
+    stream >> m_puzzle;
+    stream >> m_solution;
+
+    stream >> m_currentUndoId;
+    stream >> m_undoQueue;
+
+    emit gameStateChanged();
 }
 
 bool Sudoku::autoCleanupNotes() const

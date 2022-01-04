@@ -42,7 +42,8 @@ HEADERS += \
     src/generator.h \
     src/global.h \
     src/helper.h \
-    src/sudoku.h
+    src/sudoku.h \
+    src/undostep.h
 
 RESOURCES += \
     ressources.qrc

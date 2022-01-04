@@ -102,7 +102,7 @@ Rectangle {
                     color: {
                         if (hasError) return BoardStyles.errorColor
                         if (highlighted && isCurrentNumber()) return BoardStyles.numberHighlightColor
-                        return isEditable ? BoardStyles.numberFixedColor : BoardStyles.numberColor
+                        return isEditable ? BoardStyles.numberColor : BoardStyles.numberFixedColor
                     }
                     font.pointSize: Math.max(Math.round(cellSize * 0.5), 1)
                     font.bold: true

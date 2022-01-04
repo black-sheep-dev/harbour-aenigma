@@ -8,7 +8,6 @@ import org.nubecula.aenigma 1.0
 import "."
 import "pages"
 
-
 ApplicationWindow {
     id: app
 
@@ -19,6 +18,7 @@ ApplicationWindow {
 
         property bool autoCleanupNotes: false
         property bool autoNotes: false
+        property string gameStateData: ""
         property bool highlighting: true
         property int highlightMode: HighlightMode.Complete
         property int lastDifficulty: Difficulty.Medium
@@ -28,6 +28,20 @@ ApplicationWindow {
         onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes = autoCleanupNotes
         onAutoNotesChanged: Sudoku.autoNotes = autoNotes
         onStyleChanged: BoardStyles.setStyle(style)
+
+        function reset() {
+            clear()
+
+            // default values
+            autoCleanupNotes = false
+            autoNotes = false
+            gameStateData = ""
+            highlighting = true
+            highlightMode = HighlightMode.Complete
+            lastDifficulty = Difficulty.Medium
+            preventDisplayBlanking = true
+            style = Styles.Default
+        }
     }
 
     Notification {
