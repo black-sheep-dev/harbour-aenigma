@@ -220,15 +220,15 @@
     <message id="id-generator-failed-msg">
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
-        <translation>Nie udało się generowanie gry! Spróbuj ponownie!</translation>
+        <translation>Nie udało się wygenerowanie gry! Spróbuj ponownie!</translation>
     </message>
     <message id="id-reset-settings">
         <source>Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset ustawień</translation>
     </message>
     <message id="id-resetting-settings">
         <source>Resetting settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetowanie ustawień</translation>
     </message>
 </context>
 </TS>
