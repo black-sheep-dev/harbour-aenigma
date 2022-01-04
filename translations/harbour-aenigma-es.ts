@@ -223,11 +223,11 @@
     </message>
     <message id="id-reset-settings">
         <source>Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer ajustes</translation>
     </message>
     <message id="id-resetting-settings">
         <source>Resetting settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Restableciendo ajustes</translation>
     </message>
 </context>
 </TS>
