@@ -106,6 +106,18 @@ Page {
                         return ""
                     }
                 }
+
+                Label {
+                    visible: Sudoku.gameState >= GameState.Playing
+                    anchors{
+                        left: parent.left
+                        leftMargin: Theme.horizontalPageMargin
+                        bottom: parent.bottom
+                        bottomMargin: Theme.paddingMedium
+                    }
+                    color: Theme.highlightColor
+                    text: new Date(Sudoku.elapsedTime * 1000).toISOString().substr(11, 8);
+                }
             }
 
             Item {
@@ -164,7 +176,7 @@ Page {
         if (visible && Sudoku.gameState === GameState.Pause) {
             Sudoku.start()
         } else if (!visible && Sudoku.gameState === GameState.Playing){
-            Sudoku.pause()
+            Sudoku.stop()
         }
     }
 

@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Item {
-    property var elapsedTime
+    property int elapsedTime
     property int hints
     property int steps
 
@@ -32,7 +32,7 @@ Item {
         DetailItem {
             //% "Time required"
             label: qsTrId("id-time-required")
-            value: elapsedTime.toTimeString().slice(0, 8);
+            value: new Date(elapsedTime * 1000).toISOString().substr(11, 8);
         }
 
         DetailItem {

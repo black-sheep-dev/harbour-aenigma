@@ -5,6 +5,7 @@
 
 #include <QDateTime>
 #include <QList>
+#include <QTimer>
 #include <QVariant>
 #include <QVector>
 
@@ -20,7 +21,7 @@ class Sudoku : public QObject
     Q_PROPERTY(bool autoNotes READ autoNotes WRITE setAutoNotes NOTIFY autoNotesChanged)
     Q_PROPERTY(quint16 currentUndoId READ currentUndoId WRITE setCurrentUndoId NOTIFY currentUndoIdChanged)
     Q_PROPERTY(Difficulty::Level difficulty READ difficulty WRITE setDifficulty NOTIFY difficultyChanged)
-    Q_PROPERTY(QTime elapsedTime READ elapsedTime WRITE setElapsedTime NOTIFY elapsedTimeChanged)
+    Q_PROPERTY(qint64 elapsedTime READ elapsedTime WRITE setElapsedTime NOTIFY elapsedTimeChanged)
     Q_PROPERTY(quint16 hintsCount READ hintsCount WRITE setHintsCount NOTIFY hintsCountChanged)
     Q_PROPERTY(QDateTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(GameState::State gameState READ gameState NOTIFY gameStateChanged)
@@ -58,8 +59,8 @@ public:
     Difficulty::Level difficulty() const;
     void setDifficulty(Difficulty::Level difficulty);
 
-    const QTime &elapsedTime() const;
-    void setElapsedTime(const QTime &msec);
+    qint64 elapsedTime() const;
+    void setElapsedTime(qint64 msec);
 
     GameState::State gameState() const;
 
@@ -95,7 +96,6 @@ public slots:
     void incrementHintsCount();
     void incrementStepsCount();
     void generate();
-    void pause();
     void reset();
     void start();
     void stop();
@@ -116,7 +116,7 @@ private:
     QVector<quint16> m_notesGenerated{QVector<quint16>(gridSize, 0)};
     QVector<quint8> m_puzzle{QVector<quint8>(gridSize, 0)};
     QVector<quint8> m_solution{QVector<quint8>(gridSize, 0)};
-    qint64 m_resumeTime{0};
+    QTimer *m_timer{new QTimer(this)};
     QList<UndoStep> m_undoQueue;
 
     // properties
@@ -124,7 +124,7 @@ private:
     bool m_autoNotes{false};
     quint16 m_currentUndoId{0};
     Difficulty::Level m_difficulty{Difficulty::Easy};
-    QTime m_elapsedTime{QTime(0,0,0,0)};
+    qint64 m_elapsedTime{0};
     GameState::State m_gameState{GameState::Empty};
     quint16 m_hintsCount{0};
     QDateTime m_startTime;

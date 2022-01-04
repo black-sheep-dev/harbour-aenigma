@@ -1,10 +1,12 @@
 * Tue Jan 04 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.8-1
-- Add option to reset settings to default values
 - Save game state when closing app / will be loaded again on next app start
+- Add option to reset settings to default values
+- Add elapsed time to sudoku board
 - Fixed used hints where not shown correctly
 - Visual changes to default style
 - Updated Polish, Spanish and Hungarian translation
 - Bugfixes
+- Code cleanup
 
 * Mon Jan 03 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.7-1
 - Add game generator cancellation after defined number of retries (Sudoku unsolvable / multiple solutions)

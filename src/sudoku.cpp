@@ -12,7 +12,11 @@ constexpr quint16 AENIGMA_GAME_DATA_VERSION = 1;
 
 Sudoku::Sudoku(QObject *parent) : QObject(parent)
 {
-
+    m_timer->setInterval(1000);
+    connect(m_timer, &QTimer::timeout, [this](){
+        this->m_elapsedTime++;
+        emit elapsedTimeChanged();
+    });
 }
 
 QVariant Sudoku::data(quint8 row, quint8 column, quint8 role) const
@@ -193,6 +197,9 @@ QString Sudoku::gameStateData() const
 
 void Sudoku::setGameStateData(const QString &data)
 {
+    if (data.isEmpty())
+        return;
+
     QByteArray in = QByteArray::fromBase64(data.toUtf8());
 
     QDataStream stream(&in, QIODevice::ReadOnly);
@@ -288,12 +295,12 @@ void Sudoku::setDifficulty(Difficulty::Level difficulty)
     emit difficultyChanged();
 }
 
-const QTime &Sudoku::elapsedTime() const
+qint64 Sudoku::elapsedTime() const
 {
     return m_elapsedTime;
 }
 
-void Sudoku::setElapsedTime(const QTime &msec)
+void Sudoku::setElapsedTime(qint64 msec)
 {
     if (m_elapsedTime == msec)
         return;
@@ -374,16 +381,6 @@ void Sudoku::generate()
     QThreadPool::globalInstance()->start(generator);
 }
 
-void Sudoku::pause()
-{
-    if (m_gameState != GameState::Playing) {
-        return;
-    }
-
-    m_gameState = GameState::Pause;
-    emit gameStateChanged();
-}
-
 void Sudoku::reset()
 {
     m_undoQueue.clear();
@@ -401,11 +398,12 @@ void Sudoku::reset()
     setStepsCount(0);
     setHintsCount(0);
     setStartTime(QDateTime::currentDateTime());
-    setElapsedTime(QTime(0,0,0,0));
-    m_resumeTime = 0;
+    setElapsedTime(0);
 
     // check
     checkIfFinished();
+
+    start();
 }
 
 void Sudoku::start()
@@ -414,9 +412,11 @@ void Sudoku::start()
         return;
     }
 
-    m_resumeTime = QDateTime::currentMSecsSinceEpoch();
+    m_timer->start();
+
     m_gameState = GameState::Playing;
     emit gameStateChanged();
+
 }
 
 void Sudoku::stop()
@@ -425,8 +425,10 @@ void Sudoku::stop()
         return;
     }
 
-    setElapsedTime(QTime(m_elapsedTime).addMSecs(QDateTime::currentMSecsSinceEpoch() - m_resumeTime));
-    emit elapsedTimeChanged();
+    m_timer->stop();
+
+    m_gameState = GameState::Pause;
+    emit gameStateChanged();
 }
 
 void Sudoku::toogleNote(quint8 row, quint8 column, quint16 note)
@@ -488,6 +490,8 @@ void Sudoku::onGeneratorFinished(const QVector<quint8>& puzzle, const QVector<qu
     m_gameState = GameState::Ready;
     emit gameStateChanged();
 
+    start();
+
     checkIfFinished();
 }
 
@@ -513,7 +517,6 @@ void Sudoku::checkIfFinished()
 
     // return if not solved
     if (m_unsolvedCellCount > 0) {
-        start();
         return;
     }
 
