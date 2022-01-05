@@ -1,3 +1,6 @@
+* Wed Jan 05 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.9-1
+- Update Hungarian translation
+
 * Tue Jan 04 2022 Samuel Kron <blacksheep@nubecula.org> 0.1.8-1
 - Save game state when closing app / will be loaded again on next app start
 - Add option to reset settings to default values
