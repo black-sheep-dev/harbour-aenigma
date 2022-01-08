@@ -37,7 +37,7 @@ Categories:
     - Games
 Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/main/icons/harbour-aenigma.svg
 Screenshots:
-    - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/screenshots/Screenshot1.png
+    - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/metadata/screenshot1.png
 Url:
     Homepage: https://github.com/black-sheep-dev/harbour-aenigma
     Help: https://github.com/black-sheep-dev/harbour-aenigma/discussions
