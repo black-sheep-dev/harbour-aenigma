@@ -1,12 +1,12 @@
 # VERSION
-VERSION = 0.1.9
+VERSION = 0.1.10
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 TARGET = harbour-aenigma
 DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
 CONFIG += link_pkgconfig sailfishapp
-PKGCONFIG += nemonotifications-qt5
+PKGCONFIG += nemonotifications-qt5 keepalive
 
 SOURCES += src/harbour-aenigma.cpp \
     src/generator.cpp \

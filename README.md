@@ -27,6 +27,7 @@ Available translations:
 - Hungarian by Szabó G. (1Zgp)
 - Spanish by Carmen F. B. (carmenfdezb)
 - Polish by likot180
+- Dutch by rgrnetalk
 
 If you missing your native language you are welcome to support this project with your translation.
 

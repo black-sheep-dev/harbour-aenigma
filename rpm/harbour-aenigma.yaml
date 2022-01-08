@@ -1,6 +1,6 @@
 Name: harbour-aenigma
 Summary: Sudoku game for Sailfish OS
-Version: 0.1.9
+Version: 0.1.10
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -13,6 +13,21 @@ Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
     Sudoku puzzle game for Sailfish OS
+
+    %if "%{?vendor}" == "chum"
+    PackageName: Aenigma
+    Type: desktop-application
+    Categories:
+        - Games
+    Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/main/icons/harbour-aenigma.svg
+    Screenshots:
+        - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/screenshots/Screenshot1.png
+    Url:
+        Homepage: https://github.com/black-sheep-dev/harbour-aenigma
+        Help: https://github.com/black-sheep-dev/harbour-aenigma/discussions
+        Bugtracker: https://github.com/black-sheep-dev/harbour-aenigma/issues
+        Donation: https://www.paypal.com/paypalme/nubecula/1
+    %endif
 Builder: qmake5
 
 # This section specifies build dependencies that are resolved using pkgconfig.
@@ -23,6 +38,7 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Quick
   - nemonotifications-qt5
+  - keepalive
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:
@@ -31,7 +47,7 @@ PkgBR:
 # Runtime dependencies which are not automatically detected
 Requires:
   - sailfishsilica-qt5 >= 0.10.9
-  - libkeepalive >= 1.7.0  
+  - nemo-qml-plugin-notifications-qt5
 
 # All installed files
 Files:

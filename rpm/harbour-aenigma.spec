@@ -9,7 +9,7 @@ Name:       harbour-aenigma
 # << macros
 
 Summary:    Sudoku game for Sailfish OS
-Version:    0.1.9
+Version:    0.1.10
 Release:    1
 Group:      Amusements/Games
 License:    GPLv2
@@ -17,17 +17,33 @@ URL:        https://github.com/black-sheep-dev/harbour-aenigma
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-aenigma.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   libkeepalive >= 1.7.0
+Requires:   nemo-qml-plugin-notifications-qt5
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(nemonotifications-qt5)
+BuildRequires:  pkgconfig(keepalive)
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  desktop-file-utils
 
 %description
 Sudoku puzzle game for Sailfish OS
+
+%if "%{?vendor}" == "chum"
+PackageName: Aenigma
+Type: desktop-application
+Categories:
+    - Games
+Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/main/icons/harbour-aenigma.svg
+Screenshots:
+    - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/screenshots/Screenshot1.png
+Url:
+    Homepage: https://github.com/black-sheep-dev/harbour-aenigma
+    Help: https://github.com/black-sheep-dev/harbour-aenigma/discussions
+    Bugtracker: https://github.com/black-sheep-dev/harbour-aenigma/issues
+    Donation: https://www.paypal.com/paypalme/nubecula/1
+%endif
 
 
 %prep
