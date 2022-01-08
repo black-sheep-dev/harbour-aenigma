@@ -28,6 +28,7 @@ Available translations:
 - Spanish by Carmen F. B. (carmenfdezb)
 - Polish by likot180
 - Dutch by rgrnetalk
+- Russian by potap14108
 
 If you missing your native language you are welcome to support this project with your translation.
 
