@@ -105,6 +105,7 @@ bool Sudoku::setData(quint8 row, quint8 column, quint8 role, const QVariant &dat
         step.newValue = data;
         step.oldValue = oldData;
         m_undoQueue.append(step);
+        emit undoStepCountChanged();
     }
 
     emit dataChanged(row, column, role, data);
@@ -352,6 +353,10 @@ void Sudoku::setStepsCount(quint16 count)
     emit stepsCountChanged();
 }
 
+quint16 Sudoku::undoStepCount() const
+{
+    return m_undoQueue.count();
+}
 
 quint8 Sudoku::unsolvedCellCount() const
 {
@@ -463,6 +468,8 @@ void Sudoku::undo()
         }
 
     } while (current.id == m_undoQueue.last().id);
+
+    emit undoStepCountChanged();
 }
 
 void Sudoku::onGeneratorFailed()

@@ -42,13 +42,10 @@ Page {
                 text: qsTrId("id-settings")
                 onClicked: pageStack.animatorPush(Qt.resolvedUrl("SettingsPage.qml"))
             }
-
             MenuItem {
-                enabled: Sudoku.gameState >= GameState.Playing
-                //% "Reset"
-                text: qsTrId("id-reset")
-                //% "Reset game"
-                onClicked: remorse.execute(qsTrId("id-reset-game"), function() { reset() })
+                //% "Statistics"
+                text: qsTrId("id-statistics")
+                onClicked: pageStack.animatorPush(Qt.resolvedUrl("StatisticsPage.qml"))
             }
             MenuItem {
                 //% "New game"
@@ -63,6 +60,16 @@ Page {
                         Sudoku.generate()
                     })
                 }
+            }
+        }
+
+        PushUpMenu {
+            visible: Sudoku.gameState >= GameState.Playing
+            MenuItem {
+                //% "Reset"
+                text: qsTrId("id-reset")
+                //% "Reset game"
+                onClicked: remorse.execute(qsTrId("id-reset-game"), function() { reset() })
             }
         }
 
@@ -169,7 +176,7 @@ Page {
 
     Connections {
         target: Sudoku
-        onGameStateChanged: console.log("GameState: " + Sudoku.gameState)
+        onGameStateChanged: if (Sudoku.gameState === GameState.Solved) DB.addGame(Sudoku.difficulty, Sudoku.stepsCount, Sudoku.hintsCount, Sudoku.elapsedTime)
     }
 
     onVisibleChanged: {

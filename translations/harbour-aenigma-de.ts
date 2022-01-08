@@ -229,5 +229,65 @@
         <source>Resetting settings</source>
         <translation>Setze Einstellungen zurück</translation>
     </message>
+    <message id="id-games">
+        <source>Games</source>
+        <translation>Spiele</translation>
+    </message>
+    <message id="id-average-time">
+        <source>Average time</source>
+        <translation>Durchschnittliche Zeit</translation>
+    </message>
+    <message id="id-minimum-time">
+        <source>Minimum time</source>
+        <translation>Kürzeste Zeit</translation>
+    </message>
+    <message id="id-average-steps">
+        <source>Average steps</source>
+        <translation>Durschnittlichen Schritte</translation>
+    </message>
+    <message id="id-minimum-steps">
+        <source>Minimum steps</source>
+        <translation>Wenigsten Schritte</translation>
+    </message>
+    <message id="id-average-hints">
+        <source>Average hints</source>
+        <translation>Durchschnittlichen Hinweise</translation>
+    </message>
+    <message id="id-minimum-hints">
+        <source>Minimum hints</source>
+        <translation>Wenigste Hinweise</translation>
+    </message>
+    <message id="id-statistics">
+        <source>Statistics</source>
+        <translation>Statistiken</translation>
+    </message>
+    <message id="id-reset-statistics">
+        <source>Reset statistics</source>
+        <translation>Setze Statistik zurück</translation>
+    </message>
+    <message id="id-refresh">
+        <source>Refresh</source>
+        <translation>Aktualisieren</translation>
+    </message>
+    <message id="id-games-played">
+        <source>Games played</source>
+        <translation>Spiele gespielt</translation>
+    </message>
+    <message id="id-total">
+        <source>Total</source>
+        <translation>Gesamt</translation>
+    </message>
+    <message id="id-total-time">
+        <source>Total time</source>
+        <translation>Gesamte Spielzeit</translation>
+    </message>
+    <message id="id-no-stat-data">
+        <source>No statistic data available</source>
+        <translation>Keine Statistikdaten verfügbar</translation>
+    </message>
+    <message id="id-no-stat-data-hint">
+        <source>Play some games and come back</source>
+        <translation>Spiel einige Spiele und komm hierher zurück</translation>
+    </message>
 </context>
 </TS>

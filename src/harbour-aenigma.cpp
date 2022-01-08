@@ -2,6 +2,7 @@
 
 #include <sailfishapp.h>
 
+#include "database.h"
 #include "enums.h"
 #include "sudoku.h"
 
@@ -40,6 +41,8 @@ int main(int argc, char *argv[])
     auto sudoku = new Sudoku;
     context->setContextProperty("Sudoku", sudoku);
 
+    auto db = new Database;
+    context->setContextProperty("DB", db);
 
     v->setSource(SailfishApp::pathTo("qml/harbour-aenigma.qml"));
     v->show();

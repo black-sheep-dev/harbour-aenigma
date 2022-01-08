@@ -26,6 +26,7 @@ class Sudoku : public QObject
     Q_PROPERTY(QDateTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(GameState::State gameState READ gameState NOTIFY gameStateChanged)
     Q_PROPERTY(quint16 stepsCount READ stepsCount WRITE setStepsCount NOTIFY stepsCountChanged)
+    Q_PROPERTY(quint16 undoStepCount READ undoStepCount NOTIFY undoStepCountChanged)
     Q_PROPERTY(quint8 unsolvedCellCount READ unsolvedCellCount NOTIFY unsolvedCellCountChanged)
 
 public:    
@@ -73,6 +74,8 @@ public:
     quint16 stepsCount() const;
     void setStepsCount(quint16 count);
 
+    quint16 undoStepCount() const;
+
     quint8 unsolvedCellCount() const;   
 
 signals:
@@ -90,6 +93,7 @@ signals:
     void hintsCountChanged();
     void startTimeChanged();
     void stepsCountChanged();
+    void undoStepCountChanged();
     void unsolvedCellCountChanged(); 
 
 public slots:
@@ -128,9 +132,8 @@ private:
     GameState::State m_gameState{GameState::Empty};
     quint16 m_hintsCount{0};
     QDateTime m_startTime;
-    quint16 m_stepsCount{0};
+    quint16 m_stepsCount{0};  
     quint8 m_unsolvedCellCount{0};
-
 };
 
 #endif // SUDOKU_H

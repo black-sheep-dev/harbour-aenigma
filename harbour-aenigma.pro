@@ -5,10 +5,13 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 TARGET = harbour-aenigma
 DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
+QT += sql
+
 CONFIG += link_pkgconfig sailfishapp
 PKGCONFIG += nemonotifications-qt5 keepalive
 
 SOURCES += src/harbour-aenigma.cpp \
+    src/database.cpp \
     src/generator.cpp \
     src/helper.cpp \
     src/sudoku.cpp
@@ -22,10 +25,12 @@ DISTFILES += qml/harbour-aenigma.qml \
     qml/components/IconSwitch.qml \
     qml/components/NoteBlock.qml \
     qml/components/ResultBoard.qml \
+    qml/components/StatisticDetails.qml \
     qml/cover/CoverPage.qml \
     qml/dialogs/NewGameDialog.qml \
     qml/pages/GamePage.qml \
     qml/pages/SettingsPage.qml \
+    qml/pages/StatisticsPage.qml \
     rpm/harbour-aenigma.changes \
     rpm/harbour-aenigma.changes.run.in \
     rpm/harbour-aenigma.spec \
@@ -38,6 +43,7 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172 512x512
 include(translations/translations.pri)
 
 HEADERS += \
+    src/database.h \
     src/enums.h \
     src/generator.h \
     src/global.h \

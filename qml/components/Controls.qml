@@ -82,6 +82,7 @@ Item {
         }
 
         IconSwitch {
+            enabled: Sudoku.gameState !== GameState.Solved && Sudoku.undoStepCount > 0
             checkable: false
             source: "image://theme/icon-m-back"
             onCheckedChanged: {
@@ -90,7 +91,6 @@ Item {
             }
         }
     }
-
 
     Row {
         id: buttonRow
