@@ -268,7 +268,7 @@
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Odśwież</translation>
     </message>
     <message id="id-games-played">
         <source>Games played</source>
@@ -276,7 +276,7 @@
     </message>
     <message id="id-total">
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Całkowity</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
