@@ -1,128 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.1" language="fr">
 <context>
     <name></name>
     <message id="id-about">
         <source>About</source>
-        <translation>О Aenigma</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-app-name">
         <source>Aenigma</source>
-        <translation>Aenigma</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-about-page-description">
         <source>Aenigma is a Sudoku puzzle game for Sailfish OS.</source>
-        <translation>Aenigma - это игра-головоломка судоку для Sailfish OS.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-translations">
         <source>Translations</source>
-        <translation>Переводы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Ваш язык недоступен? Вы можете поддержать этот проект, перевести его, на моём собственном Weblate сервере.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
-        <translation>Исходный код</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-donations">
         <source>Donations</source>
-        <translation>Пожертвования</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Если вам нравится моя работа, почему бы не купить мне пива?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
-        <translation>Пожертвовать через PayPal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-donate-liberpay">
         <source>Donate with Liberpay</source>
-        <translation>Пожертвовать через Liberpay</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-reset">
         <source>Reset</source>
-        <translation>Сброс</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-new-game">
         <source>New game</source>
-        <translation>Новая игра</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-placeholder-text">
         <source>Want to play?</source>
-        <translation>Хотите поиграть?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-placeholder-hint">
         <source>Pull down to start a new game</source>
-        <translation>Потяните вниз, чтобы начать новую игру</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-reset-game">
         <source>Reset game</source>
-        <translation>Сброс игры</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-generating">
         <source>Generating</source>
-        <translation>Генерация</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-cells-unsolved" numerus="yes">
         <source>%n cell(s) unsolved</source>
-        <translation>
-            <numerusform>%n ячейка не решена</numerusform>
-            <numerusform>%n ячейки не решено</numerusform>
-            <numerusform>%n ячеек не решено</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="id-has-errors">
         <source>There are errors</source>
-        <translation>Тут есть ошибки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-solved">
         <source>Solved</source>
-        <translation>Решено</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-generate">
         <source>Generate</source>
-        <translation>Генерировать</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-dialog-new-game-info">
         <source>You can select a level of difficulty for your Sudoku puzzle.</source>
-        <translation>Вы можете выбрать уровень сложности, для своей головоломки Судоку.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-easy">
         <source>Easy</source>
-        <translation>Лёгкий</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-medium">
         <source>Medium</source>
-        <translation>Средний</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-hard">
         <source>Hard</source>
-        <translation>Тяжёлый</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-insane">
         <source>Insane</source>
-        <translation>Безумный</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-level-of-difficulty">
         <source>Level of difficulty</source>
-        <translation>Уровень сложности</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-settings">
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-support-tools">
         <source>Support tools</source>
-        <translation>Дополнительные опции</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-highlighting">
         <source>Highlighting</source>
         <oldsource>Prevent display blanking</oldsource>
-        <translation>Выделение</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-highlighting-desc">
         <source>This option enables highlighting of rows, columns and boxes already blocked by the selected number.</source>
@@ -131,104 +130,104 @@
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
-        <translation>Поле Судоку</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-level">
         <source>Level</source>
-        <translation>Уровень</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-general">
         <source>General</source>
-        <translation>Общие</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-auto-notes">
         <source>Auto notes</source>
-        <translation>Автозаметки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-auto-notes-desc">
         <source>This option automatically adds all notes to a new sudoku puzzle.</source>
-        <translation>Эта опция, автоматически, добавит все заметки, к новой головоломке судоку.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
-        <translation>Не выключать дисплей</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-display-blanking-desc">
         <source>This option prevents display blanking during playing.</source>
-        <translation>Эта опция предотвращает выключение экрана во время игры.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-auto-clean">
         <source>Auto clean</source>
-        <translation>Автоочистка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
-        <translation>Эта опция включает автоочистку заметок, при добавлении числа в ячейку.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation>Выберите режим выделения, чтобы выделить одну ячейку с выбранным номером или строку, столбец и блок, на которые влияет выбранный номер.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-none">
         <source>None</source>
-        <translation>Нет</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-cell">
         <source>Cell</source>
-        <translation>Ячейка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-row-column-block">
         <source>Row / column / block</source>
-        <translation>Строка / столбец / блок</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation>Выберите стиль вашего поля судоку.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-style">
         <source>Style</source>
-        <translation>Стиль</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-default">
         <source>Default</source>
-        <translation>По умолчанию</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>
-        <translation>Черно-белый</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-style-paper">
         <source>Paper</source>
-        <translation>Бумажный</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-puzzle-solved">
         <source>Puzzle solved!</source>
-        <translation>Головоломка решена!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-steps-required">
         <source>Steps required</source>
-        <translation>Количество шагов</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-time-required">
         <source>Time required</source>
-        <translation>Время решения</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-hints-used">
         <source>Hints used</source>
-        <translation>Использовано подсказок</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-generator-failed-msg">
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
-        <translation>Генерация игры Судоку не удалась! Пожалуйста, попробуйте еще раз!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-reset-settings">
         <source>Reset settings</source>
-        <translation>Сброс настроек</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-resetting-settings">
         <source>Resetting settings</source>
-        <translation>Сбросить настройки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-games">
         <source>Games</source>
