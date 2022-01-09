@@ -267,7 +267,7 @@
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
-        <translation>Mettre à jour</translation>
+        <translation>Rafraîchir</translation>
     </message>
     <message id="id-games-played">
         <source>Games played</source>
