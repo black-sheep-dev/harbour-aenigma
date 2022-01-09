@@ -5,7 +5,7 @@
     <name></name>
     <message id="id-about">
         <source>About</source>
-        <translation>О Aenigma</translation>
+        <translation>О программе</translation>
     </message>
     <message id="id-app-name">
         <source>Aenigma</source>
@@ -21,7 +21,7 @@
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Ваш язык недоступен? Вы можете поддержать этот проект, перевести его, на моём собственном Weblate сервере.</translation>
+        <translation>Нет перевода на ваш язык? Вы можете помочь проекту переведя интерфейс программы на моем сервере Weblate.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
@@ -29,19 +29,19 @@
     </message>
     <message id="id-donations">
         <source>Donations</source>
-        <translation>Пожертвования</translation>
+        <translation>Поддержать</translation>
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Если вам нравится моя работа, почему бы не купить мне пива?</translation>
+        <translation>Почему бы не угостить меня пивком, если вам нравится моя работа?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
-        <translation>Пожертвовать через PayPal</translation>
+        <translation>Поддержать через PayPal</translation>
     </message>
     <message id="id-donate-liberpay">
         <source>Donate with Liberpay</source>
-        <translation>Пожертвовать через Liberpay</translation>
+        <translation>Поддержать через Liberpay</translation>
     </message>
     <message id="id-reset">
         <source>Reset</source>
