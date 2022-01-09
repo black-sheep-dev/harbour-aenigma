@@ -231,63 +231,63 @@
     </message>
     <message id="id-games">
         <source>Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Games</translation>
     </message>
     <message id="id-average-time">
         <source>Average time</source>
-        <translation type="unfinished"></translation>
+        <translation>Average time</translation>
     </message>
     <message id="id-minimum-time">
         <source>Minimum time</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum time</translation>
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Average steps</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum steps</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Average hints</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum hints</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistics</translation>
     </message>
     <message id="id-reset-statistics">
         <source>Reset statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset statistics</translation>
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Refresh</translation>
     </message>
     <message id="id-games-played">
         <source>Games played</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message id="id-total">
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>Total</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Total time</translation>
     </message>
     <message id="id-no-stat-data">
         <source>No statistic data available</source>
-        <translation type="unfinished"></translation>
+        <translation>No statistic data available</translation>
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
-        <translation type="unfinished"></translation>
+        <translation>Play some games and come back</translation>
     </message>
 </context>
 </TS>
