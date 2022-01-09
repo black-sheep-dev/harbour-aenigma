@@ -243,7 +243,7 @@
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation>Durchschnittlichen Schritte</translation>
+        <translation>Durchschnittliche Schritte</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
@@ -251,11 +251,11 @@
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation>Durchschnittlichen Hinweise</translation>
+        <translation>Durchschnittliche Hinweise</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation>Wenigste Hinweise</translation>
+        <translation>Wenigsten Hinweise</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
@@ -271,15 +271,15 @@
     </message>
     <message id="id-games-played">
         <source>Games played</source>
-        <translation>Spiele gespielt</translation>
+        <translation type="vanished">Spiele gespielt</translation>
     </message>
     <message id="id-total">
         <source>Total</source>
-        <translation>Total</translation>
+        <translation type="vanished">Total</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
-        <translation>Gesamte Spielzeit</translation>
+        <translation>Spielzeit gesamt</translation>
     </message>
     <message id="id-no-stat-data">
         <source>No statistic data available</source>
@@ -288,6 +288,18 @@
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
         <translation>Spiel einige Spiele und komm hierher zurück</translation>
+    </message>
+    <message id="id-no-data-available">
+        <source>No data available</source>
+        <translation>Keine Daten verfügbar</translation>
+    </message>
+    <message id="id-overview">
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message id="id-total-games">
+        <source>Total games</source>
+        <translation>Spiele gesamt</translation>
     </message>
 </context>
 </TS>

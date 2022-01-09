@@ -33,11 +33,11 @@ QJsonObject Database::getStatisticOverview() const
 
     QVector<quint32> levels(AENIGMA_LEVEL_COUNT, 0);
     QVector<quint32> steps(AENIGMA_LEVEL_COUNT, 0);
-    QVector<quint32> stepsMin(AENIGMA_LEVEL_COUNT, 0);
+    QVector<quint32> stepsMin(AENIGMA_LEVEL_COUNT, 4294967295);
     QVector<quint32> hints(AENIGMA_LEVEL_COUNT, 0);
     QVector<quint32> hintsMin(AENIGMA_LEVEL_COUNT, 0);
     QVector<qint64> times(AENIGMA_LEVEL_COUNT, 0);
-    QVector<qint64> timesMin(AENIGMA_LEVEL_COUNT, 0);
+    QVector<qint64> timesMin(AENIGMA_LEVEL_COUNT, 9223372036854775807);
 
     quint32 count{0};
     qint64 timesTotal{0};

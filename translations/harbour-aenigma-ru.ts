@@ -270,13 +270,9 @@
         <source>Refresh</source>
         <translation>Обновить</translation>
     </message>
-    <message id="id-games-played">
-        <source>Games played</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="id-total">
         <source>Total</source>
-        <translation>Всего</translation>
+        <translation type="vanished">Всего</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
@@ -288,6 +284,18 @@
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-no-data-available">
+        <source>No data available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-overview">
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-total-games">
+        <source>Total games</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

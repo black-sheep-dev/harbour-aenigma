@@ -51,20 +51,24 @@ Page {
             }
 
             SectionHeader {
-                //% "Games played"
-                text: qsTrId("id-games-played")
+                //% "Overview"
+                text: qsTrId("id-overview")
             }
 
-            DetailItem {
-                //% "Total"
-                label: qsTrId("id-total")
-                value: stats.total_count
-            }
+            Column {
+                width: parent.width
 
-            DetailItem {
-                //% "Total time"
-                label: qsTrId("id-total-time")
-                value: Global.getTimeString(stats.total_time)
+                DetailItem {
+                    //% "Total games"
+                    label: qsTrId("id-total-games")
+                    value: stats.total_count
+                }
+
+                DetailItem {
+                    //% "Total time"
+                    label: qsTrId("id-total-time")
+                    value: Global.getTimeString(stats.total_time)
+                }
             }
 
             SectionHeader {

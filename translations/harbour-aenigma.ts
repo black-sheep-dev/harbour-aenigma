@@ -269,13 +269,9 @@
         <source>Refresh</source>
         <translation>Refresh</translation>
     </message>
-    <message id="id-games-played">
-        <source>Games played</source>
-        <translation></translation>
-    </message>
     <message id="id-total">
         <source>Total</source>
-        <translation>Total</translation>
+        <translation type="vanished">Total</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
@@ -288,6 +284,18 @@
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
         <translation>Play some games and come back</translation>
+    </message>
+    <message id="id-no-data-available">
+        <source>No data available</source>
+        <translation>No data available</translation>
+    </message>
+    <message id="id-overview">
+        <source>Overview</source>
+        <translation>No data available</translation>
+    </message>
+    <message id="id-total-games">
+        <source>Total games</source>
+        <translation>Total games</translation>
     </message>
 </context>
 </TS>
