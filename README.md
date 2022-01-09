@@ -25,10 +25,11 @@ Available translations:
 - English
 - German
 - Hungarian by Szabó G. (1Zgp)
-- Spanish by Carmen F. B. (carmenfdezb)
-- Polish by likot180
-- Dutch by rgrnetalk
-- Russian by potap14108
+- Spanish by [Carmen F. B. (carmenfdezb)](https://github.com/carmenfdezb)
+- Polish by [likot180](https://github.com/likot180)
+- Dutch by [rgrnetalk](https://github.com/rgrnetalk)
+- Russian by [potap14108](https://github.com/potap14108)
+- French by [baxyz](https://github.com/baxyz)
 
 If you missing your native language you are welcome to support this project with your translation.
 
