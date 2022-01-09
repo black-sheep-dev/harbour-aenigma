@@ -243,7 +243,7 @@
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation>Durschnittlichen Schritte</translation>
+        <translation>Durchschnittlichen Schritte</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
@@ -275,7 +275,7 @@
     </message>
     <message id="id-total">
         <source>Total</source>
-        <translation>Gesamt</translation>
+        <translation>Total</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
