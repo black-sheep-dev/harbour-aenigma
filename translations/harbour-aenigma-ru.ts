@@ -151,7 +151,7 @@
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
-        <translation>Не выключать дисплей</translation>
+        <translation>Не выключать экран</translation>
     </message>
     <message id="id-display-blanking-desc">
         <source>This option prevents display blanking during playing.</source>
@@ -232,39 +232,39 @@
     </message>
     <message id="id-games">
         <source>Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Игры</translation>
     </message>
     <message id="id-average-time">
         <source>Average time</source>
-        <translation type="unfinished"></translation>
+        <translation>Среднее время</translation>
     </message>
     <message id="id-minimum-time">
         <source>Minimum time</source>
-        <translation type="unfinished"></translation>
+        <translation>Минимальное время</translation>
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation type="unfinished"></translation>
+        <translation>В среднем шагов</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Минимум шагов</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation type="unfinished"></translation>
+        <translation>В среднем подсказок</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Минимум подсказок</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Статистика</translation>
     </message>
     <message id="id-reset-statistics">
         <source>Reset statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Сброс статистики</translation>
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
@@ -276,27 +276,27 @@
     </message>
     <message id="id-total-time">
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Общее время</translation>
     </message>
     <message id="id-no-stat-data">
         <source>No statistic data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет данных статистики</translation>
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
-        <translation type="unfinished"></translation>
+        <translation>Сыграй в несколько игр и вернись</translation>
     </message>
     <message id="id-no-data-available">
         <source>No data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет данных</translation>
     </message>
     <message id="id-overview">
         <source>Overview</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет данных</translation>
     </message>
     <message id="id-total-games">
         <source>Total games</source>
-        <translation type="unfinished"></translation>
+        <translation>Всего игр</translation>
     </message>
 </context>
 </TS>

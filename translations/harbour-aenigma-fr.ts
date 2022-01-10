@@ -290,4 +290,16 @@
         <translation>Jouez à des jeux et revenez ici</translation>
     </message>
 </context>
+<message id="id-no-data-available">
+    <source>No data available</source>
+    <translation>Aucune donnée disponible</translation>
+</message>
+<message id="id-overview">
+    <source>Overview</source>
+    <translation>Aucune donnée disponible</translation>
+</message>
+<message id="id-total-games">
+    <source>Total games</source>
+    <translation>Total parties</translation>
+</message>
 </TS>

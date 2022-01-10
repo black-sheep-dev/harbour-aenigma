@@ -45,7 +45,7 @@
     </message>
     <message id="id-reset">
         <source>Reset</source>
-        <translation>Herstellen</translation>
+        <translation>Terugzetten</translation>
     </message>
     <message id="id-new-game">
         <source>New game</source>
@@ -61,7 +61,7 @@
     </message>
     <message id="id-reset-game">
         <source>Reset game</source>
-        <translation>Herstel het spel</translation>
+        <translation>Zet het spel terug</translation>
     </message>
     <message id="id-generating">
         <source>Generating</source>
@@ -88,7 +88,7 @@
     </message>
     <message id="id-dialog-new-game-info">
         <source>You can select a level of difficulty for your Sudoku puzzle.</source>
-        <translation>Je kan een moeilijkheidsgraad van je Sudoku puzzel kiezen.</translation>
+        <translation>Je kan een niveau van je Sudoku puzzel kiezen.</translation>
     </message>
     <message id="id-easy">
         <source>Easy</source>
@@ -166,7 +166,7 @@
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation>Kies een methode voor markering een enkele cel met het gekozen cijfer of de rij, kolom en blok die door het gekozen nummer worden beïnvloed.</translation>
+        <translation>Kies een methode voor het markeren van een enkele cel met het gekozen cijfer of de rij, kolom en blok die door het gekozen nummer worden beïnvloed.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
@@ -190,7 +190,7 @@
     </message>
     <message id="id-default">
         <source>Default</source>
-        <translation>Default</translation>
+        <translation>Standaard</translation>
     </message>
     <message id="id-style-black-and-white">
         <source>Black &amp; White</source>
@@ -219,79 +219,79 @@
     <message id="id-generator-failed-msg">
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
-        <translation>Generatie van een Sudoku spel mislukt! Probeer het nog een keer!</translation>
+        <translation>Generatie van een Sudoku spel is mislukt! Probeer het nog eens!</translation>
     </message>
     <message id="id-reset-settings">
         <source>Reset settings</source>
-        <translation>Reset instellingen</translation>
+        <translation>Instellingen terugzetten</translation>
     </message>
     <message id="id-resetting-settings">
         <source>Resetting settings</source>
-        <translation>Herstel instellingen</translation>
+        <translation>Instellingen worden teruggezet</translation>
     </message>
     <message id="id-games">
         <source>Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Spellen</translation>
     </message>
     <message id="id-average-time">
         <source>Average time</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemiddelde tijd</translation>
     </message>
     <message id="id-minimum-time">
         <source>Minimum time</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum tijd</translation>
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemiddeld aantal stappen</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum aantal stappen</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemiddeld aantal hints</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum aantal hints</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistieken</translation>
     </message>
     <message id="id-reset-statistics">
         <source>Reset statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset statistieken</translation>
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Vernieuwen</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Totale tijd</translation>
     </message>
     <message id="id-no-stat-data">
         <source>No statistic data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen statistieken beschikbaar</translation>
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
-        <translation type="unfinished"></translation>
+        <translation>Speel een paar spellen en kom terug</translation>
     </message>
     <message id="id-no-data-available">
         <source>No data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen gegevens beschikbaar</translation>
     </message>
     <message id="id-overview">
         <source>Overview</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen gegevens beschikbaar</translation>
     </message>
     <message id="id-total-games">
         <source>Total games</source>
-        <translation type="unfinished"></translation>
+        <translation>Totaal aantal spellen</translation>
     </message>
 </context>
 </TS>
