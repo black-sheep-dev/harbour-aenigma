@@ -230,67 +230,67 @@
     </message>
     <message id="id-games">
         <source>Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Játékok</translation>
     </message>
     <message id="id-average-time">
         <source>Average time</source>
-        <translation type="unfinished"></translation>
+        <translation>Átlagidő</translation>
     </message>
     <message id="id-minimum-time">
         <source>Minimum time</source>
-        <translation type="unfinished"></translation>
+        <translation>Legrövidebb idő</translation>
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Átlagos lépésszám</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Legkevesebb lépés</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Átlagos tippszám</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Legkevesebb tipp</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statisztikák</translation>
     </message>
     <message id="id-reset-statistics">
         <source>Reset statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statisztikák visszaállítása</translation>
     </message>
     <message id="id-refresh">
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Frissítés</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes játékidő</translation>
     </message>
     <message id="id-no-stat-data">
         <source>No statistic data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs elérhető statisztikai adat</translation>
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
-        <translation type="unfinished"></translation>
+        <translation>Játssz néhány játékot, majd gyere vissza</translation>
     </message>
     <message id="id-no-data-available">
         <source>No data available</source>
-        <translation type="unfinished"></translation>
+        <translation>Áttekintés</translation>
     </message>
     <message id="id-overview">
         <source>Overview</source>
-        <translation type="unfinished"></translation>
+        <translation>Áttekintés</translation>
     </message>
     <message id="id-total-games">
         <source>Total games</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes játék</translation>
     </message>
 </context>
 </TS>

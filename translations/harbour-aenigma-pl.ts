@@ -284,7 +284,7 @@
     </message>
     <message id="id-no-stat-data-hint">
         <source>Play some games and come back</source>
-        <translation>Zagraj w kilka gier i wróć </translation>
+        <translation>Zagraj w kilka gier i wróć</translation>
     </message>
     <message id="id-no-data-available">
         <source>No data available</source>
