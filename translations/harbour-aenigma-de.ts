@@ -303,7 +303,7 @@
     </message>
     <message id="id-style-dark-shadow">
         <source>Dark Shadow</source>
-        <translation type="unfinished">Dunkler Schatten</translation>
+        <translation>Dunkler Schatten</translation>
     </message>
 </context>
 </TS>
