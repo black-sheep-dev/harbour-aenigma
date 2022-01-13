@@ -294,7 +294,7 @@
     </message>
     <message id="id-style-dark-shadow">
         <source>Dark Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Sötét Árnyék</translation>
     </message>
 </context>
 </TS>
