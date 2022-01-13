@@ -72,6 +72,10 @@ Page {
                         //% "Paper"
                         text: qsTrId("id-style-paper")
                     }
+                    MenuItem {
+                        //% "Dark Shadow"
+                        text: qsTrId("id-style-dark-shadow")
+                    }
                 }
 
                 onCurrentIndexChanged: settings.style = currentIndex

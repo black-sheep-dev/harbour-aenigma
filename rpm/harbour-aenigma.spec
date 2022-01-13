@@ -9,7 +9,7 @@ Name:       harbour-aenigma
 # << macros
 
 Summary:    Sudoku game for Sailfish OS
-Version:    0.1.10
+Version:    0.2.0
 Release:    1
 Group:      Amusements/Games
 License:    GPLv2
@@ -35,13 +35,12 @@ PackageName: Aenigma
 Type: desktop-application
 Categories:
     - Games
-Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/main/icons/harbour-aenigma.svg
+Custom:
+    Repo: https://github.com/black-sheep-dev/harbour-aenigma/
+Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/harbour-aenigma.svg
 Screenshots:
     - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/metadata/screenshot1.png
 Url:
-    Homepage: https://github.com/black-sheep-dev/harbour-aenigma
-    Help: https://github.com/black-sheep-dev/harbour-aenigma/discussions
-    Bugtracker: https://github.com/black-sheep-dev/harbour-aenigma/issues
     Donation: https://www.paypal.com/paypalme/nubecula/1
 %endif
 

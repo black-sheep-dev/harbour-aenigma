@@ -141,7 +141,7 @@ Page {
                     opacity: Sudoku.gameState === GameState.Solved ? 0.1 : 1.0
                     Behavior on opacity { FadeAnimator {} }
 
-                    cellSize: (width - 2*spacing) / 9
+                    cellSize: Math.floor((width - 2*spacing) / 9)
 
                     layer.enabled: true
                 }

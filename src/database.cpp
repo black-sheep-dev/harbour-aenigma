@@ -22,6 +22,7 @@ Database::Database(QObject *parent) : QObject(parent)
 
 QJsonObject Database::getStatisticOverview() const
 {
+    // initalize empty object
     QJsonObject obj;
 
     QSqlQuery query(m_db);
@@ -72,11 +73,11 @@ QJsonObject Database::getStatisticOverview() const
     for (int i = 0; i < 4; ++i) {
         QJsonObject lvl;
         lvl.insert("games", int(levels[i]));
-        lvl.insert("avg_steps", int(steps[i] / count));
+        lvl.insert("avg_steps", levels[i] ? int(steps[i] / levels[i]) : 0);
         lvl.insert("min_steps", int(stepsMin[i]));
-        lvl.insert("avg_hints", int(hints[i] / count));
+        lvl.insert("avg_hints", levels[i] ? int(hints[i] / levels[i]) : 0);
         lvl.insert("min_hints", int(hintsMin[i]));
-        lvl.insert("avg_time", int(times[i] / count));
+        lvl.insert("avg_time", levels[i] ? int(times[i] / levels[i]) : 0);
         lvl.insert("min_time", int(timesMin[i]));
 
         obj.insert(diffLvl[i], lvl);

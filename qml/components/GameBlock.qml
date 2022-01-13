@@ -12,10 +12,17 @@ Rectangle {
 
     width: cellSize * 3
     height: cellSize * 3
-    color: BoardStyles.backgroundColor
+
+    color: "transparent"
 
     border.color: BoardStyles.secondaryGridColor
     border.width: 2
+
+    Rectangle {
+        anchors.fill: parent
+        color: BoardStyles.backgroundColor
+        opacity: BoardStyles.backgroundOpacity
+    }
 
     Grid {
         rows: 3
@@ -88,7 +95,7 @@ Rectangle {
                     visible: highlighted || hasError
                     anchors.fill: parent
                     color: hasError ? BoardStyles.errorColor : BoardStyles.cellHighlightColor
-                    opacity: 0.1
+                    opacity: BoardStyles.highlightOpacity
                 }
 
                 Text {

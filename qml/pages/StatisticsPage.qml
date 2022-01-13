@@ -135,15 +135,15 @@ Page {
                 width: 1
                 height: Theme.paddingSmall
             }
-        } 
-    }
+        }
 
-    ViewPlaceholder {
-        enabled: stats === undefined
-        //% "No statistic data available"
-        text: qsTrId("id-no-stat-data")
-        //% "Play some games and come back"
-        hintText: qsTrId("id-no-stat-data-hint")
+        ViewPlaceholder {
+            enabled: stats === undefined
+            //% "No statistic data available"
+            text: qsTrId("id-no-stat-data")
+            //% "Play some games and come back"
+            hintText: qsTrId("id-no-stat-data-hint")
+        }
     }
 
     onStatusChanged: if (status === PageStatus.Active) refreshStats()

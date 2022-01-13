@@ -301,5 +301,9 @@
         <source>Total games</source>
         <translation>Spiele gesamt</translation>
     </message>
+    <message id="id-style-dark-shadow">
+        <source>Dark Shadow</source>
+        <translation type="unfinished">Dunkler Schatten</translation>
+    </message>
 </context>
 </TS>

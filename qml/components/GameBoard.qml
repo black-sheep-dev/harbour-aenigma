@@ -28,33 +28,33 @@ Item {
 
     Rectangle {
         anchors.top: parent.top
-        anchors.bottom: parent.bottom
         x: 3*cellSize
         width: spacing
+        height: 9*cellSize + 2*spacing
         color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
         anchors.top: parent.top
-        anchors.bottom: parent.bottom
         x: 6*cellSize + spacing
         width: spacing
+        height: 9*cellSize + 2*spacing
         color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
         anchors.left: parent.left
-        anchors.right: parent.right
         y: 3*cellSize
         height: spacing
+        width: 9*cellSize + 2*spacing
         color: BoardStyles.secondaryGridColor
     }
 
     Rectangle {
         anchors.left: parent.left
-        anchors.right: parent.right
         y: 6*cellSize + spacing
         height: spacing
+        width: 9*cellSize + 2*spacing
         color: BoardStyles.secondaryGridColor
     }
 }

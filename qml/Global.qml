@@ -14,7 +14,7 @@ QtObject {
     function getTimeString(value) {
         const secs = Number(value);
 
-        if (secs === 0) return 0
+        if (secs <= 0) return 0
 
         var d = Math.floor(secs / (3600*24));
         var h = Math.floor(secs % (3600*24) / 3600);

@@ -21,7 +21,7 @@
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Votre langue n&apos;est pas disponible&#xa0;? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
+        <translation>Votre langue n&apos;est pas disponible ? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
@@ -33,7 +33,7 @@
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière&#xa0;?</translation>
+        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière ?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
@@ -271,11 +271,11 @@
     </message>
     <message id="id-games-played">
         <source>Games played</source>
-        <translation>Parties jouées</translation>
+        <translation type="vanished">Parties jouées</translation>
     </message>
     <message id="id-total">
         <source>Total</source>
-        <translation>Parties jouées</translation>
+        <translation type="vanished">Parties jouées</translation>
     </message>
     <message id="id-total-time">
         <source>Total time</source>
@@ -289,17 +289,21 @@
         <source>Play some games and come back</source>
         <translation>Jouez à des jeux et revenez ici</translation>
     </message>
+    <message id="id-no-data-available">
+        <source>No data available</source>
+        <translation>Aucune donnée disponible</translation>
+    </message>
+    <message id="id-overview">
+        <source>Overview</source>
+        <translation>Aucune donnée disponible</translation>
+    </message>
+    <message id="id-total-games">
+        <source>Total games</source>
+        <translation>Total parties</translation>
+    </message>
+    <message id="id-style-dark-shadow">
+        <source>Dark Shadow</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
-<message id="id-no-data-available">
-    <source>No data available</source>
-    <translation>Aucune donnée disponible</translation>
-</message>
-<message id="id-overview">
-    <source>Overview</source>
-    <translation>Aucune donnée disponible</translation>
-</message>
-<message id="id-total-games">
-    <source>Total games</source>
-    <translation>Total parties</translation>
-</message>
 </TS>

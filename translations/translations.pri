@@ -3,6 +3,7 @@ TRANSLATIONS += \
     translations/harbour-aenigma-de.ts \
     translations/harbour-aenigma-hu.ts \
     translations/harbour-aenigma-es.ts \
+    translations/harbour-aenigma-fr.ts \
     translations/harbour-aenigma-pl.ts \
     translations/harbour-aenigma-nl.ts \
     translations/harbour-aenigma-ru.ts

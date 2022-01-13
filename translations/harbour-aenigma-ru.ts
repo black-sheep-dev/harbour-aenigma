@@ -298,5 +298,9 @@
         <source>Total games</source>
         <translation>Всего игр</translation>
     </message>
+    <message id="id-style-dark-shadow">
+        <source>Dark Shadow</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

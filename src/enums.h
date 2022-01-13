@@ -100,7 +100,8 @@ public:
     enum Style {
         Default,
         BlackAndWhite,
-        Paper
+        Paper,
+        DarkShadow
     };
     Q_ENUM(Style)
 };

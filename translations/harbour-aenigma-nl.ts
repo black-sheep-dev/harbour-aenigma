@@ -293,5 +293,9 @@
         <source>Total games</source>
         <translation>Totaal aantal spellen</translation>
     </message>
+    <message id="id-style-dark-shadow">
+        <source>Dark Shadow</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
