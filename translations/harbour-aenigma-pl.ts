@@ -248,7 +248,7 @@
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation>Min. ilość krokó</translation>
+        <translation>Min. ilość kroków</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
@@ -300,7 +300,7 @@
     </message>
     <message id="id-style-dark-shadow">
         <source>Dark Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciemny cień</translation>
     </message>
 </context>
 </TS>
