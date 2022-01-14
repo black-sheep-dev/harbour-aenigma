@@ -4,6 +4,8 @@
 
 #include "database.h"
 #include "enums.h"
+
+#include "aenigma.h"
 #include "sudoku.h"
 
 Q_DECLARE_METATYPE(QVector<quint8>)
@@ -28,18 +30,32 @@ int main(int argc, char *argv[])
     const auto uri = "org.nubecula.aenigma";
 #endif
 
-    qmlRegisterUncreatableType<CellData>(uri, 1, 0, "CellData", "ENUM");
-    qmlRegisterUncreatableType<Difficulty>(uri, 1, 0, "Difficulty", "ENUM");
+    qmlRegisterUncreatableType<Aenigma::CellData>(uri, 1, 0, "CellData", "ENUM");
+    qmlRegisterUncreatableType<Aenigma::Difficulty>(uri, 1, 0, "Difficulty", "ENUM");
     qmlRegisterUncreatableType<EditMode>(uri, 1, 0, "EditMode", "ENUM");
-    qmlRegisterUncreatableType<GameState>(uri, 1, 0, "GameState", "ENUM");
+    qmlRegisterUncreatableType<Aenigma::GameState>(uri, 1, 0, "GameState", "ENUM");
     qmlRegisterUncreatableType<HighlightMode>(uri, 1, 0, "HighlightMode", "ENUM");
-    qmlRegisterUncreatableType<Note>(uri, 1, 0, "Note", "ENUM");
+    qmlRegisterUncreatableType<Aenigma::Note>(uri, 1, 0, "Note", "ENUM");
     qmlRegisterUncreatableType<Styles>(uri, 1, 0, "Styles", "ENUM");
+
+    qmlRegisterSingletonType<Aenigma::Sudoku>(uri,
+                                              1,
+                                              0,
+                                              "Sudoku",
+                                              [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+
+        auto provider = new Aenigma::Sudoku(qApp);
+
+        return provider;
+    });
 
     auto context = v.data()->rootContext();
 
-    auto sudoku = new Sudoku;
-    context->setContextProperty("Sudoku", sudoku);
+    //auto sudoku = new Sudoku(qApp);
+    //context->setContextProperty("Sudoku", sudoku);
 
     auto db = new Database;
     context->setContextProperty("DB", db);

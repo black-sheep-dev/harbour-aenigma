@@ -188,7 +188,7 @@ Page {
         }
     }
 
-    Component.onCompleted: if (settings.gameStateData.length > 0) Sudoku.setGameStateData(settings.gameStateData)
+    Component.onCompleted: if (settings.gameStateData.length > 0) Sudoku.fromBase64(settings.gameStateData)
 
     Component.onDestruction: {
         if ( Sudoku.gameState === GameState.Ready
@@ -196,7 +196,7 @@ Page {
                 || Sudoku.gameState === GameState.Pause
                 || Sudoku.gameState === GameState.NotCorrect ) {
 
-            settings.gameStateData = Sudoku.gameStateData()
+            settings.gameStateData = Sudoku.toBase64()
         } else {
             settings.gameStateData = ""
         }

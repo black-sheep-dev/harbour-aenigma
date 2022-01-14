@@ -7,14 +7,13 @@ DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
 QT += sql
 
+include(extern/libaenigma/libaenigma.pri)
+
 CONFIG += link_pkgconfig sailfishapp
 PKGCONFIG += nemonotifications-qt5 keepalive
 
 SOURCES += src/harbour-aenigma.cpp \
-    src/database.cpp \
-    src/generator.cpp \
-    src/helper.cpp \
-    src/sudoku.cpp
+    src/database.cpp
 
 DISTFILES += qml/harbour-aenigma.qml \
     qml/BoardStyles.qml \
@@ -44,12 +43,7 @@ include(translations/translations.pri)
 
 HEADERS += \
     src/database.h \
-    src/enums.h \
-    src/generator.h \
-    src/global.h \
-    src/helper.h \
-    src/sudoku.h \
-    src/undostep.h
+    src/enums.h
 
 RESOURCES += \
     ressources.qrc

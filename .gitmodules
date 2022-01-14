@@ -1,0 +1,3 @@
+[submodule "extern/libaenigma"]
+	path = extern/libaenigma
+	url = https://github.com/black-sheep-dev/libaenigma.git
