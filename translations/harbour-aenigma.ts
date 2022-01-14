@@ -301,5 +301,9 @@
         <source>Dark Shadow</source>
         <translation>Dark Shadow</translation>
     </message>
+    <message id="id-difficulty-level">
+        <source>Difficulty level</source>
+        <translation>Difficulty level</translation>
+    </message>
 </context>
 </TS>

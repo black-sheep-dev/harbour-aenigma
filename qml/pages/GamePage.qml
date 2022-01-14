@@ -153,6 +153,7 @@ Page {
                     elapsedTime: Sudoku.elapsedTime
                     hints: Sudoku.hintsCount
                     steps: Sudoku.stepsCount
+                    difficulty: Sudoku.difficulty
                 }
             }
 

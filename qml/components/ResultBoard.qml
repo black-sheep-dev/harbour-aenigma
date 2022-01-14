@@ -1,10 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import org.nubecula.aenigma 1.0
+
 Item {
     property int elapsedTime
     property int hints
     property int steps
+    property int difficulty
 
     width: parent.width
     height: width
@@ -21,6 +24,33 @@ Item {
 
             //% "Puzzle solved!"
             text: qsTrId("id-puzzle-solved")
+        }
+
+        DetailItem {
+            //% "Difficulty level"
+            label: qsTrId("id-difficulty-level")
+            value: {
+                switch (difficulty) {
+                case Difficulty.Easy:
+                    //% "Easy"
+                    return qsTrId("id-easy")
+
+                case Difficulty.Medium:
+                    //% "Medium"
+                    return qsTrId("id-medium")
+
+                case Difficulty.Hard:
+                    //% "Hard"
+                    return qsTrId("id-hard")
+
+                case Difficulty.Insane:
+                    //% "Insane"
+                    return qsTrId("id-insane")
+
+                default:
+                    return ""
+                }
+            }
         }
 
         DetailItem {
