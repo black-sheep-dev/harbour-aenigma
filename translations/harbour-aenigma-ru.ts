@@ -300,7 +300,7 @@
     </message>
     <message id="id-style-dark-shadow">
         <source>Dark Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Тёмная Тень</translation>
     </message>
     <message id="id-difficulty-level">
         <source>Difficulty level</source>
