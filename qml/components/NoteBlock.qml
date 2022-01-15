@@ -33,15 +33,15 @@ Grid {
                 font.pointSize: Math.max(parent.width * 0.8, 1)
 
                 text: {
-                    if (index === 0 && (notes & Note.One)) return 1;
-                    if (index === 1 && (notes & Note.Two)) return 2;
-                    if (index === 2 && (notes & Note.Three)) return 3;
-                    if (index === 3 && (notes & Note.Four)) return 4;
-                    if (index === 4 && (notes & Note.Five)) return 5;
-                    if (index === 5 && (notes & Note.Six)) return 6;
-                    if (index === 6 && (notes & Note.Seven)) return 7;
-                    if (index === 7 && (notes & Note.Eight)) return 8;
-                    if (index === 8 && (notes & Note.Nine)) return 9;
+                    if (index === 0 && (notes & Note.One)) return 1
+                    if (index === 1 && (notes & Note.Two)) return 2
+                    if (index === 2 && (notes & Note.Three)) return 3
+                    if (index === 3 && (notes & Note.Four)) return 4
+                    if (index === 4 && (notes & Note.Five)) return 5
+                    if (index === 5 && (notes & Note.Six)) return 6
+                    if (index === 6 && (notes & Note.Seven)) return 7
+                    if (index === 7 && (notes & Note.Eight)) return 8
+                    if (index === 8 && (notes & Note.Nine)) return 9
 
                     return ''
                 }
