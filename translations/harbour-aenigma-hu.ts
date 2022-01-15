@@ -302,76 +302,76 @@
     </message>
     <message id="id-choose-color">
         <source>Choose color</source>
-        <translation type="unfinished"></translation>
+        <translation>Színválasztás</translation>
     </message>
     <message id="id-color">
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Szín</translation>
     </message>
     <message id="id-preview">
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Előnézet</translation>
     </message>
     <message id="id-background-color">
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Háttérszín</translation>
     </message>
     <message id="id-opacity">
         <source>opacity</source>
         <oldsource>%1% opacity</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Átlátszóság</translation>
     </message>
     <message id="id-grid-color">
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rács színe</translation>
     </message>
     <message id="id-background">
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Háttér</translation>
     </message>
     <message id="id-grid">
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rács</translation>
     </message>
     <message id="id-customize-style">
         <source>Customize style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stílus testreszabása</translation>
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Cella előnézet</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibakiemelés</translation>
     </message>
     <message id="id-number-color">
         <source>Number color</source>
-        <translation type="unfinished"></translation>
+        <translation>Szám színe</translation>
     </message>
     <message id="id-fixed-number">
         <source>Fixed number</source>
-        <translation type="unfinished"></translation>
+        <translation>Rögzített szám</translation>
     </message>
     <message id="id-notes">
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Jegyzetek</translation>
     </message>
     <message id="id-custom">
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni</translation>
     </message>
     <message id="id-customize">
         <source>Customize</source>
-        <translation type="unfinished"></translation>
+        <translation>Testreszabás</translation>
     </message>
     <message id="id-inserted-number">
         <source>Inserted number</source>
-        <translation type="unfinished"></translation>
+        <translation>Beillesztett szám</translation>
     </message>
     <message id="id-board-style">
         <source>Board style</source>
-        <translation type="unfinished"></translation>
+        <translation>Tábla stílusa</translation>
     </message>
 </context>
 </TS>
