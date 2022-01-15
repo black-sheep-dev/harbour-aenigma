@@ -303,76 +303,76 @@
     </message>
     <message id="id-choose-color">
         <source>Choose color</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige color</translation>
     </message>
     <message id="id-color">
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message id="id-preview">
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista previa</translation>
     </message>
     <message id="id-background-color">
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color del fondo</translation>
     </message>
     <message id="id-opacity">
         <source>opacity</source>
         <oldsource>%1% opacity</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>opacidad</translation>
     </message>
     <message id="id-grid-color">
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de cuadrícula</translation>
     </message>
     <message id="id-background">
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message id="id-grid">
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula</translation>
     </message>
     <message id="id-customize-style">
         <source>Customize style</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizar estilo</translation>
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista previa de casilla</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en resaltado</translation>
     </message>
     <message id="id-number-color">
         <source>Number color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color del número</translation>
     </message>
     <message id="id-fixed-number">
         <source>Fixed number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número corregido</translation>
     </message>
     <message id="id-notes">
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notas</translation>
     </message>
     <message id="id-custom">
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message id="id-customize">
         <source>Customize</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizar</translation>
     </message>
     <message id="id-inserted-number">
         <source>Inserted number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número insertado</translation>
     </message>
     <message id="id-board-style">
         <source>Board style</source>
-        <translation type="unfinished"></translation>
+        <translation>Número insertado</translation>
     </message>
 </context>
 </TS>
