@@ -51,6 +51,7 @@ ApplicationWindow {
             lastDifficulty = Difficulty.Medium
             preventDisplayBlanking = true
             style = Styles.Default
+            customStyle = ""
         }
 
         function loadCustomStyle() {
