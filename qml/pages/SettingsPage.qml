@@ -1,4 +1,4 @@
-import QtQuick 2.0
+ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 import org.nubecula.aenigma 1.0
@@ -45,6 +45,23 @@ Page {
                 text: qsTrId("id-general")
             }
 
+            TextSwitch {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                //% "Prevent display blanking"
+                text: qsTrId("id-display-blanking")
+                //% "This option prevents display blanking during playing."
+                description: qsTrId("id-display-blanking-desc")
+
+                onCheckedChanged: settings.preventDisplayBlanking = checked
+                Component.onCompleted: checked = settings.preventDisplayBlanking
+            }
+
+            SectionHeader {
+                //% "Board style"
+                text: qsTrId("id-board-style")
+            }
+
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
@@ -56,6 +73,7 @@ Page {
             }
 
             ComboBox {
+                id: styleSelection
                 //% "Style"
                 label: qsTrId("id-style")
 
@@ -76,25 +94,24 @@ Page {
                         //% "Dark Shadow"
                         text: qsTrId("id-style-dark-shadow")
                     }
+                    MenuItem {
+                        //% "Custom"
+                        text: qsTrId("id-custom")
+                    }
                 }
 
                 onCurrentIndexChanged: settings.style = currentIndex
                 Component.onCompleted: currentIndex = settings.style
             }
 
-            TextSwitch {
-                x: Theme.horizontalPageMargin
-                width: parent.width - 2*x
-                //% "Prevent display blanking"
-                text: qsTrId("id-display-blanking")
-                //% "This option prevents display blanking during playing."
-                description: qsTrId("id-display-blanking-desc")
+            Button {
+                visible: styleSelection.currentIndex === Styles.Custom
+                anchors.horizontalCenter: parent.horizontalCenter
+                //% "Customize"
+                text: qsTrId("id-customize")
 
-                onCheckedChanged: settings.preventDisplayBlanking = checked
-                Component.onCompleted: checked = settings.preventDisplayBlanking
+                onClicked: pageStack.push(Qt.resolvedUrl("CustomizeStylePage.qml"))
             }
-
-
 
             SectionHeader {
                 //% "Support tools"

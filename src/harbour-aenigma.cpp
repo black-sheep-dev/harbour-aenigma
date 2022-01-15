@@ -38,19 +38,21 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<Aenigma::Note>(uri, 1, 0, "Note", "ENUM");
     qmlRegisterUncreatableType<Styles>(uri, 1, 0, "Styles", "ENUM");
 
-    qmlRegisterSingletonType<Aenigma::Sudoku>(uri,
-                                              1,
-                                              0,
-                                              "Sudoku",
-                                              [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+    qmlRegisterType<Aenigma::Sudoku>(uri, 1, 0, "Sudoku");
 
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
+//    qmlRegisterSingletonType<Aenigma::Sudoku>(uri,
+//                                              1,
+//                                              0,
+//                                              "Sudoku",
+//                                              [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
 
-        auto provider = new Aenigma::Sudoku(qApp);
+//        Q_UNUSED(engine)
+//        Q_UNUSED(scriptEngine)
 
-        return provider;
-    });
+//        auto provider = new Aenigma::Sudoku(qApp);
+
+//        return provider;
+//    });
 
     auto context = v.data()->rootContext();
 

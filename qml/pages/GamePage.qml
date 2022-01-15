@@ -13,19 +13,19 @@ Page {
     allowedOrientations: Orientation.Portrait
 
     function reset() {
-        Sudoku.reset()
+        sudokuGame.reset()
         Global.selectedNumber = -1
         Global.resetCells()
         Global.refrechCells()
     }
 
     DisplayBlanking {
-        preventBlanking: Sudoku.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
+        preventBlanking: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
     }
 
     PageBusyIndicator {
         anchors.centerIn: parent
-        running: Sudoku.gameState === GameState.Generating
+        running: sudokuGame.gameState === GameState.Generating
     }
 
     SilicaFlickable {
@@ -55,16 +55,16 @@ Page {
 
                     dialog.accepted.connect(function() {
                         reset()
-                        Sudoku.difficulty = dialog.difficulty
+                        sudokuGame.difficulty = dialog.difficulty
                         settings.lastDifficulty = dialog.difficulty
-                        Sudoku.generate()
+                        sudokuGame.generate()
                     })
                 }
             }
         }
 
         PushUpMenu {
-            visible: Sudoku.gameState >= GameState.Playing
+            visible: sudokuGame.gameState >= GameState.Playing
             MenuItem {
                 //% "Reset"
                 text: qsTrId("id-reset")
@@ -87,7 +87,7 @@ Page {
                 //% "Sudoku board"
                 title: qsTrId("id-sudoku-board")
                 description: {
-                    switch (Sudoku.gameState) {
+                    switch (sudokuGame.gameState) {
                     case GameState.Empty:
                         return ''
 
@@ -99,7 +99,7 @@ Page {
                     case GameState.Pause:
                     case GameState.Playing:
                         //% "%n cell(s) unsolved"
-                        return qsTrId("id-cells-unsolved", Sudoku.unsolvedCellCount)
+                        return qsTrId("id-cells-unsolved", sudokuGame.unsolvedCellCount)
 
                     case GameState.NotCorrect:
                         //% "There are errors"
@@ -115,7 +115,7 @@ Page {
                 }
 
                 Label {
-                    visible: Sudoku.gameState >= GameState.Playing
+                    visible: sudokuGame.gameState >= GameState.Playing
                     anchors{
                         left: parent.left
                         leftMargin: Theme.horizontalPageMargin
@@ -123,7 +123,7 @@ Page {
                         bottomMargin: Theme.paddingMedium
                     }
                     color: Theme.highlightColor
-                    text: new Date(Sudoku.elapsedTime * 1000).toISOString().substr(11, 8);
+                    text: new Date(sudokuGame.elapsedTime * 1000).toISOString().substr(11, 8);
                 }
             }
 
@@ -133,41 +133,45 @@ Page {
                 height: width
 
                 GameBoard {
-                    visible: Sudoku.gameState >= GameState.Ready
+                    visible: sudokuGame.gameState >= GameState.Ready
                     id: gameBoard
                     anchors.fill: parent
 
 
-                    opacity: Sudoku.gameState === GameState.Solved ? 0.1 : 1.0
+                    opacity: sudokuGame.gameState === GameState.Solved ? 0.1 : 1.0
                     Behavior on opacity { FadeAnimator {} }
 
                     cellSize: Math.floor((width - 2*spacing) / 9)
 
                     layer.enabled: true
+
+                    sudoku: sudokuGame
                 }
 
                 ResultBoard {
-                    visible: Sudoku.gameState === GameState.Solved
+                    visible: sudokuGame.gameState === GameState.Solved
                     anchors.fill: parent
 
-                    elapsedTime: Sudoku.elapsedTime
-                    hints: Sudoku.hintsCount
-                    steps: Sudoku.stepsCount
-                    difficulty: Sudoku.difficulty
+                    elapsedTime: sudokuGame.elapsedTime
+                    hints: sudokuGame.hintsCount
+                    steps: sudokuGame.stepsCount
+                    difficulty: sudokuGame.difficulty
                 }
             }
 
             Controls {
-                visible: Sudoku.gameState >= GameState.Ready
+                visible: sudokuGame.gameState >= GameState.Ready
                 id: controlsPanel
 
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
+
+                sudoku: sudokuGame
             }
         }
 
         ViewPlaceholder {
-            enabled: Sudoku.gameState === GameState.Empty
+            enabled: sudokuGame.gameState === GameState.Empty
             //% "Want to play?"
             text: qsTrId("id-placeholder-text")
             //% "Pull down to start a new game"
@@ -176,27 +180,27 @@ Page {
     }
 
     Connections {
-        target: Sudoku
-        onGameStateChanged: if (Sudoku.gameState === GameState.Solved) DB.addGame(Sudoku.difficulty, Sudoku.stepsCount, Sudoku.hintsCount, Sudoku.elapsedTime)
+        target: sudokuGame
+        onGameStateChanged: if (sudokuGame.gameState === GameState.Solved) DB.addGame(sudokuGame.difficulty, sudokuGame.stepsCount, sudokuGame.hintsCount, sudokuGame.elapsedTime)
     }
 
     onVisibleChanged: {
-        if (visible && Sudoku.gameState === GameState.Pause) {
-            Sudoku.start()
-        } else if (!visible && Sudoku.gameState === GameState.Playing){
-            Sudoku.stop()
+        if (visible && sudokuGame.gameState === GameState.Pause) {
+            sudokuGame.start()
+        } else if (!visible && sudokuGame.gameState === GameState.Playing){
+            sudokuGame.stop()
         }
     }
 
-    Component.onCompleted: if (settings.gameStateData.length > 0) Sudoku.fromBase64(settings.gameStateData)
+    Component.onCompleted: if (settings.gameStateData.length > 0) sudokuGame.fromBase64(settings.gameStateData)
 
     Component.onDestruction: {
-        if ( Sudoku.gameState === GameState.Ready
-                || Sudoku.gameState === GameState.Playing
-                || Sudoku.gameState === GameState.Pause
-                || Sudoku.gameState === GameState.NotCorrect ) {
+        if ( sudokuGame.gameState === GameState.Ready
+                || sudokuGame.gameState === GameState.Playing
+                || sudokuGame.gameState === GameState.Pause
+                || sudokuGame.gameState === GameState.NotCorrect ) {
 
-            settings.gameStateData = Sudoku.toBase64()
+            settings.gameStateData = sudokuGame.toBase64()
         } else {
             settings.gameStateData = ""
         }

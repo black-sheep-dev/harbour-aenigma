@@ -37,7 +37,8 @@ public:
         Default,
         BlackAndWhite,
         Paper,
-        DarkShadow
+        DarkShadow,
+        Custom
     };
     Q_ENUM(Style)
 };

@@ -15,7 +15,7 @@ Rectangle {
 
     color: "transparent"
 
-    border.color: BoardStyles.secondaryGridColor
+    border.color: BoardStyles.gridColor
     border.width: 2
 
     Rectangle {
@@ -41,8 +41,8 @@ Rectangle {
                 property bool hasError: false
 
                 function getUndoId() {
-                    var undoId = Sudoku.currentUndoId + 1
-                    Sudoku.currentUndoId = undoId
+                    var undoId = sudoku.currentUndoId + 1
+                    sudoku.currentUndoId = undoId
                     return undoId
                 }
 
@@ -52,8 +52,8 @@ Rectangle {
 
                 function refreshCell() {
                     // highlight error cells
-                    if (Global.showErrors || Sudoku.gameState === GameState.NotCorrect) {
-                        hasError = Sudoku.data(row, column, CellData.HasError)
+                    if (Global.showErrors || sudoku.gameState === GameState.NotCorrect) {
+                        hasError = sudoku.data(row, column, CellData.HasError)
                     } else {
                         hasError = false
                     }
@@ -71,7 +71,7 @@ Rectangle {
                         return;
                     }
 
-                    if (Sudoku.isInArea(row, column, Global.selectedNumber)) {
+                    if (sudoku.isInArea(row, column, Global.selectedNumber)) {
                         highlighted = true
                         return
                     }
@@ -80,12 +80,12 @@ Rectangle {
                 }
 
                 function resetCell() {
-                    noteBlock.notes = Sudoku.data(row, column, CellData.Notes)
+                    noteBlock.notes = sudoku.data(row, column, CellData.Notes)
                 }
 
                 width: cellSize
                 height: cellSize
-                border.color: BoardStyles.primaryGridColor
+                border.color: BoardStyles.gridColor
                 border.width: 1
                 color: "transparent"
 
@@ -94,8 +94,8 @@ Rectangle {
                 Rectangle {
                     visible: highlighted || hasError
                     anchors.fill: parent
-                    color: hasError ? BoardStyles.errorColor : BoardStyles.cellHighlightColor
-                    opacity: BoardStyles.highlightOpacity
+                    color: hasError ? BoardStyles.errorColor : BoardStyles.backgroundHighlightColor
+                    opacity: hasError ? BoardStyles.errorHighlightColor : BoardStyles.highlightOpacity
                 }
 
                 Text {
@@ -130,7 +130,7 @@ Rectangle {
                 }
 
                 Connections {
-                    target: Sudoku
+                    target: sudoku
                     onDataChanged: {
                         if (row !== cell.row || column !== cell.column) return;
 
@@ -151,11 +151,11 @@ Rectangle {
                         Global.refrechCells()
                     }
                     onGameStateChanged: {
-                        if (Sudoku.gameState === GameState.Ready || Sudoku.gameState === GameState.Playing) {
-                            const value = Sudoku.data(row, column, CellData.Value)
+                        if (sudoku.gameState === GameState.Ready || sudoku.gameState === GameState.Playing) {
+                            const value = sudoku.data(row, column, CellData.Value)
                             valueLabel.setValue(value)
-                            noteBlock.notes = Sudoku.data(row, column, CellData.Notes)
-                            isEditable = Sudoku.data(row, column, CellData.IsEditable)
+                            noteBlock.notes = sudoku.data(row, column, CellData.Notes)
+                            isEditable = sudoku.data(row, column, CellData.IsEditable)
                         }
 
                         refreshCell()
@@ -168,7 +168,7 @@ Rectangle {
                     onClicked: {
                         if (!isEditable && Global.mode !== EditMode.Hint) return;
 
-                        Sudoku.incrementStepsCount()
+                        sudoku.incrementStepsCount()
 
                         if (Global.mode === EditMode.Add) {
                             if (Global.selectedNumber < 0) return
@@ -177,25 +177,25 @@ Rectangle {
 
                             var value = 0
                             if (isCurrentNumber()) {
-                                Sudoku.setData(row, column, CellData.Value, value, false, undoId)
+                                sudoku.setData(row, column, CellData.Value, value, false, undoId)
                             } else {
-                                Sudoku.setData(row, column, CellData.Value, Global.selectedNumber, false, undoId)
+                                sudoku.setData(row, column, CellData.Value, Global.selectedNumber, false, undoId)
                                 value = Global.selectedNumber
                             }    
-                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
+                            sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                         } else if (Global.mode === EditMode.Delete) {
                             const undoId = getUndoId()
-                            Sudoku.setData(row, column, CellData.Value, 0, false, undoId)
-                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
+                            sudoku.setData(row, column, CellData.Value, 0, false, undoId)
+                            sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                         } else if (Global.mode === EditMode.Note) {
-                            if (Sudoku.data(row, column, CellData.Value) !== 0) return
-                            Sudoku.toogleNote(row, column, Sudoku.numberToNote(Global.selectedNumber))
+                            if (sudoku.data(row, column, CellData.Value) !== 0) return
+                            sudoku.toogleNote(row, column, sudoku.numberToNote(Global.selectedNumber))
                         } else if (Global.mode === EditMode.Hint) {
-                            const value = Sudoku.data(row, column, CellData.Solution)
+                            const value = sudoku.data(row, column, CellData.Solution)
                             const undoId = getUndoId()
-                            Sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value, false, undoId)
-                            Sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
-                            Sudoku.incrementHintsCount()
+                            sudoku.setData(row, column, CellData.Value, value == valueLabel.text ? 0 : value, false, undoId)
+                            sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
+                            sudoku.incrementHintsCount()
                         }
                         refreshCell()
                     }

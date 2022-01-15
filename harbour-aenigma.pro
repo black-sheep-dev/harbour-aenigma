@@ -18,6 +18,9 @@ SOURCES += src/harbour-aenigma.cpp \
 DISTFILES += qml/harbour-aenigma.qml \
     qml/BoardStyles.qml \
     qml/Global.qml \
+    qml/components/CellPreviewItem.qml \
+    qml/components/ColorSelectorItem.qml \
+    qml/components/ColorWheel.qml \
     qml/components/Controls.qml \
     qml/components/GameBlock.qml \
     qml/components/GameBoard.qml \
@@ -26,7 +29,9 @@ DISTFILES += qml/harbour-aenigma.qml \
     qml/components/ResultBoard.qml \
     qml/components/StatisticDetails.qml \
     qml/cover/CoverPage.qml \
+    qml/dialogs/ColorSelectionDialog.qml \
     qml/dialogs/NewGameDialog.qml \
+    qml/pages/CustomizeStylePage.qml \
     qml/pages/GamePage.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/StatisticsPage.qml \

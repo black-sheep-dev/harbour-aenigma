@@ -306,5 +306,78 @@
         <source>Difficulty level</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="id-choose-color">
+        <source>Choose color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-color">
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-preview">
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-background-color">
+        <source>Background color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-opacity">
+        <source>opacity</source>
+        <oldsource>%1% opacity</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-grid-color">
+        <source>Grid color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-background">
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-grid">
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-customize-style">
+        <source>Customize style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-cell-preview">
+        <source>Cell preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-error-highlighting">
+        <source>Error highlighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-number-color">
+        <source>Number color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-fixed-number">
+        <source>Fixed number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-notes">
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-custom">
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-customize">
+        <source>Customize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-inserted-number">
+        <source>Inserted number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-board-style">
+        <source>Board style</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

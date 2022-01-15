@@ -11,6 +11,8 @@ import "pages"
 ApplicationWindow {
     id: app
 
+    Sudoku { id: sudokuGame }
+
     ConfigurationGroup {
         id: settings
         path: "/apps/harbour-aenigma"
@@ -24,10 +26,18 @@ ApplicationWindow {
         property int lastDifficulty: Difficulty.Medium
         property bool preventDisplayBlanking: true
         property int style: Styles.Default
+        property string customStyle: ""
 
-        onAutoCleanupNotesChanged: Sudoku.autoCleanupNotes = autoCleanupNotes
-        onAutoNotesChanged: Sudoku.autoNotes = autoNotes
-        onStyleChanged: BoardStyles.setStyle(style)
+        onAutoCleanupNotesChanged: sudokuGame.autoCleanupNotes = autoCleanupNotes
+        onAutoNotesChanged: sudokuGame.autoNotes = autoNotes
+        onStyleChanged: {
+            if (style === Styles.Custom) {
+                loadCustomStyle()
+                return
+            }
+            BoardStyles.setStyle(style)
+
+        }
 
         function reset() {
             clear()
@@ -42,6 +52,26 @@ ApplicationWindow {
             preventDisplayBlanking = true
             style = Styles.Default
         }
+
+        function loadCustomStyle() {
+            if (customStyle.length === 0) return
+            var custom = JSON.parse(customStyle)
+
+            BoardStyles.backgroundColor = custom.backgroundColor
+            BoardStyles.backgroundHighlightColor = custom.backgroundHighlightColor
+            BoardStyles.backgroundOpacity = custom.backgroundOpacity
+            BoardStyles.errorColor = custom.errorColor
+            BoardStyles.errorHighlightColor = custom.errorHighlightColor
+            BoardStyles.errorHighlightOpacity = custom.errorHighlightOpacity
+            BoardStyles.gridColor = custom.gridColor
+            BoardStyles.highlightOpacity = custom.highlightOpacity
+            BoardStyles.notesColor = custom.notesColor
+            BoardStyles.numberColor = custom.numberColor
+            BoardStyles.numberFixedColor = custom.numberFixedColor
+            BoardStyles.numberHighlightColor = custom.numberHighlightColor
+        }
+
+        Component.onCompleted: if (style === Styles.Custom) loadCustomStyle()
     }
 
     Notification {
@@ -59,7 +89,7 @@ ApplicationWindow {
     }
 
     Connections {
-        target: Sudoku
+        target: sudokuGame
         //% "Generation of Sudoku game failed! Please try again!"
         onGeneratorFailed: notification.show(qsTrId("id-generator-failed-msg"))
     }

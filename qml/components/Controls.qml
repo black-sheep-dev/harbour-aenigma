@@ -9,6 +9,7 @@ import "../."
 Item {
     id: controlsPanel
     property int mode: EditMode.Add
+    property var sudoku
 
     height: controlsRow.height + buttonRow.height
 
@@ -82,12 +83,12 @@ Item {
         }
 
         IconSwitch {
-            enabled: Sudoku.gameState !== GameState.Solved && Sudoku.undoStepCount > 0
+            enabled: sudoku.gameState !== GameState.Solved && sudoku.undoStepCount > 0
             checkable: false
             source: "image://theme/icon-m-back"
             onCheckedChanged: {
-                Sudoku.undo()
-                Sudoku.incrementStepsCount()
+                sudoku.undo()
+                sudoku.incrementStepsCount()
             }
         }
     }
@@ -125,7 +126,7 @@ Item {
                 }
 
                 Connections {
-                    target: Sudoku
+                    target: sudoku
                     onNumberFinished: {
                         if (number !== (index + 1)) return
                         overlayRect.visible = finished

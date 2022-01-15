@@ -21,7 +21,7 @@
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Votre langue n&apos;est pas disponible&#xa0;? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
+        <translation>Votre langue n&apos;est pas disponible ? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
@@ -33,7 +33,7 @@
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière&#xa0;?</translation>
+        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière ?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
@@ -308,6 +308,79 @@
     <message id="id-difficulty-level">
         <source>Difficulty level</source>
         <translation>Niveau de difficulté</translation>
+    </message>
+    <message id="id-choose-color">
+        <source>Choose color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-color">
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-preview">
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-background-color">
+        <source>Background color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-opacity">
+        <source>opacity</source>
+        <oldsource>%1% opacity</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-grid-color">
+        <source>Grid color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-background">
+        <source>Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-grid">
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-customize-style">
+        <source>Customize style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-cell-preview">
+        <source>Cell preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-error-highlighting">
+        <source>Error highlighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-number-color">
+        <source>Number color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-fixed-number">
+        <source>Fixed number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-notes">
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-custom">
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-customize">
+        <source>Customize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-inserted-number">
+        <source>Inserted number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-board-style">
+        <source>Board style</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

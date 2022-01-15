@@ -8,6 +8,7 @@ Item {
     id: gameBoard
     property int cellSize
     property int spacing: 5
+    property var sudoku
 
     Grid {
         rows: 3
@@ -31,7 +32,7 @@ Item {
         x: 3*cellSize
         width: spacing
         height: 9*cellSize + 2*spacing
-        color: BoardStyles.secondaryGridColor
+        color: BoardStyles.gridColor
     }
 
     Rectangle {
@@ -39,7 +40,7 @@ Item {
         x: 6*cellSize + spacing
         width: spacing
         height: 9*cellSize + 2*spacing
-        color: BoardStyles.secondaryGridColor
+        color: BoardStyles.gridColor
     }
 
     Rectangle {
@@ -47,7 +48,7 @@ Item {
         y: 3*cellSize
         height: spacing
         width: 9*cellSize + 2*spacing
-        color: BoardStyles.secondaryGridColor
+        color: BoardStyles.gridColor
     }
 
     Rectangle {
@@ -55,7 +56,7 @@ Item {
         y: 6*cellSize + spacing
         height: spacing
         width: 9*cellSize + 2*spacing
-        color: BoardStyles.secondaryGridColor
+        color: BoardStyles.gridColor
     }
 }
 
