@@ -30,7 +30,7 @@ Grid {
                 id: valueLabel
                 anchors.centerIn: parent
                 color: BoardStyles.notesColor
-                font.pointSize: Math.max(Math.round(parent.width * 0.8), 1)
+                font.pointSize: Math.max(parent.width * 0.8, 1)
 
                 text: {
                     if (index === 0 && (notes & Note.One)) return 1;

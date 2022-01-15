@@ -111,7 +111,7 @@ Rectangle {
                         if (highlighted && isCurrentNumber()) return BoardStyles.numberHighlightColor
                         return isEditable ? BoardStyles.numberColor : BoardStyles.numberFixedColor
                     }
-                    font.pointSize: Math.max(Math.round(cellSize * 0.5), 1)
+                    font.pointSize: Math.max(cellSize * 0.5, 1)
                     font.bold: true
                 }
 
