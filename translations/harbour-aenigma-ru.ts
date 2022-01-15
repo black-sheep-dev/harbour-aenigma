@@ -304,7 +304,7 @@
     </message>
     <message id="id-difficulty-level">
         <source>Difficulty level</source>
-        <translation type="unfinished"></translation>
+        <translation>Уровень сложности</translation>
     </message>
     <message id="id-choose-color">
         <source>Choose color</source>
