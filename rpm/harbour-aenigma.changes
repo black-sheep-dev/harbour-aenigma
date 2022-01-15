@@ -1,3 +1,9 @@
+* Sat Jan 15 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.0-1
+- Add custom styling of game board
+- Add difficulty level on result board
+- Moved main functionality to separate library
+- Update translations
+
 * Thu Jan 13 2022 Samuel Kron <blacksheep@nubecula.org> 0.2.0-1
 - Add game statistics
 - New Theme "Dark Shadow" requested by rob_kouw
