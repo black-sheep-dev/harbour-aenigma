@@ -340,7 +340,7 @@
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation>Vista previa de casilla</translation>
+        <translation>Vista previa de la casilla</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
