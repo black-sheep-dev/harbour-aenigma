@@ -1,4 +1,4 @@
-name: Aenigma BUILD (4.3.0.12)
+name: BUILD on Sailfish OS 4.3.0.12
 
 on:
   push:
