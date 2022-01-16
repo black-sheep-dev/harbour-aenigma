@@ -53,7 +53,7 @@
     </message>
     <message id="id-placeholder-text">
         <source>Want to play?</source>
-        <translation>Envi de jouer ?</translation>
+        <translation>Envie de jouer ?</translation>
     </message>
     <message id="id-placeholder-hint">
         <source>Pull down to start a new game</source>
@@ -162,11 +162,11 @@
     </message>
     <message id="id-auto-clean-desc">
         <source>This option enables auto cleaning of notes when a number is added to a cell.</source>
-        <translation>Cette option permet le nettoyage automatique des notes lorsqu&apos;un numéro est ajouté à une case.</translation>
+        <translation>Cette option permet le nettoyage automatique des notes lorsqu&apos;un chiffre est ajouté à une case.</translation>
     </message>
     <message id="id-highlight-combo-desc">
         <source>Choose a highlighting mode to highlight a single cell with the selected number or the row, column and block the selected number affects.</source>
-        <translation>Choisissez un mode de surbrillance pour mettre en évidence d&apos;un numéro sélectionné sa case seulle ou sa ligne, sa colonne et son bloc.</translation>
+        <translation>Choisissez un mode de surbrillance pour mettre en évidence un chiffre sélectionné sur sa case seulle ou sur ses ligne, colonne et bloc.</translation>
     </message>
     <message id="id-none">
         <source>None</source>
@@ -315,72 +315,72 @@
     </message>
     <message id="id-color">
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur</translation>
     </message>
     <message id="id-preview">
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Prévisualisation</translation>
     </message>
     <message id="id-background-color">
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur du fond</translation>
     </message>
     <message id="id-opacity">
         <source>opacity</source>
         <oldsource>%1% opacity</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>opacité</translation>
     </message>
     <message id="id-grid-color">
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur de la grille</translation>
     </message>
     <message id="id-background">
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fond</translation>
     </message>
     <message id="id-grid">
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille</translation>
     </message>
     <message id="id-customize-style">
         <source>Customize style</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnaliser le style</translation>
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Apperçu case</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
-        <translation type="unfinished"></translation>
+        <translation>Subrillance d&apos;erreur</translation>
     </message>
     <message id="id-number-color">
         <source>Number color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur d&apos;un chiffre</translation>
     </message>
     <message id="id-fixed-number">
         <source>Fixed number</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiffre fixé</translation>
     </message>
     <message id="id-notes">
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notes</translation>
     </message>
     <message id="id-custom">
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message id="id-customize">
         <source>Customize</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisation</translation>
     </message>
     <message id="id-inserted-number">
         <source>Inserted number</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiffre inséré</translation>
     </message>
     <message id="id-board-style">
         <source>Board style</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiffre inséré</translation>
     </message>
 </context>
 </TS>
