@@ -131,7 +131,7 @@
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
-        <translation>Поле Судоку</translation>
+        <translation>Судоку</translation>
     </message>
     <message id="id-level">
         <source>Level</source>
@@ -183,7 +183,7 @@
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation>Выберите стиль вашего поля судоку.</translation>
+        <translation>Выберите стиль вашего судоку.</translation>
     </message>
     <message id="id-style">
         <source>Style</source>
@@ -244,19 +244,19 @@
     </message>
     <message id="id-average-steps">
         <source>Average steps</source>
-        <translation>В среднем шагов</translation>
+        <translation>Среднее количество шагов</translation>
     </message>
     <message id="id-minimum-steps">
         <source>Minimum steps</source>
-        <translation>Минимум шагов</translation>
+        <translation>Минимальное количество шагов</translation>
     </message>
     <message id="id-average-hints">
         <source>Average hints</source>
-        <translation>В среднем подсказок</translation>
+        <translation>Среднее количество подсказок</translation>
     </message>
     <message id="id-minimum-hints">
         <source>Minimum hints</source>
-        <translation>Минимум подсказок</translation>
+        <translation>Минимальное количество подсказок</translation>
     </message>
     <message id="id-statistics">
         <source>Statistics</source>
@@ -308,76 +308,76 @@
     </message>
     <message id="id-choose-color">
         <source>Choose color</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите цвет</translation>
     </message>
     <message id="id-color">
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет</translation>
     </message>
     <message id="id-preview">
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпросмотр</translation>
     </message>
     <message id="id-background-color">
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет фона</translation>
     </message>
     <message id="id-opacity">
         <source>opacity</source>
         <oldsource>%1% opacity</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>непрозрачность</translation>
     </message>
     <message id="id-grid-color">
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет сетки</translation>
     </message>
     <message id="id-background">
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон</translation>
     </message>
     <message id="id-grid">
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сетка</translation>
     </message>
     <message id="id-customize-style">
         <source>Customize style</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить стиль</translation>
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Предварительный просмотр ячейки</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
-        <translation type="unfinished"></translation>
+        <translation>Выделение ошибок</translation>
     </message>
     <message id="id-number-color">
         <source>Number color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет номера</translation>
     </message>
     <message id="id-fixed-number">
         <source>Fixed number</source>
-        <translation type="unfinished"></translation>
+        <translation>Фиксированный номер</translation>
     </message>
     <message id="id-notes">
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Заметки</translation>
     </message>
     <message id="id-custom">
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский</translation>
     </message>
     <message id="id-customize">
         <source>Customize</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить</translation>
     </message>
     <message id="id-inserted-number">
         <source>Inserted number</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставленный номер</translation>
     </message>
     <message id="id-board-style">
         <source>Board style</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставленный номер</translation>
     </message>
 </context>
 </TS>
