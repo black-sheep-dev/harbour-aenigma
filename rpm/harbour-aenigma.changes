@@ -1,3 +1,7 @@
+* Mon Jan 17 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.1-1
+- Fix bug saved games difficutly is always easy
+- Update French / Hungarian / Polish / Russian / Spanish translation
+
 * Sat Jan 15 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.0-1
 - Add custom styling of game board
 - Add difficulty level on result board
