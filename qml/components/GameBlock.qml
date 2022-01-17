@@ -166,7 +166,8 @@ Rectangle {
                     anchors.fill: parent
 
                     onClicked: {
-                        if (!isEditable && Global.mode !== EditMode.Hint) return;
+                        if (sudoku.gameState === GameState.Solved) return
+                        if (!isEditable && Global.mode !== EditMode.Hint) return
 
                         sudoku.incrementStepsCount()
 
