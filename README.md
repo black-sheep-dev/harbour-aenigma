@@ -3,6 +3,8 @@ Aenigma (Latin for puzzle) is a Sudoku puzzle game for Sailfish OS.
 
 >![](icons/128x128/harbour-aenigma.png)
 
+![](https://www.codefactor.io/repository/github/black-sheep-dev/harbour-aenigma/badge?style=plastic)
+
 [![](https://github.com/black-sheep-dev/harbour-aenigma/actions/workflows/main.yml/badge.svg)](https://github.com/black-sheep-dev/harbour-aenigma/actions/workflows/main.yml)
 
 ![](http://weblate.nubecula.org/widgets/harbour-aenigma/-/harbour-aenigma/svg-badge.svg)
