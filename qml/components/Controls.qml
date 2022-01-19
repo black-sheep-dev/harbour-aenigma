@@ -9,9 +9,21 @@ import "../."
 Item {
     id: controlsPanel
     property int mode: EditMode.Add
+    property bool portaitMode: true
     property var sudoku
 
-    height: controlsRow.height + buttonRow.height
+    onPortaitModeChanged: {
+        if (portaitMode) {
+            buttonsGrid.anchors.top = parent.top
+            buttonsGrid.anchors.left = none
+            numberGrid.anchors.top = buttonsGrid.top
+            numberGrid.anchors.topMargin = Theme.paddingLarge
+        } else {
+
+        }
+    }
+
+    height: Math.max(buttonsGrid.height, numberGrid.height)
 
     onModeChanged: {
         Global.mode = mode
@@ -45,17 +57,18 @@ Item {
         }
     }
 
-    Flow {
-        id: controlsRow
-        anchors.top: parent.top
-        width: parent.width
+    Grid {
+        id: buttonsGrid
+        anchors.left: parent.left
+        rows: 3
+        columns: 2
         spacing: Theme.paddingMedium
 
         IconSwitch {
             id: switchAdd
             enabled: !checked
             checked: true
-            source: "image://theme/icon-m-tab-new"
+            source: "image://theme/icon-m-add"
             onCheckedChanged: if (checked) mode = EditMode.Add
         }
         IconSwitch {
@@ -78,7 +91,7 @@ Item {
         }
         IconSwitch {
             highlichtColor: Theme.errorColor
-            source: "image://theme/icon-m-warning"
+            source: "image://theme/icon-m-cancel"
             onCheckedChanged: Global.showErrors = checked
         }
 
@@ -93,18 +106,23 @@ Item {
         }
     }
 
-    Row {
-        id: buttonRow
-        anchors.top: controlsRow.bottom
-        anchors.topMargin: Theme.paddingLarge
-        width: parent.width
-        spacing: Theme.paddingSmall
+    Grid {
+        id: numberGrid
+        anchors {
+            right: parent.right
+            left: buttonsGrid.right
+            leftMargin: Theme.paddingLarge
+            verticalCenter: buttonsGrid.verticalCenter
+        }
+        rows: 3
+        columns: 3
+        spacing: Theme.paddingMedium
 
         Repeater {
             model: 9
 
             Button {
-                preferredWidth: (buttonRow.width - 8*buttonRow.spacing) / 9
+                preferredWidth: (numberGrid.width - 2*numberGrid.spacing) / 3
                 text: index + 1
                 color: Global.selectedNumber === (index + 1) ? Theme.highlightColor : Theme.primaryColor
 
