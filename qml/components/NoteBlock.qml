@@ -29,7 +29,7 @@ Grid {
             Text {
                 id: valueLabel
                 anchors.centerIn: parent
-                color: BoardStyles.notesColor
+                color: (index + 1) === Global.selectedNumber ? BoardStyles.numberHighlightColor : BoardStyles.notesColor
                 font.pointSize: Math.max(parent.width * 0.8, 1)
 
                 text: {
