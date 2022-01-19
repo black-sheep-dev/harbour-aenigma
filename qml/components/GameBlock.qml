@@ -47,7 +47,7 @@ Rectangle {
                 }
 
                 function isCurrentNumber() {
-                    return Global.selectedNumber == valueLabel.text
+                    return Global.selectedNumber === sudoku.data(row, column, CellData.Value)
                 }
 
                 function refreshCell() {
@@ -165,7 +165,7 @@ Rectangle {
                 MouseArea {
                     anchors.fill: parent
 
-                    onClicked: {
+                    function handleInput(replace) {
                         if (sudoku.gameState === GameState.Solved) return
                         if (!isEditable && Global.mode !== EditMode.Hint) return
 
@@ -173,6 +173,9 @@ Rectangle {
 
                         if (Global.mode === EditMode.Add) {
                             if (Global.selectedNumber < 0) return
+
+                            // overwriting existing number with different number needs double click
+                            if ( !replace && sudoku.data(row, column, CellData.Value) > 0 && !isCurrentNumber()) return
 
                             const undoId = getUndoId()
 
@@ -182,7 +185,7 @@ Rectangle {
                             } else {
                                 sudoku.setData(row, column, CellData.Value, Global.selectedNumber, false, undoId)
                                 value = Global.selectedNumber
-                            }    
+                            }
                             sudoku.setData(row, column, CellData.Notes, Note.None, false, undoId)
                         } else if (Global.mode === EditMode.Delete) {
                             const undoId = getUndoId()
@@ -200,6 +203,9 @@ Rectangle {
                         }
                         refreshCell()
                     }
+
+                    onClicked: handleInput(false)
+                    onDoubleClicked: handleInput(true)
                 }
             }
         }
