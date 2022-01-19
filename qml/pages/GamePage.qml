@@ -13,6 +13,7 @@ Page {
     allowedOrientations: Orientation.Portrait
 
     function reset() {
+        settings.gameStateData = ""
         sudokuGame.reset()
         Global.selectedNumber = -1
         Global.resetCells()
