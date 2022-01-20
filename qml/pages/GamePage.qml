@@ -15,9 +15,17 @@ Page {
     function reset() {
         settings.gameStateData = ""
         sudokuGame.reset()
+        sudokuGame.resetBookmarks()
         Global.selectedNumber = -1
         Global.resetCells()
-        Global.refrechCells()
+        Global.refrechCells() 
+    }
+
+    function saveBookmarkThumbnail(timestamp) {
+        // save board thumbnail
+        gameBoard.grabToImage(function(result) {
+            result.saveToFile(StandardPaths.cache + "/bookmarks/" + sudokuGame.uuid + "_" + timestamp + ".png")
+        })
     }
 
     DisplayBlanking {
@@ -66,6 +74,22 @@ Page {
 
         PushUpMenu {
             visible: sudokuGame.gameState >= GameState.Playing
+            MenuItem {
+                enabled: sudokuGame.gameState === GameState.Playing
+                //% "Add bookmark"
+                text: qsTrId("id-add-bookmark")
+                onClicked: {
+                    var date = new Date()
+                    sudokuGame.addBookmark(date)
+                    saveBookmarkThumbnail(Math.round(date.getTime() / 1000))
+                }
+            }
+            MenuItem {
+                enabled: sudokuGame.bookmarks.length > 0
+                //% "Bookmarks"
+                text: qsTrId("id-bookmarks")
+                onClicked: pageStack.push(Qt.resolvedUrl("BookmarksListPage.qml"))
+            }
             MenuItem {
                 //% "Reset"
                 text: qsTrId("id-reset")
@@ -137,7 +161,6 @@ Page {
                     visible: sudokuGame.gameState >= GameState.Ready
                     id: gameBoard
                     anchors.fill: parent
-
 
                     opacity: sudokuGame.gameState === GameState.Solved ? 0.1 : 1.0
                     Behavior on opacity { FadeAnimator {} }

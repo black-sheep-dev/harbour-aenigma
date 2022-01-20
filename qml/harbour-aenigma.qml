@@ -11,7 +11,36 @@ import "pages"
 ApplicationWindow {
     id: app
 
-    Sudoku { id: sudokuGame }
+    Sudoku {
+        property var bookmarks: []
+
+        function addBookmark(date) {
+            const bookmark = {
+                uuid: sudokuGame.uuid,
+                timestamp: date.toISOString(),
+                gameData: sudokuGame.toBase64()
+            }
+
+            var arr = bookmarks
+            arr.push(bookmark)
+            bookmarks = arr
+
+            //% "Bookmark added"
+            notification.show(qsTrId("id-bookmark-added"))
+        }
+
+        function deleteBookmark(index) {
+            var arr = bookmarks
+            arr.splice(index, 1)
+            bookmarks = arr
+        }
+
+        function resetBookmarks() { bookmarks = [] }
+
+        id: sudokuGame
+
+        onBookmarksChanged: settings.bookmarks = JSON.stringify(bookmarks)
+    }
 
     ConfigurationGroup {
         id: settings
@@ -20,6 +49,7 @@ ApplicationWindow {
 
         property bool autoCleanupNotes: false
         property bool autoNotes: false
+        property string bookmarks: ""
         property string gameStateData: ""
         property bool highlighting: true
         property int highlightMode: HighlightMode.Complete
@@ -45,6 +75,7 @@ ApplicationWindow {
             // default values
             autoCleanupNotes = false
             autoNotes = false
+            bookmarks = ""
             gameStateData = ""
             highlighting = true
             highlightMode = HighlightMode.Complete
@@ -52,6 +83,11 @@ ApplicationWindow {
             preventDisplayBlanking = true
             style = Styles.Default
             customStyle = ""
+        }
+
+        function loadBookmarks() {
+            if (bookmarks.length === 0) return
+            sudokuGame.bookmarks = JSON.parse(bookmarks)
         }
 
         function loadCustomStyle() {
@@ -72,7 +108,10 @@ ApplicationWindow {
             BoardStyles.numberHighlightColor = custom.numberHighlightColor
         }
 
-        Component.onCompleted: if (style === Styles.Custom) loadCustomStyle()
+        Component.onCompleted: {
+            if (style === Styles.Custom) loadCustomStyle()
+            loadBookmarks()
+        }
     }
 
     Notification {

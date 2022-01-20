@@ -1,5 +1,8 @@
 #include <QtQuick>
 
+#include <QDir>
+#include <QStandardPaths>
+
 #include <sailfishapp.h>
 
 #include "database.h"
@@ -13,6 +16,8 @@ Q_DECLARE_METATYPE(QVector<quint16>)
 
 int main(int argc, char *argv[])
 {
+    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/org.nubecula/aenigma/bookmarks/");
+
     qRegisterMetaType<QVector<quint8> >();
     qRegisterMetaType<QVector<quint16> >();
 

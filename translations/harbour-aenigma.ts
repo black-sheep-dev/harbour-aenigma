@@ -378,5 +378,37 @@
         <source>Board style</source>
         <translation>Inserted number</translation>
     </message>
+    <message id="id-add-bookmark">
+        <source>Add bookmark</source>
+        <translation>Add bookmark</translation>
+    </message>
+    <message id="id-bookmarks">
+        <source>Bookmarks</source>
+        <translation>Bookmarks</translation>
+    </message>
+    <message id="id-load">
+        <source>Load</source>
+        <translation>Load</translation>
+    </message>
+    <message id="id-load-bookmarked-state">
+        <source>Loading bookmarked game state</source>
+        <translation>Loading bookmarked game state</translation>
+    </message>
+    <message id="id-resetting-bookmarks">
+        <source>Resetting bookmarks</source>
+        <translation>Resetting bookmarks</translation>
+    </message>
+    <message id="id-delete">
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+    <message id="id-deleting-bookmark">
+        <source>Deleting bookmark</source>
+        <translation>Deleting bookmark</translation>
+    </message>
+    <message id="id-bookmark-added">
+        <source>Bookmark added</source>
+        <translation>Bookmark added</translation>
+    </message>
 </context>
 </TS>

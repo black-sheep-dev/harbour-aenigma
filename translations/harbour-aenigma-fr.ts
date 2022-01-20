@@ -21,7 +21,7 @@
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Votre langue n&apos;est pas disponible&#xa0;? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
+        <translation>Votre langue n&apos;est pas disponible ? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
@@ -33,7 +33,7 @@
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière&#xa0;?</translation>
+        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière ?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
@@ -381,6 +381,38 @@
     <message id="id-board-style">
         <source>Board style</source>
         <translation>Chiffre inséré</translation>
+    </message>
+    <message id="id-add-bookmark">
+        <source>Add bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-bookmarks">
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-load">
+        <source>Load</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-load-bookmarked-state">
+        <source>Loading bookmarked game state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-resetting-bookmarks">
+        <source>Resetting bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-delete">
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-deleting-bookmark">
+        <source>Deleting bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="id-bookmark-added">
+        <source>Bookmark added</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

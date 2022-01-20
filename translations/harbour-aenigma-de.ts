@@ -382,5 +382,37 @@
         <source>Board style</source>
         <translation>Board Stil</translation>
     </message>
+    <message id="id-add-bookmark">
+        <source>Add bookmark</source>
+        <translation>Markierung hinzufügen</translation>
+    </message>
+    <message id="id-bookmarks">
+        <source>Bookmarks</source>
+        <translation>Markierungen</translation>
+    </message>
+    <message id="id-load">
+        <source>Load</source>
+        <translation>Laden</translation>
+    </message>
+    <message id="id-load-bookmarked-state">
+        <source>Loading bookmarked game state</source>
+        <translation>Lade markierten Spiel Status</translation>
+    </message>
+    <message id="id-resetting-bookmarks">
+        <source>Resetting bookmarks</source>
+        <translation>Markierungen zurücksetzen</translation>
+    </message>
+    <message id="id-delete">
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message id="id-deleting-bookmark">
+        <source>Deleting bookmark</source>
+        <translation>Lösche Markierung</translation>
+    </message>
+    <message id="id-bookmark-added">
+        <source>Bookmark added</source>
+        <translation>Markierung hinzugefügt</translation>
+    </message>
 </context>
 </TS>
