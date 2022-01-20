@@ -95,19 +95,6 @@ Page {
 
                     source: StandardPaths.cache + "/bookmarks/" + modelData.uuid + "_" + Math.round(new Date(modelData.timestamp) / 1000) + ".png"
                 }
-
-//                GameBoard {
-//                    enabled: false
-//                    anchors.horizontalCenter: parent.horizontalCenter
-//                    width: parent.width * 0.75
-//                    height: width
-
-//                    cellSize: Math.floor((width - 2*spacing) / 9)
-
-//                    layer.enabled: true
-
-//                    sudoku: sudokuPreview
-//                }
             }
 
             Component.onCompleted: sudokuPreview.fromBase64(modelData.gameData)
