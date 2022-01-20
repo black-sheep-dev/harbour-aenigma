@@ -1,3 +1,11 @@
+* Thu Jan 20 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.2-1
+- Add bookmarking of game states / return to bookmarked gamestate (requested by elBoberido)
+- Overwrite existing number with an other by double tap instead of one tap
+- Changed controls layout (requested by elBoberido)
+- Highlight notes if number is selected (requested by elBoberido)
+- Changed some icons because they were not available in older SailfishOS versions
+- Bugfixes
+
 * Mon Jan 17 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.1-1
 - Fix bug saved games difficutly is always easy
 - Update French / Hungarian / Polish / Russian / Spanish translation
