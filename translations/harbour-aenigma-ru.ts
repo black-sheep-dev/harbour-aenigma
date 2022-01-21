@@ -381,35 +381,35 @@
     </message>
     <message id="id-add-bookmark">
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить закладку</translation>
     </message>
     <message id="id-bookmarks">
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Закладки</translation>
     </message>
     <message id="id-load">
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить</translation>
     </message>
     <message id="id-load-bookmarked-state">
         <source>Loading bookmarked game state</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить закладку состояния игры</translation>
     </message>
     <message id="id-resetting-bookmarks">
         <source>Resetting bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Сброс закладок</translation>
     </message>
     <message id="id-delete">
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message id="id-deleting-bookmark">
         <source>Deleting bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить закладку</translation>
     </message>
     <message id="id-bookmark-added">
         <source>Bookmark added</source>
-        <translation type="unfinished"></translation>
+        <translation>Закладка добавлена</translation>
     </message>
 </context>
 </TS>
