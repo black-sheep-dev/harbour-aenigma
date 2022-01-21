@@ -376,35 +376,35 @@
     </message>
     <message id="id-add-bookmark">
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir marcador</translation>
     </message>
     <message id="id-bookmarks">
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcadores</translation>
     </message>
     <message id="id-load">
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar</translation>
     </message>
     <message id="id-load-bookmarked-state">
         <source>Loading bookmarked game state</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuperando estado del juego guardado</translation>
     </message>
     <message id="id-resetting-bookmarks">
         <source>Resetting bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando marcadores</translation>
     </message>
     <message id="id-delete">
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar</translation>
     </message>
     <message id="id-deleting-bookmark">
         <source>Deleting bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando marcador</translation>
     </message>
     <message id="id-bookmark-added">
         <source>Bookmark added</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcador añadido</translation>
     </message>
 </context>
 </TS>
