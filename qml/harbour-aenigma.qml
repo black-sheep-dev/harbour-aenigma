@@ -11,6 +11,8 @@ import "pages"
 ApplicationWindow {
     id: app
 
+    Cache { id: cache }
+
     Sudoku {
         property var bookmarks: []
 
@@ -18,7 +20,7 @@ ApplicationWindow {
             const bookmark = {
                 uuid: sudokuGame.uuid,
                 timestamp: date.toISOString(),
-                gameData: sudokuGame.toBase64()
+                gameData: sudokuGame.toBase64() 
             }
 
             var arr = bookmarks
@@ -35,7 +37,10 @@ ApplicationWindow {
             bookmarks = arr
         }
 
-        function resetBookmarks() { bookmarks = [] }
+        function resetBookmarks() {
+            bookmarks = []
+            cache.cleanBookmarkScreenshots()
+        }
 
         id: sudokuGame
 
@@ -83,6 +88,8 @@ ApplicationWindow {
             preventDisplayBlanking = true
             style = Styles.Default
             customStyle = ""
+
+            cache.cleanBookmarkScreenshots()
         }
 
         function loadBookmarks() {

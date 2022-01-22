@@ -25,7 +25,7 @@ Page {
         // save board thumbnail
         gameBoard.grabToImage(function(result) {
             result.saveToFile(StandardPaths.cache + "/bookmarks/" + sudokuGame.uuid + "_" + timestamp + ".png")
-        })
+        }, Qt.size(Math.round(Screen.width * 0,75), Math.round(Screen.width * 0,75)))
     }
 
     DisplayBlanking {

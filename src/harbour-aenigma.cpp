@@ -5,6 +5,7 @@
 
 #include <sailfishapp.h>
 
+#include "cache.h"
 #include "database.h"
 #include "enums.h"
 
@@ -43,21 +44,8 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<Aenigma::Note>(uri, 1, 0, "Note", "ENUM");
     qmlRegisterUncreatableType<Styles>(uri, 1, 0, "Styles", "ENUM");
 
+    qmlRegisterType<Cache>(uri, 1, 0, "Cache");
     qmlRegisterType<Aenigma::Sudoku>(uri, 1, 0, "Sudoku");
-
-//    qmlRegisterSingletonType<Aenigma::Sudoku>(uri,
-//                                              1,
-//                                              0,
-//                                              "Sudoku",
-//                                              [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-
-//        Q_UNUSED(engine)
-//        Q_UNUSED(scriptEngine)
-
-//        auto provider = new Aenigma::Sudoku(qApp);
-
-//        return provider;
-//    });
 
     auto context = v.data()->rootContext();
 

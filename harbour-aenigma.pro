@@ -13,6 +13,7 @@ CONFIG += link_pkgconfig sailfishapp
 PKGCONFIG += nemonotifications-qt5 keepalive
 
 SOURCES += src/harbour-aenigma.cpp \
+    src/cache.cpp \
     src/database.cpp
 
 DISTFILES += qml/harbour-aenigma.qml \
@@ -48,6 +49,7 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172 512x512
 include(translations/translations.pri)
 
 HEADERS += \
+    src/cache.h \
     src/database.h \
     src/enums.h
 
