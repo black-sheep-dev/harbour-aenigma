@@ -13,7 +13,7 @@
     </message>
     <message id="id-about-page-description">
         <source>Aenigma is a Sudoku puzzle game for Sailfish OS.</source>
-        <translation>Aenigma jest grą w sudoku dla systemu Sialfish OS.</translation>
+        <translation>Aenigma jest grą w sudoku dla systemu Sailfish OS.</translation>
     </message>
     <message id="id-translations">
         <source>Translations</source>
