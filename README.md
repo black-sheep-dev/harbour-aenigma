@@ -37,7 +37,7 @@ Available translations:
 - Hungarian by Szabó G. (1Zgp)
 - Spanish by [Carmen F. B. (carmenfdezb)](https://github.com/carmenfdezb)
 - Polish by [likot180](https://github.com/likot180)
-- Dutch by [rgrnetalk](https://github.com/rgrnetalk)
+- Dutch by [rgrnetalk](https://github.com/rgrnetalk) and Rob Kouwenberg
 - Russian by [potap14108](https://github.com/potap14108)
 - French by [baxyz](https://github.com/baxyz)
 
