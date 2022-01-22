@@ -13,7 +13,7 @@
     </message>
     <message id="id-about-page-description">
         <source>Aenigma is a Sudoku puzzle game for Sailfish OS.</source>
-        <translation>Enigma is een Sudoku puzzel spel voor Sailfish OS.</translation>
+        <translation>Enigma is een Sudoku-puzzelspel voor Sailfish OS.</translation>
     </message>
     <message id="id-translations">
         <source>Translations</source>
@@ -88,7 +88,7 @@
     </message>
     <message id="id-dialog-new-game-info">
         <source>You can select a level of difficulty for your Sudoku puzzle.</source>
-        <translation>Je kan een niveau van je Sudoku puzzel kiezen.</translation>
+        <translation>Je kan een niveau van je Sudoku-puzzel kiezen.</translation>
     </message>
     <message id="id-easy">
         <source>Easy</source>
@@ -130,7 +130,7 @@
     </message>
     <message id="id-sudoku-board">
         <source>Sudoku board</source>
-        <translation>Sudoku bord</translation>
+        <translation>Sudoku-bord</translation>
     </message>
     <message id="id-level">
         <source>Level</source>
@@ -146,7 +146,7 @@
     </message>
     <message id="id-auto-notes-desc">
         <source>This option automatically adds all notes to a new sudoku puzzle.</source>
-        <translation>Deze optie voegt automatische notities toe aan een nieuwe Sudoku puzzel.</translation>
+        <translation>Deze optie voegt automatische notities toe aan een nieuwe Sudoku-puzzel.</translation>
     </message>
     <message id="id-display-blanking">
         <source>Prevent display blanking</source>
@@ -182,7 +182,7 @@
     </message>
     <message id="id-styles-desc">
         <source>Choose a style for you sudoku board.</source>
-        <translation>Kies een stijl voor jou Sudoku bord.</translation>
+        <translation>Kies een stijl voor jouw Sudoku-bord.</translation>
     </message>
     <message id="id-style">
         <source>Style</source>
@@ -219,7 +219,7 @@
     <message id="id-generator-failed-msg">
         <source>Generation of Sudoku game failed! Please try again!</source>
         <oldsource>Generation of game failed! Please try again!</oldsource>
-        <translation>Generatie van een Sudoku spel is mislukt! Probeer het nog eens!</translation>
+        <translation>Generatie van een Sudoku-spel is mislukt! Probeer het nog eens!</translation>
     </message>
     <message id="id-reset-settings">
         <source>Reset settings</source>
@@ -295,116 +295,116 @@
     </message>
     <message id="id-style-dark-shadow">
         <source>Dark Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaduw</translation>
     </message>
     <message id="id-difficulty-level">
         <source>Difficulty level</source>
-        <translation type="unfinished"></translation>
+        <translation>Moeilijkheidsgraad</translation>
     </message>
     <message id="id-choose-color">
         <source>Choose color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de kleur</translation>
     </message>
     <message id="id-color">
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur</translation>
     </message>
     <message id="id-preview">
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld</translation>
     </message>
     <message id="id-background-color">
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondkleur</translation>
     </message>
     <message id="id-opacity">
         <source>opacity</source>
         <oldsource>%1% opacity</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>ondoorzichtigheid</translation>
     </message>
     <message id="id-grid-color">
         <source>Grid color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterkleur</translation>
     </message>
     <message id="id-background">
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond</translation>
     </message>
     <message id="id-grid">
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster</translation>
     </message>
     <message id="id-customize-style">
         <source>Customize style</source>
-        <translation type="unfinished"></translation>
+        <translation>Pas de opmaak aan</translation>
     </message>
     <message id="id-cell-preview">
         <source>Cell preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld cel</translation>
     </message>
     <message id="id-error-highlighting">
         <source>Error highlighting</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutmarkering</translation>
     </message>
     <message id="id-number-color">
         <source>Number color</source>
-        <translation type="unfinished"></translation>
+        <translation>Getalkleur</translation>
     </message>
     <message id="id-fixed-number">
         <source>Fixed number</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegeven getal</translation>
     </message>
     <message id="id-notes">
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notities</translation>
     </message>
     <message id="id-custom">
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepast</translation>
     </message>
     <message id="id-customize">
         <source>Customize</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanpassen</translation>
     </message>
     <message id="id-inserted-number">
         <source>Inserted number</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingevoerd getal</translation>
     </message>
     <message id="id-board-style">
         <source>Board style</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingevoerd getal</translation>
     </message>
     <message id="id-add-bookmark">
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg bladwijzer toe</translation>
     </message>
     <message id="id-bookmarks">
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bladwijzers</translation>
     </message>
     <message id="id-load">
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Ophalen</translation>
     </message>
     <message id="id-load-bookmarked-state">
         <source>Loading bookmarked game state</source>
-        <translation type="unfinished"></translation>
+        <translation>Ophalen opgeslagen spel</translation>
     </message>
     <message id="id-resetting-bookmarks">
         <source>Resetting bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen bladwijzers</translation>
     </message>
     <message id="id-delete">
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message id="id-deleting-bookmark">
         <source>Deleting bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen bladwijzer</translation>
     </message>
     <message id="id-bookmark-added">
         <source>Bookmark added</source>
-        <translation type="unfinished"></translation>
+        <translation>Bladwijzer toegevoegd</translation>
     </message>
 </context>
 </TS>
