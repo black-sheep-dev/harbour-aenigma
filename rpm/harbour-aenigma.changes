@@ -1,3 +1,7 @@
+* Sun Jan 23 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.3-1
+- Updated translations
+- Cleanup old bookmark screenshots
+
 * Thu Jan 20 2022 Samuel Kron <blacksheep@nubecula.org> 0.3.2-1
 - Add bookmarking of game states / return to bookmarked gamestate (requested by elBoberido)
 - Overwrite existing number with an other by double tap instead of one tap

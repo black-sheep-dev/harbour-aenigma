@@ -9,7 +9,7 @@ Name:       harbour-aenigma
 # << macros
 
 Summary:    Sudoku game for Sailfish OS
-Version:    0.3.2
+Version:    0.3.3
 Release:    1
 Group:      Amusements/Games
 License:    GPLv2
