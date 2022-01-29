@@ -20,15 +20,22 @@ ApplicationWindow {
             const bookmark = {
                 uuid: sudokuGame.uuid,
                 timestamp: date.toISOString(),
-                gameData: sudokuGame.toBase64() 
+                gameData: sudokuGame.toBase64(),
+                description: ""
             }
 
-            var arr = bookmarks
-            arr.push(bookmark)
-            bookmarks = arr
+            var dialog = pageStack.push(Qt.resolvedUrl("dialogs/AddBookmarkDialog.qml"))
 
-            //% "Bookmark added"
-            notification.show(qsTrId("id-bookmark-added"))
+            dialog.accepted.connect(function() {
+                bookmark.description = dialog.description
+
+                var arr = bookmarks
+                arr.push(bookmark)
+                bookmarks = arr
+
+                //% "Bookmark added"
+                notification.show(qsTrId("id-bookmark-added"))
+            })
         }
 
         function deleteBookmark(index) {

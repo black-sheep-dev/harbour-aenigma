@@ -91,6 +91,12 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("BookmarksListPage.qml"))
             }
             MenuItem {
+                //% "Revert to correct state"
+                text: qsTrId("id-revert-to-last-correct-state")
+                onClicked: remorse.execute(qsTrId("id-revert-to-last-correct-state"), function() { sudokuGame.revertToLastCorrectState() })
+            }
+
+            MenuItem {
                 //% "Reset"
                 text: qsTrId("id-reset")
                 //% "Reset game"

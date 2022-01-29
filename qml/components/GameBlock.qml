@@ -95,7 +95,7 @@ Rectangle {
                     visible: highlighted || hasError
                     anchors.fill: parent
                     color: hasError ? BoardStyles.errorColor : BoardStyles.backgroundHighlightColor
-                    opacity: hasError ? BoardStyles.errorHighlightColor : BoardStyles.highlightOpacity
+                    opacity: BoardStyles.highlightOpacity
                 }
 
                 Text {

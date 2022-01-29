@@ -410,5 +410,17 @@
         <source>Bookmark added</source>
         <translation>Bookmark added</translation>
     </message>
+    <message id="id-revert-to-last-correct-state">
+        <source>Revert to correct state</source>
+        <translation>Revert to correct state</translation>
+    </message>
+    <message id="id-enter-description">
+        <source>Enter description</source>
+        <translation>Enter description</translation>
+    </message>
+    <message id="id-add">
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
 </context>
 </TS>

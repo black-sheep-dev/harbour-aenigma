@@ -10,6 +10,41 @@ Grid {
 
     property int notes: Note.None
 
+    function numberPresent(index) {
+        switch (index) {
+        case 0:
+            return notes & Note.One
+
+        case 1:
+            return notes & Note.Two
+
+        case 2:
+            return notes & Note.Three
+
+        case 3:
+            return notes & Note.Four
+
+        case 4:
+            return notes & Note.Five
+
+        case 5:
+            return notes & Note.Six
+
+        case 6:
+            return notes & Note.Seven
+
+        case 7:
+            return notes & Note.Eight
+
+        case 8:
+            return notes & Note.Nine
+
+        default:
+            return false
+
+        }
+    }
+
     rows: 3
     columns: 3
 
@@ -25,6 +60,12 @@ Grid {
             height: noteGrid.width / 3
             color: "transparent"
             border.width: 0
+
+            Rectangle {
+                anchors.fill: parent
+                color: BoardStyles.backgroundHighlightColor
+                opacity: (index + 1) === Global.selectedNumber && numberPresent(index) ? BoardStyles.highlightOpacity : 0.0
+            }
 
             Text {
                 id: valueLabel

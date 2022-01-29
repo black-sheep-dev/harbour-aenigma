@@ -86,6 +86,15 @@ Page {
 
                 }
 
+                Label {
+                    id: descriptionLabel
+                    visible: modelData.description.length > 0
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width * 0.75
+                    wrapMode: Text.Wrap
+                    text: modelData.description
+                }
+
                 Image {
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: parent.width * 0.75

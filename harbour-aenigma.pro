@@ -30,6 +30,7 @@ DISTFILES += qml/harbour-aenigma.qml \
     qml/components/ResultBoard.qml \
     qml/components/StatisticDetails.qml \
     qml/cover/CoverPage.qml \
+    qml/dialogs/AddBookmarkDialog.qml \
     qml/dialogs/ColorSelectionDialog.qml \
     qml/dialogs/NewGameDialog.qml \
     qml/pages/BookmarksListPage.qml \
