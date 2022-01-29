@@ -1,5 +1,5 @@
 # VERSION
-VERSION = 0.3.3
+VERSION = 0.3.4
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 TARGET = harbour-aenigma
