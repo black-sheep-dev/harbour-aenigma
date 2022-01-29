@@ -8,7 +8,7 @@
 
 Cache::Cache(QObject *parent) : QObject(parent)
 {
-
+    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QStringLiteral("/bookmarks/"));
 }
 
 void Cache::cleanBookmarkScreenshots(const QString &keep)
