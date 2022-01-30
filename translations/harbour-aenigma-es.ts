@@ -408,15 +408,15 @@
     </message>
     <message id="id-revert-to-last-correct-state">
         <source>Revert to correct state</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver al estado correcto</translation>
     </message>
     <message id="id-enter-description">
         <source>Enter description</source>
-        <translation type="unfinished"></translation>
+        <translation>Introducir descripción</translation>
     </message>
     <message id="id-add">
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir</translation>
     </message>
 </context>
 </TS>
