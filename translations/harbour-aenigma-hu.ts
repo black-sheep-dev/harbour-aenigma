@@ -407,15 +407,15 @@
     </message>
     <message id="id-revert-to-last-correct-state">
         <source>Revert to correct state</source>
-        <translation type="unfinished"></translation>
+        <translation>A helyes állapot visszaállítása</translation>
     </message>
     <message id="id-enter-description">
         <source>Enter description</source>
-        <translation type="unfinished"></translation>
+        <translation>Leírás megadása</translation>
     </message>
     <message id="id-add">
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hozzáadás</translation>
     </message>
 </context>
 </TS>

@@ -21,7 +21,7 @@
     </message>
     <message id="id-about-page-translation-text">
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation>Votre langue n&apos;est pas disponible ? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
+        <translation>Votre langue n&apos;est pas disponible&#xa0;? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
     </message>
     <message id="id-sources">
         <source>Sources</source>
@@ -33,7 +33,7 @@
     </message>
     <message id="id-buy-me-a-beer">
         <source>If you like my work why not buy me a beer?</source>
-        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière ?</translation>
+        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière&#xa0;?</translation>
     </message>
     <message id="id-donate-paypal">
         <source>Donate with PayPal</source>
@@ -416,15 +416,15 @@
     </message>
     <message id="id-revert-to-last-correct-state">
         <source>Revert to correct state</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour à l’état correct</translation>
     </message>
     <message id="id-enter-description">
         <source>Enter description</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrez la description</translation>
     </message>
     <message id="id-add">
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter</translation>
     </message>
 </context>
 </TS>
