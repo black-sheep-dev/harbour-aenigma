@@ -1,6 +1,6 @@
 Name: harbour-aenigma
 Summary: Sudoku game for Sailfish OS
-Version: 0.3.5
+Version: 0.3.6
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -18,9 +18,9 @@ Description: |
     PackageName: Aenigma
     Type: desktop-application
     Categories:
-        - Games
+        - Game
     Custom:
-        DescriptionMD: https://github.com/black-sheep-dev/harbour-aenigma/raw/main/README.md
+        DescriptionMD: https://github.com/black-sheep-dev/harbour-aenigma/raw/master/README.md
         Repo: https://github.com/black-sheep-dev/harbour-aenigma/
     Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/harbour-aenigma.svg
     Screenshots:
@@ -37,6 +37,7 @@ PkgConfigBR:
   - Qt5Core
   - Qt5Qml
   - Qt5Quick
+  - Qt5Sql
   - nemonotifications-qt5
   - keepalive
 
