@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Nemo.KeepAlive 1.2
+//import Nemo.KeepAlive 1.2
 
 import org.nubecula.aenigma 1.0
 
@@ -28,14 +28,26 @@ Page {
         }, Qt.size(Math.round(Screen.width * 0,75), Math.round(Screen.width * 0,75)))
     }
 
-    DisplayBlanking {
-        preventBlanking: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
+//    DisplayBlanking {
+//        preventBlanking: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
+//    }
+
+//    PageBusyIndicator {
+//        anchors.centerIn: parent
+//        running: sudokuGame.gameState === GameState.Generating
+//    }
+
+    HarbourDisplayBlanking {
+        pauseRequested: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
     }
 
-    PageBusyIndicator {
+    BusyIndicator {
         anchors.centerIn: parent
+        size: BusyIndicatorSize.Large
         running: sudokuGame.gameState === GameState.Generating
     }
+
+
 
     SilicaFlickable {
         anchors.fill: parent

@@ -1,3 +1,6 @@
 [submodule "extern/libaenigma"]
 	path = extern/libaenigma
 	url = https://github.com/black-sheep-dev/libaenigma.git
+[submodule "extern/harbour-lib"]
+	path = extern/harbour-lib
+	url = https://github.com/black-sheep-dev/harbour-lib.git

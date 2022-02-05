@@ -1,5 +1,5 @@
 # VERSION
-VERSION = 0.3.6
+VERSION = 0.3.7
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 TARGET = harbour-aenigma
@@ -8,6 +8,7 @@ DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 QT += sql
 
 include(extern/libaenigma/libaenigma.pri)
+include(extern/harbour-lib.pri)
 
 CONFIG += link_pkgconfig sailfishapp
 PKGCONFIG += nemonotifications-qt5 keepalive

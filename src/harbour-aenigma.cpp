@@ -12,6 +12,8 @@
 #include "aenigma.h"
 #include "sudoku.h"
 
+#include <HarbourDisplayBlanking.h>
+
 Q_DECLARE_METATYPE(QVector<quint8>)
 Q_DECLARE_METATYPE(QVector<quint16>)
 
@@ -44,6 +46,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<Cache>(uri, 1, 0, "Cache");
     qmlRegisterType<Aenigma::Sudoku>(uri, 1, 0, "Sudoku");
+    qmlRegisterType<HarbourDisplayBlanking>(uri, 1, 0, "HarbourDisplayBlanking");
 
     auto context = v.data()->rootContext();
 
