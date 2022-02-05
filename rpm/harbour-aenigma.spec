@@ -23,8 +23,8 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Sql)
+BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(nemonotifications-qt5)
-BuildRequires:  pkgconfig(keepalive)
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  desktop-file-utils
 
@@ -39,7 +39,7 @@ Categories:
 Custom:
     DescriptionMD: https://github.com/black-sheep-dev/harbour-aenigma/raw/master/README.md
     Repo: https://github.com/black-sheep-dev/harbour-aenigma/
-Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/harbour-aenigma.svg
+Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/172x172/harbour-aenigma.png
 Screenshots:
     - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/metadata/screenshot1.png
 Url:

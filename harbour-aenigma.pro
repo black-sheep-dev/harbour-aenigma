@@ -5,13 +5,13 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 TARGET = harbour-aenigma
 DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
-QT += sql
+QT += sql dbus
 
 include(extern/libaenigma/libaenigma.pri)
 include(extern/harbour-lib.pri)
 
 CONFIG += link_pkgconfig sailfishapp
-PKGCONFIG += nemonotifications-qt5 keepalive
+PKGCONFIG += nemonotifications-qt5
 
 SOURCES += src/harbour-aenigma.cpp \
     src/cache.cpp \
