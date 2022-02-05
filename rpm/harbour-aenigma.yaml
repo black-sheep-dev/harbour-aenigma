@@ -22,7 +22,7 @@ Description: |
     Custom:
         DescriptionMD: https://github.com/black-sheep-dev/harbour-aenigma/raw/master/README.md
         Repo: https://github.com/black-sheep-dev/harbour-aenigma/
-    Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/harbour-aenigma.svg
+    Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-aenigma/master/icons/172x172/harbour-aenigma.png
     Screenshots:
         - https://github.com/black-sheep-dev/harbour-aenigma/raw/master/metadata/screenshot1.png
     Url:
