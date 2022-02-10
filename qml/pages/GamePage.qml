@@ -10,7 +10,7 @@ import "../components"
 Page {    
     id: page
 
-    allowedOrientations: Orientation.Portrait
+    allowedOrientations: Orientation.All
 
     function reset() {
         settings.gameStateData = ""
@@ -25,17 +25,8 @@ Page {
         // save board thumbnail
         gameBoard.grabToImage(function(result) {
             result.saveToFile(StandardPaths.cache + "/bookmarks/" + sudokuGame.uuid + "_" + timestamp + ".png")
-        }, Qt.size(Math.round(Screen.width * 0,75), Math.round(Screen.width * 0,75)))
+        }, Qt.size(Math.round(Screen.width * 0.75), Math.round(Screen.width * 0.75)))
     }
-
-//    DisplayBlanking {
-//        preventBlanking: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
-//    }
-
-//    PageBusyIndicator {
-//        anchors.centerIn: parent
-//        running: sudokuGame.gameState === GameState.Generating
-//    }
 
     HarbourDisplayBlanking {
         pauseRequested: sudokuGame.gameState === GameState.Playing && settings.preventDisplayBlanking && app.visible
@@ -47,9 +38,8 @@ Page {
         running: sudokuGame.gameState === GameState.Generating
     }
 
-
-
     SilicaFlickable {
+        id: flickable
         anchors.fill: parent
 
         PullDownMenu {
@@ -118,99 +108,96 @@ Page {
 
         RemorsePopup { id: remorse }
 
-        contentHeight: column.height
+        PageHeader {
+            id: pageHeader
+            //% "Sudoku board"
+            title: qsTrId("id-sudoku-board")
+            description: {
+                switch (sudokuGame.gameState) {
+                case GameState.Empty:
+                    return ''
 
-        Column {
-            id: column
+                case GameState.Generating:
+                    //% "Generating"
+                    return qsTrId("id-generating") + "..."
 
-            width: page.width
-            spacing: Theme.paddingLarge
+                case GameState.Ready:
+                case GameState.Pause:
+                case GameState.Playing:
+                    //% "%n cell(s) unsolved"
+                    return qsTrId("id-cells-unsolved", sudokuGame.unsolvedCellCount) + " (" + new Date(sudokuGame.elapsedTime * 1000).toISOString().substr(11, 8) + ")"
 
-            PageHeader {
-                //% "Sudoku board"
-                title: qsTrId("id-sudoku-board")
-                description: {
-                    switch (sudokuGame.gameState) {
-                    case GameState.Empty:
-                        return ''
+                case GameState.NotCorrect:
+                    //% "There are errors"
+                    return qsTrId("id-has-errors")
 
-                    case GameState.Generating:
-                        //% "Generating"
-                        return qsTrId("id-generating") + "..."
+                case GameState.Solved:
+                    //% "Solved"
+                    return qsTrId("id-solved")
 
-                    case GameState.Ready:
-                    case GameState.Pause:
-                    case GameState.Playing:
-                        //% "%n cell(s) unsolved"
-                        return qsTrId("id-cells-unsolved", sudokuGame.unsolvedCellCount)
-
-                    case GameState.NotCorrect:
-                        //% "There are errors"
-                        return qsTrId("id-has-errors")
-
-                    case GameState.Solved:
-                        //% "Solved"
-                        return qsTrId("id-solved")
-
-                    default:
-                        return ""
-                    }
-                }
-
-                Label {
-                    visible: sudokuGame.gameState >= GameState.Playing
-                    anchors{
-                        left: parent.left
-                        leftMargin: Theme.horizontalPageMargin
-                        bottom: parent.bottom
-                        bottomMargin: Theme.paddingMedium
-                    }
-                    color: Theme.highlightColor
-                    text: new Date(sudokuGame.elapsedTime * 1000).toISOString().substr(11, 8);
+                default:
+                    return ""
                 }
             }
+        }
 
-            Item {
-                x: Theme.horizontalPageMargin
-                width: parent.width - 2*x
-                height: width
+        Item {
+            id: gameArea
 
-                GameBoard {
-                    visible: sudokuGame.gameState >= GameState.Ready
-                    id: gameBoard
-                    anchors.fill: parent
-
-                    opacity: sudokuGame.gameState === GameState.Solved ? 0.1 : 1.0
-                    Behavior on opacity { FadeAnimator {} }
-
-                    cellSize: Math.floor((width - 2*spacing) / 9)
-
-                    layer.enabled: true
-
-                    sudoku: sudokuGame
-                }
-
-                ResultBoard {
-                    visible: sudokuGame.gameState === GameState.Solved
-                    anchors.fill: parent
-
-                    elapsedTime: sudokuGame.elapsedTime
-                    hints: sudokuGame.hintsCount
-                    steps: sudokuGame.stepsCount
-                    difficulty: sudokuGame.difficulty
-                }
+            anchors{
+                left: pageHeader.left
+                leftMargin: Theme.horizontalPageMargin
+                top: orientation === Orientation.Portrait ? pageHeader.bottom : pageHeader.top
+                topMargin: Theme.horizontalPageMargin
             }
 
-            Controls {
+            width: orientation === Orientation.Portrait ? parent.width - 2*Theme.horizontalPageMargin : Screen.width - 2*Theme.horizontalPageMargin
+            height: width
+
+            GameBoard {
                 visible: sudokuGame.gameState >= GameState.Ready
-                id: controlsPanel
+                id: gameBoard
+                anchors.fill: parent
 
-                x: Theme.horizontalPageMargin
-                width: parent.width - 2*x
+                opacity: sudokuGame.gameState === GameState.Solved ? 0.1 : 1.0
+                Behavior on opacity { FadeAnimator {} }
+
+                cellSize: Math.floor((width - 2*spacing) / 9)
+
+                layer.enabled: true
 
                 sudoku: sudokuGame
             }
+
+            ResultBoard {
+                visible: sudokuGame.gameState === GameState.Solved
+                anchors.fill: parent
+
+                elapsedTime: sudokuGame.elapsedTime
+                hints: sudokuGame.hintsCount
+                steps: sudokuGame.stepsCount
+                difficulty: sudokuGame.difficulty
+            }
         }
+
+        Controls {
+            visible: sudokuGame.gameState >= GameState.Ready
+            id: controlsPanel
+            anchors{
+                left: orientation === Orientation.Portrait ? pageHeader.left : gameArea.right
+                leftMargin: Theme.horizontalPageMargin
+                right: pageHeader.right
+                rightMargin: Theme.horizontalPageMargin
+                top: orientation === Orientation.Portrait ? gameArea.bottom : pageHeader.bottom
+                topMargin: orientation === Orientation.Portrait ? Theme.paddingLarge : Theme.paddingLarge
+            }
+            height: width
+
+            portaitMode: orientation === Orientation.Portrait
+
+            sudoku: sudokuGame
+        }
+
 
         ViewPlaceholder {
             enabled: sudokuGame.gameState === GameState.Empty

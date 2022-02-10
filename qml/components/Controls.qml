@@ -12,18 +12,7 @@ Item {
     property bool portaitMode: true
     property var sudoku
 
-    onPortaitModeChanged: {
-        if (portaitMode) {
-            buttonsGrid.anchors.top = parent.top
-            buttonsGrid.anchors.left = none
-            numberGrid.anchors.top = buttonsGrid.top
-            numberGrid.anchors.topMargin = Theme.paddingLarge
-        } else {
-
-        }
-    }
-
-    height: Math.max(buttonsGrid.height, numberGrid.height)
+    //height: Math.max(buttonsGrid.height, numberGrid.height)
 
     onModeChanged: {
         Global.mode = mode
@@ -59,10 +48,15 @@ Item {
 
     Grid {
         id: buttonsGrid
-        anchors.left: parent.left
-        rows: 3
-        columns: 2
-        spacing: Theme.paddingMedium
+        anchors{
+            top: parent.top
+            left: parent.left
+            right: portaitMode ? undefined : parent.right
+        }
+        rows: portaitMode ? 3 : 1
+        columns: portaitMode ? 2 : 6
+        spacing: portaitMode ? Theme.paddingMedium : Theme.paddingSmall
+        width: switchAdd.width * columns + (columns - 1) * spacing
 
         IconSwitch {
             id: switchAdd
@@ -109,10 +103,11 @@ Item {
     Grid {
         id: numberGrid
         anchors {
+            top: portaitMode ? parent.top : buttonsGrid.bottom
+            topMargin: portaitMode ? (buttonsGrid.height - height) / 2 : Theme.paddingLarge
             right: parent.right
-            left: buttonsGrid.right
-            leftMargin: Theme.paddingLarge
-            verticalCenter: buttonsGrid.verticalCenter
+            left: portaitMode ? buttonsGrid.right : parent.left
+            leftMargin: portaitMode ? Theme.paddingLarge : 0
         }
         rows: 3
         columns: 3
