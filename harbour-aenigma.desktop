@@ -5,4 +5,8 @@ Icon=harbour-aenigma
 Exec=harbour-aenigma
 Name=Aenigma
 
+[X-Sailjail]
+OrganizationName=org.nubecula
+ApplicationName=aenigma
+
 
